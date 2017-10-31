@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/mc_froum_select_box" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <Button android:layout_gravity="left" android:id="@id/mc_froum_select_btn" android:background="@drawable/mc_forum_detail_select_n" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+        <TextView android:gravity="center_vertical" android:id="@id/mc_forum_vote_num_lable_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" style="@style/mc_forum_vote_lable_style" />
+        <TextView android:id="@id/mc_forum_poll_item_text" android:background="@color/mc_forum_transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="10.0dip" style="@style/mc_forum_posts_content_detail_style" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_froum_poll_result_box" android:paddingTop="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip">
+        <ProgressBar android:id="@id/mc_forum_vote_rs_progress" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:progressDrawable="@drawable/mc_forum_progress_bar_color" android:layout_weight="1.0" style="?android:attr/progressBarStyleHorizontal" />
+        <TextView android:layout_gravity="right" android:id="@id/mc_forum_vote_rs_text" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/mc_forum_posts_content_detail_style" />
+    </LinearLayout>
+</LinearLayout>

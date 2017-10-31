@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_plaza_top_layout" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <RelativeLayout android:id="@id/personal_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/personal_btn" android:background="@drawable/mc_forum_squre_icon1" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_personal" android:layout_below="@id/personal_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_wire" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+        <RelativeLayout android:id="@id/set_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/set_btn" android:background="@drawable/mc_forum_squre_icon2" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_set" android:layout_below="@id/set_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_wire" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+        <RelativeLayout android:id="@id/about_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/about_btn" android:background="@drawable/mc_forum_squre_icon3" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_about" android:layout_below="@id/about_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/base_search_layout" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_below="@id/mc_plaza_top_layout">
+        <include layout="@layout/mc_plaza_widget_search_layout" />
+        <View android:id="@id/mc_plaza_before_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <android.support.v4.view.ViewPager android:id="@id/view_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_below="@id/base_search_layout" />
+    <include layout="@layout/mc_plaza_widget_loading" />
+</RelativeLayout>

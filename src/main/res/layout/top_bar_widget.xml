@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mobcent.discuz.base.widget.TopBarWidget
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_below="@id/my_toolbar"
+    android:id="@id/top_bar_widget"
+    android:layout_width="fill_parent"
+    style="@style/mc_forum_top_bar_bg"  />

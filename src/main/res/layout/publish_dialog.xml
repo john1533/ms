@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_top_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="35.0dip" android:layout_above="@id/mc_forum_middle_box" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_middle_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="35.0dip" android:layout_above="@id/mc_forum_bottom_box" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_bottom_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="35.0dip" android:layout_above="@id/mc_forum_bottom_bar" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:id="@id/mc_forum_bottom_bar" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/mc_forum_cancle_btn" android:background="@drawable/mc_forum_main_bar_button18" android:layout_width="38.0dip" android:layout_height="34.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

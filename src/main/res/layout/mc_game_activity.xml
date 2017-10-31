@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/mc_game_topbar" style="@style/mc_plaza_top_bar_style">
+        <Button android:id="@id/mc_game_topbar_left_btn" android:background="@drawable/mc_forum_top_bar_button1" android:layout_alignParentLeft="true" style="@style/mc_plaza_top_bar_btn_style" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/mc_forum_title_color" android:gravity="center" android:id="@id/mc_game_topbar_title_text" android:layout_toLeftOf="@id/map_btn" android:layout_toRightOf="@id/back_btn" style="@style/mc_plaza_title_style" />
+    </RelativeLayout>
+    <com.mobcent.lowest.android.ui.widget.MCTabBarScrollView android:id="@id/mc_game_subnav" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="37.0dip" android:layout_below="@id/mc_game_topbar" />
+    <android.support.v4.view.ViewPager android:id="@id/mc_game_content" android:background="@drawable/mc_forum_bg1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/mc_game_detail_buttom_bar" android:layout_below="@id/mc_game_subnav" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_game_detail_buttom_bar" android:background="@drawable/mc_forum_bg2" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <Button android:textSize="15.0sp" android:textColor="@color/mc_game_list_button_color_selector" android:id="@id/mc_game_detail_buttom_comment" android:background="@drawable/mc_forum_top_bar_button2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="@string/mc_game_detail_coment" android:layout_weight="1.0" />
+        <Button android:textSize="14.0sp" android:id="@id/mc_game_detail_buttom_into_game" android:background="@drawable/mc_forum_game_button2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mc_game_detail_into_game" android:layout_weight="20.0" />
+        <Button android:textSize="15.0sp" android:textColor="@color/mc_game_list_button_color_selector" android:id="@id/mc_game_detail_buttom_share" android:background="@drawable/mc_forum_top_bar_button2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="@string/mc_game_datail_share" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="7.0dip" android:paddingTop="2.0dip" android:paddingRight="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/normal_img" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="7.0dip" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/close_img" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="-7.0dip" android:src="@drawable/mc_forum_remove" android:layout_alignRight="@id/normal_img" android:layout_alignParentTop="true" />
+</RelativeLayout>

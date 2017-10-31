@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.discuz.activity.view.ScaleHeaderScrollView android:id="@id/mc_forum_my_view" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:id="@id/mc_forum_my_top_box" layout="@layout/user_home_head_layout" />
+            <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_box2" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_below="@id/mc_forum_my_top_box">
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_infomation_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon20_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_infomation" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_photo_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon7_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_photo" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_box3" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_below="@id/mc_forum_box2">
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_friend_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon4_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_friends" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_follow_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon5_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_follow" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_fan_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon6_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_fans" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_box4" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_below="@id/mc_forum_box3">
+                <View android:id="@id/message_line" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_message_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon21_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_message" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_publish_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon8_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_publish" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_reply_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon9_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_reply" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_favorites_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon10_n" />
+                    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_favorites" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_box5" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_below="@id/mc_forum_box4">
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                <LinearLayout android:gravity="center_vertical" android:id="@id/mc_forum_setting_box" android:background="@drawable/mc_forum_list_item2" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                    <ImageView android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_marginLeft="22.0dip" android:src="@drawable/mc_forum_personal_icon19_n" />
+                    <TextView android:id="@id/mc_forum_user_setting" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mc_forum_my_setting" style="@style/mc_forum_user_home_style" />
+                </LinearLayout>
+                <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            </LinearLayout>
+        </RelativeLayout>
+    </com.mobcent.discuz.activity.view.ScaleHeaderScrollView>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/back_btn" android:background="@drawable/mc_forum_personal_icon1_n" android:layout_width="44.0dip" android:layout_height="44.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/mc_forum_top_bar_button" />
+        <TextView android:id="@id/title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_more_info" android:layout_centerInParent="true" android:layout_centerHorizontal="true" style="@style/mc_forum_info_topbar_title" />
+        <Button android:gravity="center_vertical" android:id="@id/more_btn" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginRight="7.0dip" android:text="@string/mc_forum_manage_user" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/mc_forum_top_bar_right_button" />
+    </RelativeLayout>
+</RelativeLayout>

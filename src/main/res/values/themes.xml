@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="light" parent="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!--<item name="color_dangerous">@color/color_dangerous_light</item>-->
+
+        <item name="colorPrimary">#5bb0ed</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">#5bb0ed</item>
+        <!-- 窗口的背景颜色 -->
+        <!--<item name="android:windowBackground">@android:color/white</item>-->
+
+        <item name="android:windowBackground">@color/main_background_light</item>
+
+
+        <!--<item name="color_nav">@color/color_nav_light</item>-->
+
+        <!--<item name="textColor">@color/color_text_light</item>-->
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+
+        <item name="actionBarSize">40dp</item>
+
+        <item name="android:editTextBackground">@color/editbox_background_light</item>
+
+        <item name="android:popupBackground">@color/popup_background_light</item>
+
+        <item name="nav_title_color">@color/nav_title_light</item>
+
+        <item name="nav_title_select_color">#ff52ff93</item>
+
+        <!--<item name="nav_title_select_style">@style/mc_forum_posts_lab_style</item>-->
+        <item name="nav_title_select_style">@style/mc_forum_posts_lab_style</item>
+
+        <item name="android:textColor">#ffff0000</item>
+
+        <item name="topic_list_item_title_color">@color/topic_list_item_title_light</item>
+        <item name="topic_list_item_title_read_color">@color/topic_list_item_title_read_light</item>
+        <item name="topic_list_item_desc_color">@color/topic_list_item_desc_light</item>
+        <item name="topic_detail_title_color">#343434</item>
+        <item name="topic_detail_content_color">@color/topic_detail_content_light</item>
+        <item name="topic_detail_desc_color">@color/topic_detail_desc_light</item>
+
+
+    </style>
+
+    <style name="dark" parent="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!--<item name="color_dangerous">@color/color_dangerous_light</item>-->
+
+        <item name="colorPrimary">#a6d1c7</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">#a6d1c7</item>
+        <!-- 窗口的背景颜色 -->
+        <!--<item name="android:windowBackground">@android:color/darker_gray</item>-->
+
+        <item name="android:windowBackground">@color/main_background_dark</item>
+
+        <!--<item name="color_nav">@color/color_nav_dark</item>-->
+
+        <!--<item name="textColor">@color/color_text_dark</item>-->
+
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="actionBarSize">40dp</item>
+
+
+
+        <item name="android:editTextBackground">@color/editbox_background_dark</item>
+        <item name="android:popupBackground">@color/popup_background_dark</item>
+
+
+
+        <item name="nav_title_select_color">#ff0000</item>
+        <item name="nav_title_color">@color/nav_title_dark</item>
+        <item name="android:textColor">#ffff0000</item>
+        <item name="nav_title_select_style">@style/mc_forum_posts_lab_style1</item>
+        <item name="topic_list_item_title_color">@color/topic_list_item_title_dark</item>
+        <item name="topic_list_item_title_read_color">@color/topic_list_item_title_read_dark</item>
+        <item name="topic_list_item_desc_color">@color/topic_list_item_desc_dark</item>
+        <item name="topic_detail_title_color">@color/topic_detail_title_dark</item>
+        <item name="topic_detail_content_color">@color/topic_detail_content_dark</item>
+        <item name="topic_detail_desc_color">@color/topic_detail_desc_dark</item>
+
+    </style>
+</resources>

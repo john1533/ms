@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/game_item_layout" android:background="@drawable/mc_forum_card_bg2" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/mc_game_center_item_top_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/mc_game_center_list_thumbnail" android:layout_width="50.0dip" android:layout_height="50.0dip" />
+        <RelativeLayout android:id="@id/mc_game_center_list_game_message" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_toLeftOf="@id/mc_game_center_center_list_into_game" android:layout_toRightOf="@id/mc_game_center_list_thumbnail">
+            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/mc_game_center_list_game_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/mc_game_center_list_game_rank" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/mc_game_center_list_game_name" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text_normal_color" android:id="@id/mc_game_center_list_game_player" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/mc_game_center_list_game_rank" />
+        </RelativeLayout>
+        <Button android:textColor="@color/mc_game_detail_buttom_color_selector" android:id="@id/mc_game_center_center_list_into_game" android:background="@drawable/mc_forum_game_button1" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="26.0dip" android:layout_marginRight="5.0dip" android:text="@string/mc_game_center_into_game" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/mc_game_center_list_content_segmentation" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/mc_game_center_item_top_content">
+        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/mc_game_center_content_msg_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_game_center_game_message" />
+        <ImageView android:id="@id/mc_game_center_msg_line" android:background="@drawable/mc_forum_wire" android:layout_width="wrap_content" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text_normal_color" android:id="@id/mc_game_center_list_game_description" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:maxLines="3" android:layout_below="@id/mc_game_center_list_content_segmentation" />
+</RelativeLayout>

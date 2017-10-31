@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/mc_forum_bg1">
+
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10.0dip">
+             <LinearLayout
+                android:id="@id/mc_forum_box2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                 android:layout_alignParentTop="true"
+                android:background="@drawable/mc_forum_bg3"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+                <LinearLayout
+                    android:id="@id/mc_forum_infomation_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/mc_forum_list_item2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/user_icon_img"
+                        android:layout_width="23.0dip"
+                        android:layout_height="23.0dip"
+                        android:layout_marginLeft="22.0dip"
+                        android:src="@drawable/mc_forum_squre_icon9" />
+
+                    <TextView
+                        android:id="@+id/user_name_text"
+                        style="@style/mc_forum_user_home_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_plaza_top_personal" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@id/mc_forum_box5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mc_forum_box2"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/mc_forum_bg3"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+                <LinearLayout
+                    android:id="@id/mc_forum_setting_box"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/mc_forum_list_item2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="23.0dip"
+                        android:layout_height="23.0dip"
+                        android:layout_marginLeft="22.0dip"
+                        android:src="@drawable/mc_forum_personal_icon19_n" />
+
+                    <TextView
+                        android:id="@id/mc_forum_user_setting"
+                        style="@style/mc_forum_user_home_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_forum_update" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+
+                <LinearLayout
+                    android:id="@+id/clear_cache_box"
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/mc_forum_list_item2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="23.0dip"
+                        android:layout_height="23.0dip"
+                        android:layout_marginLeft="22.0dip"
+                        android:src="@drawable/mc_forum_personal_icon19_n" />
+
+                    <TextView
+                        android:id="@id/password_btn"
+                        style="@style/mc_forum_user_home_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_forum_clear_cache" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="44.0dip"
+                    android:background="@drawable/mc_forum_list_item2"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="23.0dip"
+                        android:layout_height="23.0dip"
+                        android:layout_marginLeft="22.0dip"
+                        android:src="@drawable/mc_forum_personal_icon19_n" />
+
+                    <TextView
+                        android:id="@id/password_btn"
+                        style="@style/mc_forum_user_home_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mc_forum_about" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@drawable/mc_forum_wire" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

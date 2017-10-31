@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_peripheral_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/route_top_bar" android:background="@drawable/mc_forum_top_bar_bg" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <Button android:id="@id/route_finish_btn" android:background="@drawable/mc_forum_top_bar_button1" android:layout_width="38.0dip" android:layout_height="38.0dip" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/mc_forum_topbar_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_route_plan" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/route_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/route_top_bar" />
+</RelativeLayout>

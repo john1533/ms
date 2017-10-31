@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/weather_detail_top_box"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/search_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/city_name_edit" android:background="@drawable/mc_forum_weather_page_search" android:paddingLeft="5.0dip" android:paddingRight="30.0dip" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="40.0dip" android:singleLine="true" android:layout_centerInParent="true" android:imeOptions="actionSearch" />
+        <Button android:id="@id/search_btn" android:background="@drawable/mc_forum_weather_page_search_button1" android:focusable="false" android:clickable="false" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_today_text" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_weather_location_city" android:layout_weight="0.0" />
+        <View android:layout_gravity="center_vertical" android:background="@drawable/mc_forum_weather_page_line_repeat" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:textSize="18.0sp" android:textColor="@color/mc_forum_weather_today_text" android:gravity="center_vertical" android:id="@id/location_city_text" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/mc_forum_weather_location_city" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_today_text" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_weather_hot_city" android:layout_weight="0.0" />
+        <View android:layout_gravity="center_vertical" android:background="@drawable/mc_forum_weather_page_line_repeat" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/mc_forum_topic_box"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/mc_forum_list_item">
+
+    <TextView
+        android:id="@id/mc_forum_topic_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="9.0dip"
+        android:layout_marginRight="9.0dip"
+        android:layout_marginTop="9.0dip"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:scrollHorizontally="true"
+        android:textColor="@color/mc_forum_text4_normal_color"
+        android:textSize="@dimen/mc_forum_text_size_16" />
+
+    <TextView
+        android:id="@id/mc_forum_last_update_time_text"
+        android:layout_width="70.0dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/mc_forum_topic_title_text"
+        android:layout_marginLeft="9.0dip"
+        android:layout_marginTop="10.0dip"
+        android:lines="1"
+        android:textColor="@color/mc_forum_text4_flat_other_normal_color"
+        android:textSize="@dimen/mc_forum_text_size_12" />
+
+    <TextView
+        android:id="@id/mc_forum_nickname_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mc_forum_topic_title_text"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_toRightOf="@id/mc_forum_last_update_time_text"
+        android:lines="1"
+        android:textColor="@color/mc_forum_text4_flat_other_normal_color"
+        android:textSize="@dimen/mc_forum_text_size_12" />
+
+    <ImageView
+        android:id="@id/mc_forum_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_below="@id/mc_forum_last_update_time_text"
+        android:layout_marginTop="9.0dip"
+        android:background="@drawable/mc_forum_wire" />
+</RelativeLayout>

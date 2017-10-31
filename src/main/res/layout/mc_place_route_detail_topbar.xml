@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/route_plan_traffic_list" android:background="@drawable/mc_forum_top_bar_bg" android:layout_width="fill_parent" android:layout_height="38.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/route_plan_go_route_plan" android:background="@drawable/mc_forum_top_bar_button1" android:layout_width="38.0dip" android:layout_height="38.0dip" android:layout_alignParentLeft="true" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/route_plan_traffic_show" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="38.0dip" android:layout_toRightOf="@id/route_plan_go_route_plan" android:layout_alignParentBottom="true">
+        <Button android:id="@id/route_plan_top_by_bus" android:background="@drawable/mc_forum_map_button13" android:paddingTop="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:drawableTop="@drawable/mc_forum_peripheral_small_icons13_reverse" android:layout_weight="1.0" />
+        <Button android:id="@id/route_plan_top_by_car" android:background="@drawable/mc_forum_map_button13" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:drawableTop="@drawable/mc_forum_peripheral_small_icons14_reverse" android:layout_weight="1.0" />
+        <Button android:id="@id/route_plan_top_by_walk" android:background="@drawable/mc_forum_map_button13" android:paddingTop="6.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:drawableTop="@drawable/mc_forum_peripheral_small_icons15_reverse" android:layout_weight="1.0" />
+    </LinearLayout>
+    <Button android:textColor="@color/mc_forum_topbar_button_color" android:id="@id/route_plan_open_map" android:background="@drawable/mc_forum_top_bar_button2" android:visibility="gone" android:layout_width="38.0dip" android:layout_height="38.0dip" android:text="@string/mc_place_map" android:layout_alignParentRight="true" />
+</RelativeLayout>

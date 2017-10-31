@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/mc_forum_web_progressbar" android:layout_width="fill_parent" android:layout_height="3.0dip" android:max="100" android:progress="1" android:progressDrawable="@drawable/mc_plaza_webview_progress_bar" style="?android:attr/progressBarStyleHorizontal" />
+    <com.mobcent.lowest.android.ui.module.ad.widget.AdView android:id="@id/mc_ad_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/mc_forum_web_progressbar" />
+    <FrameLayout android:id="@id/main_content" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mc_ad_box">
+        <com.mobcent.lowest.android.ui.widget.MCWebView android:id="@id/mc_forum_webview_browser" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.mobcent.discuz.activity.view.MCPopupListView android:id="@id/popup_listview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/mc_share_dialog_listview" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/mc_share_dialog_cancel" style="@style/mc_forum_list_view_without_line" />
+    <Button android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_share_text_normal_color2" android:id="@id/mc_share_dialog_cancel" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/mc_share_cancel" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+
+	<module>
+		<id>-1</id>
+		<type>5</type>
+		<name>个人主页</name>
+		<icon>mc_forum_squre_icon9</icon>
+	</module>
+
+	<!--<module>-->
+		<!--<id>-3</id>-->
+		<!--<type>5</type>-->
+		<!--<name>周边用户</name>-->
+		<!--<icon>mc_forum_squre_icon5</icon>-->
+	<!--</module>-->
+
+	<!--<module>-->
+		<!--<id>-2</id>-->
+		<!--<type>5</type>-->
+		<!--<name>周边帖子</name>-->
+		<!--<icon>mc_forum_squre_icon4</icon>-->
+	<!--</module>-->
+
+	<!--<module>-->
+		<!--<id>-4</id>-->
+		<!--<type>5</type>-->
+		<!--<name>推荐用户</name>-->
+		<!--<icon>mc_forum_squre_icon6</icon>-->
+	<!--</module>-->
+
+	<module>
+		<id>-5</id>
+		<type>5</type>
+		<name>设置</name>
+		<icon>mc_forum_squre_icon7</icon>
+	</module>
+	<!-- <module> <id>-6</id> <type>5</type> <name>关于</name> <icon>mc_forum_squre_icon8</icon> 
+		</module> -->
+</modules>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/posts_layout_box" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/posts_poll_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip">
+        <TextView android:id="@id/poll_title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" style="@style/mc_forum_posts_content_detail_style" />
+        <LinearLayout android:orientation="vertical" android:id="@id/poll_select_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <Button android:id="@id/poll_submit_btn" android:layout_width="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mc_forum_poll" style="@style/mc_forum_button1_style" />
+    </LinearLayout>
+    <TextView android:id="@id/posts_sign_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:includeFontPadding="false" android:layout_below="@id/posts_poll_layout" style="@style/mc_forum_posts_content_detail_style" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/posts_wechat_share_box" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="16.0dip" android:layout_below="@id/posts_sign_text">
+        <LinearLayout android:gravity="center_vertical" android:id="@id/posts_wechat_share" android:background="@drawable/mc_forum_icon51" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
+            <ImageView android:background="@drawable/mc_forum_ico52_n" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginLeft="5.0dip" />
+            <TextView android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_share_to_wechat" style="@style/mc_forum_wechat_share_text_style" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/posts_moments_share" android:background="@drawable/mc_forum_icon51" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_weight="1.0">
+            <ImageView android:background="@drawable/mc_forum_ico55_n" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginLeft="5.0dip" />
+            <TextView android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_share_to_moments" style="@style/mc_forum_wechat_share_text_style" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/posts_location_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/posts_wechat_share_box">
+        <ImageView android:layout_gravity="center|left" android:background="@drawable/mc_forum_ico8_n" android:layout_width="11.0dip" android:layout_height="14.0dip" />
+        <TextView android:gravity="center_vertical" android:layout_gravity="bottom" android:id="@id/posts_location_text" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/mc_forum_posts_location_style" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:id="@id/posts_function_box" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/posts_location_box">
+        <LinearLayout android:gravity="center_vertical" android:id="@id/posts_praise_box" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageButton android:id="@id/posts_praise_btn" android:background="@drawable/mc_forum_ico50_n" android:layout_width="17.0dip" android:layout_height="17.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/posts_praise_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/posts_more_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip">
+            <ImageButton android:id="@id/posts_more_btn" android:background="@drawable/mc_forum_ico47_n" android:layout_width="17.0dip" android:layout_height="17.0dip" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text_normal_color" android:id="@id/posts_more_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/mc_forum_posts_more" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/posts_line" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/posts_function_box" />
+    <LinearLayout android:orientation="vertical" android:id="@id/posts_rate_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/posts_line">
+        <RelativeLayout android:id="@id/posts_rate_function_box" android:background="@color/mc_forum_rate_background" android:layout_width="fill_parent" android:layout_height="39.0dip">
+            <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_desc_normal_color" android:gravity="center" android:background="@color/mc_forum_text1_normal_color" android:layout_width="66.0dip" android:layout_height="fill_parent" android:text="@string/mc_forum_rate" android:layout_alignParentLeft="true" />
+            <Button android:id="@id/posts_rate_btn" android:background="@drawable/mc_forum_icon57" android:layout_width="103.0dip" android:layout_height="29.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/posts_rate_detail_box" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:id="@id/posts_rate_more_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="17.0dip">
+            <View android:background="@drawable/mc_forum_icon58" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_centerVertical="true" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_rate_text2_color" android:id="@id/posts_more_rate_text" android:background="@color/mc_forum_text1_normal_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_more_rate_text" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_rate_text2_color" android:id="@id/posts_more_rate_sign" android:background="@color/mc_forum_text1_normal_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_more_rate_sign" android:layout_toRightOf="@id/posts_more_rate_text" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/posts_not_rate_box" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_desc_normal_color" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/posts_not_rate_text" android:background="@color/mc_forum_text1_normal_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/mc_forum_not_rate_text" android:singleLine="true" android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/posts_not_rate_img" android:background="@drawable/mc_forum_ico59_n" android:layout_width="22.0dip" android:layout_height="19.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="60.0dip" />
+        </LinearLayout>
+        <ImageView android:id="@id/posts_not_rate_line" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+</RelativeLayout>

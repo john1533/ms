@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/mc_forum_loading_container" android:visibility="gone" android:layout_width="@dimen/mc_forum_default_progress_bar_width" android:layout_height="@dimen/mc_forum_default_progress_bar_height" android:layout_centerInParent="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.lowest.android.ui.widget.MCProgressBar android:id="@id/mc_forum_progress_bar" android:background="@drawable/mc_forum_loading1" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_centerInParent="true" />
+</RelativeLayout>

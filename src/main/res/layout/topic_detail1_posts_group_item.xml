@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/posts_layout_box"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <!--TODO-->
+
+
+
+    <LinearLayout
+        android:id="@id/posts_user_box"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="3dp">
+
+        <com.mobcent.discuz.activity.view.MCHeadIcon
+            android:id="@id/posts_user_img"
+            android:layout_width="@dimen/mc_forum_user_icon_width"
+            android:layout_height="@dimen/mc_forum_user_icon_height"
+            android:layout_marginRight="5.0dip"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@id/posts_user_name_text"
+                    style="@style/mc_forum_posts_user_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@id/posts_user_role_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:textColor="@color/mc_forum_text_normal_color"
+                    android:textSize="@dimen/mc_forum_text_size_12"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!--<TextView-->
+                <!--android:id="@id/posts_user_title_text"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="3.0dip"-->
+                <!--android:layout_weight="1.0"-->
+                <!--android:textColor="@color/mc_forum_user_level_color"-->
+                <!--android:textSize="@dimen/mc_forum_text_size_12" />-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="3dp">
+                <TextView
+                    android:id="@id/posts_time_text"
+                    style="@style/mc_forum_board_other_num_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/mc_forum_text2_other_normal_color" />
+
+                <Button
+                    android:id="@id/reply_btn"
+                    android:layout_width="12.0dip"
+                    android:layout_height="11.0dip"
+                    android:background="@drawable/mc_forum_icon4"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@id/reply_count_text"
+                    style="@style/mc_forum_board_other_num_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/mc_forum_text2_other_normal_color" />
+
+                <Button
+                    android:id="@id/scan_btn"
+                    android:layout_width="12.0dip"
+                    android:layout_height="11.0dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/mc_forum_icon3"
+                    android:layout_marginLeft="5dp"/>
+                <TextView
+                    android:id="@id/scan_count_text"
+                    style="@style/mc_forum_board_other_num_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/mc_forum_text2_other_normal_color" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/posts_activity_topic_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/posts_user_box"
+        android:layout_marginBottom="5.0dip"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@id/acitivty_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@id/activity_summary"
+            style="@style/mc_forum_posts_content_detail_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@id/activity_desc"
+            style="@style/mc_forum_posts_content_detail_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mc_forum_text_unapparent_color"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@id/activity_submit_btn"
+            style="@style/mc_forum_button1_style"
+            android:layout_width="80.0dip"
+            android:layout_marginTop="5.0dip" />
+
+        <LinearLayout
+            android:id="@id/activity_apply_box"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <include
+        android:id="@id/posts_title_box"
+        android:layout_below="@id/posts_user_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/topic_detail_title_item" />
+
+
+    <!--<TextView-->
+        <!--android:id="@id/posts_lab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginRight="15.0dip"-->
+        <!--android:layout_marginTop="85.0dip"-->
+        <!--android:text="@string/mc_forum_posts_topic_lab"-->
+        <!--/>-->
+
+
+
+
+</RelativeLayout>

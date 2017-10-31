@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/multi_more_box" android:background="@android:color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="220.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:id="@id/more_grid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchMode="columnWidth" android:numColumns="4" android:layout_above="@id/location_box" android:layout_alignParentTop="true" style="@style/mc_forum_grid_view" />
+    <RelativeLayout android:id="@id/location_box" android:background="@drawable/mc_forum_location_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentBottom="true">
+        <com.mobcent.lowest.android.ui.widget.MCProgressBar android:id="@id/location_progress_bar" android:background="@drawable/mc_forum_loading1" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_alignParentLeft="true" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text6_normal_color" android:gravity="center_vertical" android:id="@id/location_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/location_progress_bar" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

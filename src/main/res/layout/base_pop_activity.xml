@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<com.mobcent.discuz.base.widget.CenteredToolbar-->
+        <!--android:id="@+id/my_toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:elevation="4dp"-->
+        <!--app:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--/>-->
+    <include android:id="@+id/my_toolbar" layout="@layout/toolbar" />
+    <!--<include layout="@layout/top_bar_widget" />-->
+    <FrameLayout android:id="@id/container_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/my_toolbar" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/top_layout" android:visibility="visible" android:baselineAligned="false" android:layout_alignParentTop="true" style="@style/mc_plaza_web_top_bar_style">
+        <Button android:id="@id/close_btn" android:background="@drawable/mc_forum_top_bar_button20" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/mc_plaza_web_top_bar_btn_style" />
+    </RelativeLayout>
+    <com.mobcent.lowest.android.ui.widget.MCWebView android:id="@id/web_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/top_layout" />
+    <ProgressBar android:id="@id/progress_bar" android:layout_width="fill_parent" android:layout_height="3.0dip" android:max="100" android:progress="1" android:progressDrawable="@drawable/mc_plaza_webview_progress_bar" android:layout_below="@id/top_layout" style="?android:attr/progressBarStyleHorizontal" />
+</RelativeLayout>

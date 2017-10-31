@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_game_comment_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="15.0sp" android:textColor="@color/mc_forum_input_normal_text_color" android:gravity="top" android:id="@id/mc_game_detail_comment_content" android:background="@drawable/mc_forum_game_comment_bg2" android:paddingLeft="11.0dip" android:paddingTop="12.0dip" android:paddingRight="11.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="175.0dip" android:layout_margin="11.0dip" />
+    <LinearLayout android:gravity="center" android:paddingBottom="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/mc_game_detail_comment_content">
+        <Button android:id="@id/mc_game_detail_comment_submit" android:background="@drawable/mc_forum_game_button4" android:layout_width="100.0dip" android:layout_height="34.0dip" android:layout_marginLeft="50.0dip" android:layout_marginRight="20.0dip" android:text="@string/mc_game_detail_comment_submit" />
+        <Button android:id="@id/mc_game_detail_comment_cancel" android:background="@drawable/mc_forum_game_button4" android:layout_width="100.0dip" android:layout_height="34.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="50.0dip" android:text="@string/mc_game_detail_comment_cancel" />
+    </LinearLayout>
+</RelativeLayout>

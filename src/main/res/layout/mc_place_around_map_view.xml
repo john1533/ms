@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/place_around_map_view_top_bar" android:background="@drawable/mc_forum_top_bar_bg" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <Button android:id="@id/place_around_map_view_finish" android:background="@drawable/mc_forum_top_bar_button1" android:layout_width="38.0dip" android:layout_height="38.0dip" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_tool_bar_normal_color" android:id="@id/place_around_map_view_top_bar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_route_bus_detail_topbar_tital" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.baidu.mapapi.map.MapView android:id="@id/place_around_poi_baidu_mapview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/place_around_map_view_top_bar" />
+    <LinearLayout android:orientation="vertical" android:id="@id/place_around_poi_tools_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/place_around_map_view_top_bar" android:layout_alignParentRight="true">
+        <Button android:id="@id/place_around_poi_traffic" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+        <Button android:id="@id/place_around_poi_screen_shot" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginTop="20.0dip" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/place_around_poi_map_control_tools" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/place_around_poi_detail_layout">
+        <Button android:id="@id/place_around_poi_find_me_btn" android:background="@drawable/mc_forum_map_button6" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="10.0dip" android:layout_marginBottom="8.0dip" android:layout_alignParentBottom="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/place_around_poi_zoom_tool" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="8.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <Button android:id="@id/place_around_poi_zoom_in" android:background="@drawable/mc_forum_map_button8" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+            <Button android:id="@id/place_around_poi_zoom_out" android:background="@drawable/mc_forum_map_button9" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/place_around_poi_detail_layout" android:background="@drawable/mc_forum_peripheral_range_h" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:layout_alignParentBottom="true">
+        <RelativeLayout android:id="@id/place_poi_detail_msg_one" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="14.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="@color/mc_forum_text_normal_color" android:id="@id/place_poi_detail_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textColor="@color/mc_place_poi_map_detail_text_selector" android:id="@id/place_poi_detail_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_route_bus_detail_topbar_tital" android:layout_alignParentRight="true" />
+            <ImageView android:id="@id/place_poi_detail_icon" android:background="@drawable/mc_forum_map_button7" android:layout_width="17.0dip" android:layout_height="19.0dip" android:layout_toLeftOf="@id/place_poi_detail_text" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/place_poi_detail_msg_two" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/place_poi_detail_msg_one">
+            <LinearLayout android:gravity="center" android:id="@id/place_poi_detail_rank_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RatingBar android:id="@id/place_poi_detail_rating_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" style="@style/mc_place_rating_bar_style" />
+            </LinearLayout>
+            <TextView android:gravity="center" android:id="@id/place_poi_detail_rank_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/place_poi_detail_rank_layout" />
+            <TextView android:textColor="@color/mc_forum_text_normal_color" android:gravity="center" android:id="@id/place_poi_detail_average_expense" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/mc_place_route_avg_expense" android:layout_toRightOf="@id/place_poi_detail_rank_text" />
+            <TextView android:textColor="@color/mc_forum_text_normal_color" android:gravity="center" android:id="@id/place_poi_detail_average_expense_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/place_poi_detail_average_expense" />
+        </RelativeLayout>
+        <ImageView android:id="@id/place_poi_detail_layout_line_one" android:background="@drawable/mc_forum_peripheral_line1" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="12.0dip" android:layout_below="@id/place_poi_detail_msg_two" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/place_poi_detail_buttom_function" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/place_poi_detail_layout_line_one">
+            <LinearLayout android:gravity="center" android:id="@id/place_poi_detail_search_around_layout" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/place_poi_detail_search_around" android:background="@drawable/mc_forum_peripheral_small_icons1" android:layout_width="15.0dip" android:layout_height="15.0dip" />
+                <TextView android:textColor="@color/mc_place_poi_map_detail_text_selector" android:id="@id/place_poi_detail_search_around_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_route_searche_around" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/mc_forum_peripheral_tab2_bar_bg2" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" />
+            <LinearLayout android:gravity="center" android:id="@id/place_poi_detail_go_dis_layout" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageButton android:id="@id/place_poi_detail_go_dis_icon" android:background="@drawable/mc_forum_peripheral_small_icons3" android:layout_width="15.0dip" android:layout_height="15.0dip" />
+                <TextView android:textColor="@color/mc_place_poi_map_detail_text_selector" android:id="@id/place_poi_detail_go_dis_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_route_go" />
+            </LinearLayout>
+            <ImageView android:id="@id/place_poi_detail_layout_line_two" android:background="@drawable/mc_forum_peripheral_tab2_bar_bg2" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" />
+            <LinearLayout android:gravity="center" android:id="@id/place_poi_detail_call_layout" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/place_poi_detail_call_icon" android:background="@drawable/mc_forum_peripheral_small_icons2" android:layout_width="15.0dip" android:layout_height="15.0dip" />
+                <TextView android:textColor="@color/mc_place_poi_map_detail_text_selector" android:id="@id/place_poi_detail_call_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_route_tel" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

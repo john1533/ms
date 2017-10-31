@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/mc_forum_photot_img" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <TextView android:textColor="@color/mc_forum_text1_normal_color" android:id="@id/mc_forum_title" android:background="@drawable/mc_forum_card_bg1" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

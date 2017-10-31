@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/big_pic_item_layout" android:background="@drawable/mc_forum_list_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+        <ImageView android:id="@id/user_icon_img" android:layout_width="42.0dip" android:layout_height="42.0dip" android:layout_marginRight="10.0dip" android:scaleType="centerCrop" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textStyle="bold" android:textColor="@color/mc_forum_text4_normal_color" android:gravity="center_vertical" android:id="@id/user_name_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="aaaaaaaaaaa" android:layout_toRightOf="@id/user_icon_img" />
+        <ImageView android:gravity="center_vertical" android:id="@id/user_gender_text" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/user_name_text" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:id="@id/topic_time_text" android:layout_width="fill_parent" android:layout_height="21.0dip" android:text="2012-12-300000" android:layout_toRightOf="@id/user_icon_img" android:layout_below="@id/user_name_text" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textStyle="bold" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/topic_title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginBottom="10.0dip" android:text="bbbbbbbbbbb" />
+    <ImageView android:id="@id/topic_content_img" android:layout_width="fill_parent" android:layout_height="211.0dip" android:layout_marginBottom="10.0dip" android:scaleType="centerCrop" />
+    <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/topic_content_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginBottom="10.0dip" android:text="bbbbbbbbbbb" />
+    <RelativeLayout android:id="@id/topic_function_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:layout_marginBottom="14.0dip">
+        <LinearLayout android:orientation="horizontal" android:id="@id/topic_praise_box" android:background="@drawable/mc_forum_ico60_n" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginLeft="14.0dip">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/topic_praise_btn" android:background="@drawable/mc_forum_ico61_n" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="6.0dip" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:id="@id/topic_praise_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="100" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/topic_reply_box" android:background="@drawable/mc_forum_ico60_n" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginLeft="12.0dip" android:layout_toRightOf="@id/topic_praise_box">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/topic_reply_btn" android:background="@drawable/mc_forum_ico62_n" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="6.0dip" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:id="@id/topic_reply_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="100" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/topic_share_box" android:background="@drawable/mc_forum_ico60_n" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginRight="14.0dip" android:layout_alignParentRight="true">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/topic_share_btn" android:background="@drawable/mc_forum_ico63_n" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="6.0dip" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="@string/mc_forum_announce_share" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="2.0px" />
+</LinearLayout>

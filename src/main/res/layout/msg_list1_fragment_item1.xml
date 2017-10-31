@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/item1_box" android:background="@drawable/mc_forum_list_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="62.0dip">
+        <RelativeLayout android:id="@id/img_box" android:layout_width="54.0dip" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_alignParentLeft="true">
+            <com.mobcent.discuz.activity.view.MCHeadIcon android:id="@id/icon_img" android:layout_width="@dimen/mc_forum_user_icon_width" android:layout_height="@dimen/mc_forum_user_icon_height" android:layout_centerVertical="true" />
+            <TextView android:id="@id/msg_sign" android:visibility="gone" android:layout_alignParentTop="true" android:layout_alignParentRight="true" style="@style/mc_forum_msg_sign" />
+        </RelativeLayout>
+        <TextView android:gravity="center_vertical" android:id="@id/title_text" android:layout_width="fill_parent" android:layout_height="@dimen/mc_forum_user_icon_height" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="\ 111111111" android:lines="1" android:layout_toLeftOf="@id/about_img" android:layout_toRightOf="@id/img_box" android:layout_centerVertical="true" style="@style/mc_forum_message_title_style" />
+        <ImageView android:id="@id/about_img" android:background="@drawable/mc_forum_squre_arrow" android:layout_width="8.0dip" android:layout_height="13.0dip" android:layout_marginRight="13.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/mc_forum_line_img" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="2.0px" />
+</LinearLayout>

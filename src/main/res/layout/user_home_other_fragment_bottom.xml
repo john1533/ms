@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/bottom_layout" android:background="@drawable/mc_forum_personal_bottom_bar_bg" android:layout_width="fill_parent" android:layout_height="44.0dip" android:baselineAligned="false" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:id="@id/add_friend_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/add_friend_img" android:background="@drawable/mc_forum_personal_icon22_n" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_centerVertical="true" />
+        <TextView android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/add_friend_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_add_friend" android:layout_toRightOf="@id/add_friend_img" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@id/add_follow_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/add_follow_img" android:background="@drawable/mc_forum_personal_icon24_n" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_centerVertical="true" />
+        <TextView android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/add_follow_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_add_follow" android:layout_toRightOf="@id/add_follow_img" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@id/send_msg_layout" android:background="@drawable/mc_forum_list_item2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/send_msg_img" android:background="@drawable/mc_forum_personal_icon23_n" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_centerVertical="true" />
+        <TextView android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/send_msg_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_send_msg" android:layout_toRightOf="@id/send_msg_img" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

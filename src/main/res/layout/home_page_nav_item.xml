@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button
+        android:textSize="10.0sp"
+        android:textColor="@color/home_nav_item_selector"
+        android:ellipsize="end"
+        android:gravity="bottom|center"
+        android:id="@id/nav_btn"
+        android:background="@drawable/mc_forum_main_bar_button1"
+        android:paddingBottom="3.0dip"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:maxLines="1"
+        android:includeFontPadding="false"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_new_chat_input_bar_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/mc_forum_share_btn" android:background="@drawable/mc_forum_chat_icon8" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="5.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <EditText android:gravity="center_vertical" android:id="@id/mc_forum_reply_edit" android:background="@drawable/mc_forum_new_chat_input_bar_bg2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:hint="@string/mc_forum_reply_edit" android:autoText="true" android:layout_toLeftOf="@id/mc_forum_send_reply_btn" android:layout_toRightOf="@id/mc_forum_share_btn" style="@style/mc_forum_edit_text" />
+    <Button android:textColor="@color/mc_forum_rapid_content_color" android:layout_gravity="center" android:id="@id/mc_forum_send_reply_btn" android:background="@android:color/transparent" android:layout_width="55.0dip" android:layout_height="35.0dip" android:layout_marginRight="2.0dip" android:text="@string/mc_forum_msg_send" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

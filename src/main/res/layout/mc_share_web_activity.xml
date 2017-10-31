@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/mc_share_platform_box" android:layout_width="fill_parent" style="@style/mc_forum_top_bar_style">
+        <Button android:id="@id/mc_share_back_btn" android:background="@drawable/mc_forum_top_bar_button1" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/mc_forum_top_bar_button" />
+        <Button android:id="@id/mc_share_refresh_btn" android:background="@drawable/mc_forum_top_bar_button7" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/mc_forum_top_bar_button" />
+        <TextView android:id="@id/mc_share_platform_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_share_platform" android:layout_centerHorizontal="true" android:layout_centerVertical="true" style="@style/mc_forum_info_topbar_title" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mc_share_platform_box">
+        <WebView android:id="@id/mc_share_web_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/mc_share_loading_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.mobcent.share.android.widget.MCShareProgressBar android:id="@id/mc_share_progress_bar" android:background="@drawable/mc_forum_loading1" android:layout_width="@dimen/mc_forum_share_progress_bar_width" android:layout_height="@dimen/mc_forum_share_progress_bar_height" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

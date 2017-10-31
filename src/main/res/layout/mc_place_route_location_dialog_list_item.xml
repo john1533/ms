@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/route_dialog_sug_list_item" android:paddingLeft="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/route_dialog_sug_list_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:singleLine="true" />
+    <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_text4_other_normal_color" android:id="@id/route_dialog_sug_list_item_city" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" android:layout_below="@id/route_dialog_sug_list_item_name" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip">
+        <TextView android:textSize="20.0sp" android:id="@id/category_text" android:layout_width="40.0dip" android:layout_height="wrap_content" />
+        <View android:background="@drawable/mc_forum_peripheral_small_icons16" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_toRightOf="@id/category_text" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/category_img" android:layout_width="64.0dip" android:layout_height="64.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

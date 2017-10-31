@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="?android:windowBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="cadfasdfasf"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:textColor="?nav_title_select_color"/>-->
+    <com.mobcent.lowest.android.ui.widget.PullToRefreshExpandableListView
+        android:id="@id/topic_detail_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="45.0dip"
+        android:divider="@color/mc_forum_transparent"
+        android:dividerHeight="0.0dip"
+        style="?android:expandableListViewStyle"
+        />
+    <com.mobcent.discuz.activity.view.MCMultiBottomView
+        android:id="@id/bottom_bar_box"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

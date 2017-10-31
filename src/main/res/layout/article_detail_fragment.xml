@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/mc_forum_all_bg1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.lowest.android.ui.widget.PullToRefreshListView android:id="@id/mc_forum_lv" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/mc_forum_transparent" android:dividerHeight="0.0dip" android:layout_above="@id/bottom_bar_box" style="@style/list_view" />
+    <com.mobcent.discuz.activity.view.MCMultiBottomView android:id="@id/bottom_bar_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

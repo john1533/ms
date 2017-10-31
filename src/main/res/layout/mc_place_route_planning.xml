@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_peripheral_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/route_plan_get_message" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/route_plan_switch_btn" android:background="@drawable/mc_forum_map_button11" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginRight="10.0dip" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center_vertical" android:id="@id/route_plan_start_place" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginRight="10.0dip" android:layout_toRightOf="@id/route_plan_switch_btn">
+            <ImageView android:id="@id/route_plan_start_icon" android:background="@drawable/mc_forum_peripheral_small_icons11_n" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="12.0dip" />
+            <AutoCompleteTextView android:textColor="@color/mc_forum_text3_content_normal_color" android:gravity="center_vertical" android:id="@id/route_plan_start_name" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:hint="@string/mc_place_route_input_start_location" android:singleLine="true" android:selectAllOnFocus="true" android:imeOptions="actionGo" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/route_plan_end_place" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_toRightOf="@id/route_plan_switch_btn" android:layout_below="@id/route_plan_start_place">
+            <ImageView android:id="@id/route_plan_end_icon" android:background="@drawable/mc_forum_peripheral_small_icons12_n" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="12.0dip" />
+            <AutoCompleteTextView android:textColor="@color/mc_forum_text3_content_normal_color" android:gravity="center_vertical" android:id="@id/route_plan_end_name" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:hint="@string/mc_place_route_input_dis_location" android:singleLine="true" android:selectAllOnFocus="true" android:imeOptions="actionGo" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/route_plan_traffic_tool" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="4.0dip" android:layout_below="@id/route_plan_get_message">
+        <LinearLayout android:gravity="center" android:id="@id/route_plan_by_bus" android:background="@drawable/mc_forum_map_button12_n" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/place_route_bus_icon" android:background="@drawable/mc_forum_peripheral_small_icons13" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+            <TextView android:textColor="@color/mc_place_route_bus_selector" android:id="@id/mc_place_route_bus_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_traffic_by_bus" />
+        </LinearLayout>
+        <ImageView android:id="@id/route_plan_line_onw" android:background="@drawable/mc_forum_peripheral_tab2_bar_line2" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:id="@id/route_plan_by_car" android:background="@drawable/mc_forum_map_button12_n" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/place_route_car_icon" android:background="@drawable/mc_forum_peripheral_small_icons14" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+            <TextView android:textColor="@color/mc_place_route_car_selector" android:id="@id/mc_place_route_car_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_traffic_by_car" />
+        </LinearLayout>
+        <ImageView android:id="@id/route_plan_line_two" android:background="@drawable/mc_forum_peripheral_tab2_bar_line2" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center" android:id="@id/route_plan_by_walk" android:background="@drawable/mc_forum_map_button12_n" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/place_route_walk_icon" android:background="@drawable/mc_forum_peripheral_small_icons15" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+            <TextView android:textColor="@color/mc_place_route_walk_selector" android:id="@id/mc_place_route_walk_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_traffic_by_walk" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.baidu.mapapi.map.MapView android:id="@id/place_route_baidu_mapview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/route_plan_traffic_tool" />
+</RelativeLayout>

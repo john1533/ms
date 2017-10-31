@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.lowest.android.ui.widget.MCWebView android:id="@id/mc_forum_webview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:id="@id/mc_forum_loading_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.mobcent.lowest.android.ui.widget.MCProgressBar android:id="@id/mc_forum_web_progressbar" android:background="@drawable/mc_forum_loading1" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/mc_place_route_detail_topbar" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/traffic_policy" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/route_plan_traffic_list" />
+    <LinearLayout android:orientation="vertical" android:id="@id/place_route_traffic_msg_layout" android:background="@drawable/mc_forum_peripheral_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/traffic_policy">
+        <LinearLayout android:orientation="horizontal" android:id="@id/route_start_and_end_location" android:background="@drawable/mc_forum_peripheral_bg" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/route_plan_traffic_list_start_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/route_plan_traffic_list_start_icon" android:background="@drawable/mc_forum_peripheral_small_icons22_n" android:layout_width="23.0dip" android:layout_height="29.0dip" android:layout_marginLeft="20.0dip" android:layout_alignParentLeft="true" />
+                <TextView android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/route_plan_traffic_list_start_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:singleLine="true" android:layout_toRightOf="@id/route_plan_traffic_list_start_icon" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/route_plan_traffic_list_end_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:id="@id/route_plan_traffic_list_end_icon" android:background="@drawable/mc_forum_peripheral_small_icons23_n" android:layout_width="23.0dip" android:layout_height="29.0dip" android:layout_marginLeft="20.0dip" android:layout_alignParentLeft="true" />
+                <TextView android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/route_plan_traffic_list_end_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:singleLine="true" android:layout_toRightOf="@id/route_plan_traffic_list_end_icon" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/route_plan_traffic_other_msg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginBottom="10.0dip" />
+    </LinearLayout>
+    <ListView android:id="@id/route_plan_traffic_result_list" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="@drawable/mc_forum_wire" android:dividerHeight="1.0px" android:layout_above="@id/route_plan_traffic_share_and_nav_layout" android:layout_below="@id/place_route_traffic_msg_layout" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/route_plan_traffic_share_and_nav_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/route_traffic_nav_layout" android:background="@drawable/mc_forum_login_button2" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip">
+            <ImageButton android:id="@id/place_traffic_list_nav_icon" android:background="@drawable/mc_forum_peripheral_small_icons18_n" android:layout_width="18.0dip" android:layout_height="18.0dip" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/mc_forum_topbar_title_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_route_map_nav" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/route_traffic_share_layout" android:background="@drawable/mc_forum_map_button12" android:paddingLeft="20.0dip" android:paddingTop="5.0dip" android:paddingRight="20.0dip" android:paddingBottom="5.0dip" android:layout_width="135.0dip" android:layout_height="wrap_content" android:layout_marginTop="17.0dip">
+            <ImageView android:id="@id/place_traffic_list_share_icon" android:background="@drawable/mc_forum_peripheral_small_icons19" android:layout_width="18.0dip" android:layout_height="18.0dip" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_text_apparent_color" android:id="@id/place_route_traffic_share_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_place_baidu_map_share" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

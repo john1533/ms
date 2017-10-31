@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/top_bar_layout" style="@style/mc_plaza_top_bar_style">
+        <Button android:id="@id/back_btn" android:background="@drawable/mc_forum_top_bar_button1" android:layout_alignParentLeft="true" style="@style/mc_plaza_top_bar_btn_style" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/mc_forum_topbar_title_color" android:gravity="center" android:id="@id/title_text" android:layout_toLeftOf="@id/map_btn" android:layout_toRightOf="@id/back_btn" style="@style/mc_plaza_title_style" />
+        <Button android:textSize="14.0sp" android:textColor="@color/mc_forum_topbar_button_color" android:id="@id/map_btn" android:background="@drawable/mc_forum_top_bar_button2" android:text="@string/mc_place_top_map_text" android:layout_alignParentRight="true" style="@style/mc_plaza_top_bar_btn_style" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/filter_layout" android:background="@drawable/mc_forum_peripheral_tab2_bar_bg1" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_below="@id/top_bar_layout">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/distance_btn" android:text="@string/mc_place_around_range" style="@style/mc_place_around_list_tab_btn_style" />
+            <ImageView android:id="@id/distance_small_icon" android:layout_toRightOf="@id/distance_btn" style="@style/mc_place_arrow_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_peripheral_tab2_bar_line1" android:layout_width="1.5dip" android:layout_height="fill_parent" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/category_btn" android:text="@string/mc_place_around_category" style="@style/mc_place_around_list_tab_btn_style" />
+            <ImageView android:id="@id/distance_category_icon" android:layout_toRightOf="@id/category_btn" style="@style/mc_place_arrow_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_peripheral_tab2_bar_line1" android:layout_width="1.5dip" android:layout_height="fill_parent" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <Button android:id="@id/sort_btn" android:text="@string/mc_place_around_sort" style="@style/mc_place_around_list_tab_btn_style" />
+            <ImageView android:id="@id/distance_sort_icon" android:layout_toRightOf="@id/sort_btn" style="@style/mc_place_arrow_style" />
+        </RelativeLayout>
+    </LinearLayout>
+    <com.mobcent.lowest.android.ui.widget.PullToRefreshListView android:id="@id/pull_refresh_list" android:background="@drawable/mc_forum_peripheral_bg" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:scrollbars="none" android:dividerHeight="5.0dip" android:layout_below="@id/filter_layout" style="@style/mc_place_list_style" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/range_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/filter_layout">
+        <ListView android:id="@id/range_nav_list" android:background="#ffffffff" android:layout_width="0.0dip" android:layout_weight="1.0" style="@style/mc_place_list_style" />
+        <ListView android:id="@id/range_sub_list" android:background="@drawable/mc_forum_peripheral_range_h" android:layout_width="0.0dip" android:layout_weight="2.0" style="@style/mc_place_list_style" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/category_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/filter_layout">
+        <ListView android:id="@id/category_nav_list" android:background="#ffffffff" android:layout_width="0.0dip" android:layout_weight="1.0" style="@style/mc_place_list_style" />
+        <ListView android:id="@id/category_sub_list" android:background="@drawable/mc_forum_peripheral_range_h" android:layout_width="0.0dip" android:layout_weight="2.0" style="@style/mc_place_list_style" />
+    </LinearLayout>
+    <ListView android:id="@id/rule_list" android:background="@drawable/mc_forum_peripheral_range_h" android:visibility="gone" android:layout_below="@id/filter_layout" style="@style/mc_place_list_style" />
+</RelativeLayout>

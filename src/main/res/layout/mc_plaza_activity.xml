@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_squre_bg2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/mc_plaza_top_bar_layout" android:background="@drawable/mc_forum_top_bar_bg" style="@style/mc_plaza_top_bar_style">
+        <Button android:id="@id/top_back_btn" android:background="@drawable/mc_forum_top_bar_button1" android:visibility="gone" style="@style/mc_plaza_top_bar_btn_style" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_topbar_title_color" android:id="@id/title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_plaza_top_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_plaza_top_layout" android:background="@drawable/mc_forum_squre_bg3" android:layout_width="fill_parent" android:layout_height="63.0dip" android:layout_below="@id/mc_plaza_top_bar_layout">
+        <RelativeLayout android:id="@id/personal_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/personal_btn" android:background="@drawable/mc_forum_squre_icon1" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_personal" android:layout_below="@id/personal_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/set_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/set_btn" android:background="@drawable/mc_forum_squre_icon2" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_set" android:layout_below="@id/set_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/about_layout" style="@style/mc_plaza_top_box_style">
+            <Button android:id="@id/about_btn" android:background="@drawable/mc_forum_squre_icon3" style="@style/mc_plaza_top_btn_style" />
+            <TextView android:text="@string/mc_plaza_top_about" android:layout_below="@id/about_btn" style="@style/mc_plaza_top_text_style" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/base_search_layout" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_below="@id/mc_plaza_top_layout">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="33.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_centerVertical="true">
+            <EditText android:id="@id/key_word_edit" style="@style/mc_plaza_edit_text_style" />
+            <Button android:id="@id/search_btn" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/mc_plaza_search_btn_style" />
+        </RelativeLayout>
+        <View android:id="@id/mc_plaza_before_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <com.mobcent.lowest.android.ui.widget.PlazaListWidget android:id="@id/mc_plaza_content_list" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@android:color/transparent" android:dividerHeight="0.0dip" android:layout_below="@id/base_search_layout" android:headerDividersEnabled="true" />
+    <include layout="@layout/mc_plaza_widget_loading" />
+</RelativeLayout>

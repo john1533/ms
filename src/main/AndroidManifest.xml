@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appbyme.app136419">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.mobcent.discuz.application.DiscuzApplication"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon128"
+        android:label="@string/app_name"
+        >
+        <activity
+            android:name="com.mobcent.discuz.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mobcent.discuz.activity.HomeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.mobcent.discuz.activity.PopComponentActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.activity.PopModuleActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.activity.BoardListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserHomeActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserPhotosActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserPhotosSubActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.ReportActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserMyInfoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserMyPwdActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.lowest.android.ui.widget.scaleview.ImagePreviewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.activity.widget.cropImage.CropImageActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.article.fragment.activity.ArticleDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.article.fragment.activity.ArticleCommentListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.MentionFriendFragmentActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.SelectBoardFragmentActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.topic.list.fragment.activity.TopicListActivty"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.topic.list.fragment.activity.UserTopicListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserLoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.about.fragment.activity.AboutActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.PlatformLoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.AuthorizationSuccActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.msg.fragment.activity.AtListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.msg.fragment.activity.CommentListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.msg.fragment.activity.FriendListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.msg.fragment.activity.SessionListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.activity.WebViewFragmentActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserRegistActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserRegistSuccActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.activity.widget.album.PhotoSelectorActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.activity.widget.album.PhotoPreviewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.PublishTopicActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.ClassifyTopicActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.ReplyTopicActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.PublishPollTopicActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.activity.widget.album.PhotoFragmentActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.publish.fragment.activity.PoiFragmentAcitvity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserSettingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserProfileActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.msg.fragment.activity.ChatRoomActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.lowest.android.ui.module.plaza.activity.PlazaWebViewActivity"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.mobcent.discuz.module.topic.detail.fragment.activity.TopicDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.topic.detail.fragment.activity.AnnounceDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UploadPhotosActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.lowest.android.ui.module.weather.activity.WeatherActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.lowest.android.ui.module.weather.activity.WeatherCityActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.mobcent.lowest.android.ui.module.weather.activity.WeatherCitySearchActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.mobcent.discuz.android.os.HeartBeatOSService" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <receiver android:name="com.mobcent.lowest.android.ui.receiver.PhoneReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobcent.update.android.ui.activity.receiver.DownReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.mobcent.share.android.activity.MCShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.share.android.activity.MCShareWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|stateAlwaysVisible|adjustResize" />
+        <activity
+            android:name="com.mobcent.discuz.module.person.activity.UserLoginBoundActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/no_title_activity" />
+        <activity
+            android:name="com.mobcent.discuz.module.draft.activity.DraftActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mobcent.lowest.android.ui.module.ad.activity.AdWebViewActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <receiver android:name="com.mobcent.lowest.module.ad.receiver.DownFailedReceiver">
+            <intent-filter>
+                <action android:name="com.appbyme.app136419.com.mobcent.lowest.module.ad.receiver.DownFailedReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobcent.lowest.module.ad.receiver.ApkInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!--check升级时候用到-->
+        <meta-data
+            android:name="mc_forum_key"
+            android:value="6xUMGDN2QU3EUFAcG4" />
+        <meta-data
+            android:name="mc_ad_channel"
+            android:value="1000" />
+        <meta-data
+            android:name="mc_discuz_versions"
+            android:value="2.5" />
+        <meta-data
+            android:name="mc_forum_type"
+            android:value="discuz" />
+    </application>
+</manifest>

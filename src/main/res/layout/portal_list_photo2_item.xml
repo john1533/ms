@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/user_icon_img" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_margin="10.0dip" android:scaleType="centerCrop" />
+    <TextView android:textSize="@dimen/mc_forum_text_size_12" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/user_name_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_toRightOf="@id/user_icon_img" />
+    <TextView android:textSize="@dimen/mc_forum_text_size_9" android:textColor="@color/mc_forum_text4_desc_normal_color" android:id="@id/time_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/user_icon_img" android:layout_below="@id/user_name_text" />
+    <ImageView android:id="@id/pic_img" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_above="@id/topic_praise_box" android:layout_below="@id/user_icon_img" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/topic_praise_box" android:background="@drawable/mc_forum_ico60_n" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true">
+        <ImageButton android:layout_gravity="center_vertical" android:id="@id/topic_praise_btn" android:background="@drawable/mc_forum_ico61_n" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="6.0dip" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_12" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="6.0dip" android:text="@string/mc_forum_posts_praise" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/mc_forum_text_size_12" android:textColor="@color/mc_forum_text4_other_normal_color" android:gravity="center_vertical" android:id="@id/topic_praise_text" android:layout_width="wrap_content" android:layout_height="22.0dip" android:layout_margin="10.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+</RelativeLayout>

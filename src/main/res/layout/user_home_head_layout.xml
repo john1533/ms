@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/mc_forum_my_top_box" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/mc_forum_personal_bg" android:layout_width="fill_parent" android:layout_height="170.0dip" android:src="@drawable/mc_forum_personal_bg2" android:scaleType="matrix" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="96.0dip" android:layout_marginTop="-48.0dip" android:layout_below="@id/mc_forum_personal_bg">
+        <ImageView android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentBottom="true" />
+        <com.mobcent.discuz.activity.view.MCHeadIcon android:id="@id/mc_forum_user_icon" android:background="@drawable/mc_forum_head" android:layout_width="75.0dip" android:layout_height="75.0dip" android:layout_marginLeft="18.0dip" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@android:color/white" android:id="@id/mc_forum_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="25.0dip" android:shadowColor="@android:color/black" android:layout_toRightOf="@id/mc_forum_user_icon" style="@style/mc_forum_user_name_style" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text3_content_normal_color" android:id="@id/mc_forum_user_gender" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/mc_forum_user_name" android:layout_alignBottom="@id/mc_forum_user_name" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_desc_normal_color" android:ellipsize="end" android:id="@id/mc_froum_user_credits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:singleLine="true" android:layout_below="@id/mc_forum_user_name" android:layout_alignLeft="@id/mc_forum_user_name" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_user_level_color" android:id="@id/mc_froum_user_level_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/mc_froum_user_credits" android:layout_alignLeft="@id/mc_froum_user_credits" />
+        <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

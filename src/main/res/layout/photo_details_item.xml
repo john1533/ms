@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/photo_box" android:layout_width="100.0dip" android:layout_height="100.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/photo_img" android:background="@drawable/mc_forum_camera_imgbg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/photo_indicator_img" android:background="@drawable/mc_forum_camera_checked" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="2.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+</RelativeLayout>

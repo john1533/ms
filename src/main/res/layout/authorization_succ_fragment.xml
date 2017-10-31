@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/mc_forum_all_bg1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textStyle="bold" android:textColor="@color/mc_forum_text4_normal_color" android:gravity="center" android:layout_gravity="center" android:background="@drawable/mc_forum_login_succeed" android:layout_width="234.0dip" android:layout_height="34.0dip" android:layout_marginTop="15.0dip" android:text="@string/mc_forum_user_authorization_succ" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_desc_normal_color" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/mc_forum_add_msg_and_register_warn" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:layout_gravity="center_vertical" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="@string/mc_forum_nickname_label" style="@style/mc_forum_user_info_setting_label" />
+                <EditText android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_normal_color" android:textColorHint="@color/mc_forum_text4_other_normal_color" android:layout_gravity="center_vertical" android:id="@id/mc_forum_user_input_username_btn" android:background="@drawable/mc_forum_input_box" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_marginRight="8.0dip" android:hint="@string/mc_forum_user_input_user" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_user_email_box" android:paddingTop="4.0dip" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:layout_gravity="center_vertical" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="@string/mc_forum_user_email" style="@style/mc_forum_user_info_setting_label" />
+                <EditText android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_normal_color" android:textColorHint="@color/mc_forum_text4_other_normal_color" android:layout_gravity="center_vertical" android:id="@id/mc_forum_user_input_user_email_edit" android:background="@drawable/mc_forum_input_box" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_marginRight="8.0dip" android:hint="@string/mc_forum_user_input_email" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="15.0dip">
+                <TextView android:layout_gravity="center_vertical" android:id="@id/mc_forum_gender_label_text" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="@string/mc_forum_gender_label" style="@style/mc_forum_user_info_setting_label" />
+                <LinearLayout android:id="@id/mc_forum_gender_secrecy_box" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <Button android:layout_gravity="center_vertical" android:id="@id/mc_forum_gender_secrecy_btn" android:background="@drawable/mc_forum_personal_set_icon3_n" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+                    <TextView android:textColor="@color/mc_forum_text_apparent_color" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_gender_secrecy" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/mc_forum_gender_male_box" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <Button android:layout_gravity="center_vertical" android:id="@id/mc_forum_gender_male_btn" android:background="@drawable/mc_forum_personal_set_icon3_n" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+                    <TextView android:textColor="@color/mc_forum_text4_normal_color" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_gender_male" />
+                </LinearLayout>
+                <LinearLayout android:id="@id/mc_forum_gender_female_box" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <Button android:layout_gravity="center_vertical" android:id="@id/mc_forum_gender_female_btn" android:background="@drawable/mc_forum_personal_set_icon3_n" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+                    <TextView android:textColor="@color/mc_forum_text4_normal_color" android:gravity="center" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mc_forum_gender_female" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Button android:layout_gravity="center_horizontal" android:id="@id/mc_forum_user_save_info_submit_btn" android:layout_width="90.0dip" android:layout_marginTop="20.0dip" android:text="@string/mc_forum_user_registerbtn" style="@style/mc_forum_button1_style" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/mc_forum_user_register_email_box" android:background="@drawable/mc_forum_pop_upmenu_bg1" android:padding="1.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginTop="190.0dip" android:layout_marginRight="10.0dip">
+        <ListView android:id="@id/mc_forum_user_register_email_list" android:background="@drawable/mc_forum_pop_upmenu_bg1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stackFromBottom="true" android:cacheColorHint="@color/mc_forum_transparent" android:divider="@drawable/mc_forum_wire" />
+    </RelativeLayout>
+</RelativeLayout>

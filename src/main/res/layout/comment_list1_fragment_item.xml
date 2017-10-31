@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/mc_forum_card_bg2" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+            <com.mobcent.discuz.activity.view.MCHeadIcon android:id="@id/user_icon_img" android:background="@drawable/mc_forum_head" android:layout_width="@dimen/mc_forum_user_icon_width" android:layout_height="@dimen/mc_forum_user_icon_height" android:scaleType="centerCrop" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip">
+                <TextView android:gravity="center_vertical" android:id="@id/user_name_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="1111111" android:layout_weight="1.0" style="@style/mc_forum_message_title_style" />
+                <TextView android:gravity="center_vertical" android:id="@id/time_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="1111111" android:layout_weight="1.0" style="@style/mc_forum_msg_time_style" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/reply_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text3_content_normal_color" android:id="@id/reply_content_text" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/reply_url_img" android:background="@drawable/mc_forum_add_new_img" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:scaleType="centerCrop" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/topic_layout" android:background="@drawable/mc_forum_reply_bg" android:paddingLeft="5.0dip" android:paddingTop="7.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip">
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_desc_normal_color" android:id="@id/topic_content_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="11111111" />
+            <ImageView android:id="@id/topic_url_img" android:background="@drawable/mc_forum_add_new_img" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:scaleType="centerCrop" />
+        </LinearLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+            <Button android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text1_normal_color" android:id="@id/check_btn" android:background="@drawable/mc_forum_icon2" android:layout_width="62.0dip" android:layout_height="22.0dip" android:text="@string/mc_forum_check_topic" android:layout_alignParentLeft="true" />
+            <Button android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text1_normal_color" android:id="@id/reply_btn" android:background="@drawable/mc_forum_icon1" android:layout_width="31.0dip" android:layout_height="22.0dip" android:text="@string/mc_forum_reply_topic" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

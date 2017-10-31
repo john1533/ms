@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/mc_forum_open_platform_login_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/weather_detail_top_box" style="@style/mc_autogen_top_bar_style">
+        <TextView android:gravity="center" android:id="@id/title_text" android:text="@string/mc_forum_weather_search_city" android:layout_centerInParent="true" style="@style/mc_autogen_top_bar_title_style" />
+        <Button android:id="@id/weather_detail_back_btn" android:background="@drawable/mc_forum_top_bar_button1" style="@style/mc_autogen_top_bar_btn_style" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/search_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_below="@id/weather_detail_top_box">
+        <EditText android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_today_text" android:textColorHint="@color/mc_forum_weather_today_text" android:id="@id/city_name_edit" android:background="@drawable/mc_forum_weather_page_search" android:paddingLeft="5.0dip" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:hint="@string/mc_forum_weather_search_city_edit_hint" android:singleLine="true" android:layout_centerInParent="true" android:imeOptions="actionSearch" />
+        <Button android:id="@id/search_btn" android:background="@drawable/mc_forum_weather_page_search_button1" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ListView android:id="@id/city_list" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@drawable/mc_forum_weather_page_line2_repeat" android:dividerHeight="1.0dip" android:layout_below="@id/search_layout" />
+</RelativeLayout>

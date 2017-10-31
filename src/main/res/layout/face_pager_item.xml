@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView android:gravity="center" android:id="@id/face_grid" android:layout_width="fill_parent" android:layout_height="@dimen/mc_forum_face_panle_height" android:horizontalSpacing="10.0dip" android:verticalSpacing="10.0dip" android:stretchMode="columnWidth" android:numColumns="6" android:divider="@color/mc_forum_transparent" android:dividerHeight="5.0dip" style="@style/mc_forum_grid_view"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

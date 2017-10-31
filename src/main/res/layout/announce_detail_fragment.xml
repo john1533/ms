@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/mc_forum_all_bg1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/mc_forum_announce_box" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/mc_forum_announce_author_img" android:layout_width="@dimen/mc_forum_user_icon_width" android:layout_height="@dimen/mc_forum_user_icon_height" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_announce_content_box" android:paddingLeft="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_toRightOf="@id/mc_forum_announce_author_img">
+            <TextView android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/mc_forum_announce_title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" style="@style/mc_forum_posts_title_style" />
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+                <TextView android:id="@id/mc_forum_announce_author_text" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/mc_forum_posts_user_style" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/mc_forum_role_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+                <TextView android:id="@id/mc_forum_announce_start_date_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:layout_alignParentRight="true" style="@style/mc_forum_posts_time_style" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/mc_forum_baord_line_img" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/mc_forum_announce_box" />
+    <TextView android:id="@id/mc_forum_anno_content_text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="10.0dip" android:layout_below="@id/mc_forum_baord_line_img" style="@style/mc_forum_posts_content_detail_style" />
+</RelativeLayout>

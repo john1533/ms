@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" style="@style/mc_forum_top_bar_style">
+        <Button android:id="@id/mc_share_cancel" android:text="@string/mc_share_cancel" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/mc_forum_top_bar_right_button" />
+        <Button android:id="@id/mc_share_sure" android:text="@string/mc_share_sure" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/mc_forum_top_bar_right_button" />
+        <TextView android:id="@id/mc_share_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_share_app" android:layout_centerHorizontal="true" android:layout_centerVertical="true" style="@style/mc_forum_info_topbar_title" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/mc_share_content" android:background="@drawable/mc_forum_card_bg2" android:paddingLeft="10.0dip" android:paddingTop="15.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="175.0dip" android:layout_marginLeft="7.0dip" android:layout_marginTop="47.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="9.0dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <EditText android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_share_text_normal_color2" android:gravity="top" android:id="@id/mc_share_edit_text" android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/mc_share_say_something" android:layout_weight="1.0" android:lineSpacingMultiplier="1.2" android:textCursorDrawable="@null" />
+            <ImageView android:id="@id/mc_share_image" android:layout_width="75.0dip" android:layout_height="60.0dip" android:layout_marginLeft="15.0dip" android:scaleType="centerCrop" />
+        </LinearLayout>
+        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginBottom="7.0dip">
+            <ImageView android:id="@id/mc_share_at_btn" android:background="@drawable/mc_forum_ico39" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginBottom="2.0dip" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/mc_share_topic_btn" android:background="@drawable/mc_forum_ico40" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="15.0dip" android:layout_marginBottom="2.0dip" android:layout_toRightOf="@id/mc_share_at_btn" />
+            <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_share_text_normal_color3" android:id="@id/mc_share_word_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_share_word_num" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:background="@drawable/mc_forum_card_bg2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="7.0dip" android:layout_marginRight="7.0dip" android:layout_marginBottom="9.0dip" android:layout_below="@id/mc_share_content">
+        <ListView android:id="@id/mc_share_item_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@drawable/mc_forum_wire" android:dividerHeight="1.0px" style="@style/mc_forum_list_view_without_line" />
+    </LinearLayout>
+</RelativeLayout>

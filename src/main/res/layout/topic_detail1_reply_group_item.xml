@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/reply_user_box"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.mobcent.discuz.activity.view.MCHeadIcon
+        android:id="@id/reply_user_img"
+        android:layout_width="@dimen/mc_forum_detail_user_icon_width"
+        android:layout_height="@dimen/mc_forum_detail_user_icon_height"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="13.0dip"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9.0dip"
+        android:layout_marginTop="13.0dip"
+        android:layout_toRightOf="@id/reply_user_img"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@id/reply_user_name_text"
+            style="@style/mc_forum_posts_user_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:lines="1" />
+
+        <TextView
+            android:id="@id/reply_user_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="11.0dip"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:textColor="@color/mc_forum_user_level_color"
+            android:textSize="@dimen/mc_forum_text_size_12" />
+
+        <TextView
+            android:id="@id/reply_user_role_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="11.0dip"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/mc_forum_text_normal_color"
+            android:textSize="@dimen/mc_forum_text_size_12" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/reply_lab_text"
+        style="?nav_title_select_style"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginTop="13.0dip" />
+</RelativeLayout>

@@ -1,0 +1,45 @@
+package com.mobcent.lowest.module.game.api.constant;
+
+public interface GameApiConstant {
+    public static final int CONTENT_AUDIO = 5;
+    public static final int CONTENT_IMG = 1;
+    public static final int CONTENT_TEXT = 0;
+    public static final String DESC = "desc";
+    public static final int FIRST_REQUEST = 1;
+    public static final String GAMES = "games";
+    public static final String GAME_DESC = "game_desc";
+    public static final String GAME_ICON = "game_icon";
+    public static final String GAME_ID = "game_id";
+    public static final String GAME_NAME = "game_name";
+    public static final String GAME_SCREENSHOTS = "game_screenshots";
+    public static final String GAME_TAG = "game_tag";
+    public static final String GAME_URL = "game_url";
+    public static final String HITS = "hits";
+    public static final String INFOR = "infor";
+    public static final String LATEST_TAG = "latest_tag";
+    public static final String LIST = "list";
+    public static final int MORE_DATA = 3;
+    public static final String MY_TAG = "my_game_tag";
+    public static final int PAGESIZE = 20;
+    public static final String PARAM_BOARD_ID = "boardId";
+    public static final String PARAM_IS_ANNOUNCE = "isAnnounce";
+    public static final String PARAM_IS_QUOTE = "isQuote";
+    public static final String PARAM_LATITUDE = "latitude";
+    public static final String PARAM_LOCATION = "location";
+    public static final String PARAM_LONGITUDE = "longitude";
+    public static final String PARAM_R = "r";
+    public static final String PARAM_TO_REPLY_ID = "toReplyId";
+    public static final String POSTS_DATE = "posts_date";
+    public static final String RECOMMEND_TAG = "recommend_tag";
+    public static final int REFRESH = 2;
+    public static final String REPLIES = "replies";
+    public static final String REPLY_CONTENT = "reply_content";
+    public static final String REPLY_NAME = "reply_name";
+    public static final String R_CONTENT = "rContent";
+    public static final String R_TITLE = "rTitle";
+    public static final String SOURCE = "source";
+    public static final String TAG_NAME = "tag_name";
+    public static final String TOPIC_ID = "topicId";
+    public static final String TOTAL_NUM = "total_num";
+    public static final String TYPE = "type";
+}

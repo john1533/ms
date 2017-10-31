@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/top_line_view" android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/mc_plaza_content_height">
+        <RelativeLayout android:gravity="center" android:id="@id/content_layout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/plaza_gird_item_img1" style="@style/mc_plaza_content_img_style" />
+            <TextView android:id="@id/plaza_grid_item_text1" android:layout_below="@id/plaza_gird_item_img1" style="@style/mc_plaza_content_text_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_wire" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_weight="0.0" />
+        <RelativeLayout android:gravity="center" android:id="@id/content_layout2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/plaza_gird_item_img2" style="@style/mc_plaza_content_img_style" />
+            <TextView android:id="@id/plaza_grid_item_text2" android:layout_below="@id/plaza_gird_item_img2" style="@style/mc_plaza_content_text_style" />
+        </RelativeLayout>
+        <View android:background="@drawable/mc_forum_wire" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_weight="0.0" />
+        <RelativeLayout android:gravity="center" android:id="@id/content_layout3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:id="@id/plaza_gird_item_img3" style="@style/mc_plaza_content_img_style" />
+            <TextView android:id="@id/plaza_grid_item_text3" android:layout_below="@id/plaza_gird_item_img3" style="@style/mc_plaza_content_text_style" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

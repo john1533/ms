@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.lowest.android.ui.module.ad.widget.AdView android:id="@id/mc_ad_box" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+    <com.mobcent.lowest.android.ui.widget.gif.GifView android:id="@id/mc_forum_gif_imageview" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/mc_ad_box" android:layout_centerInParent="true" />
+    <com.mobcent.discuz.activity.view.MCPointImageView android:id="@id/mc_forum_point_imageview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mc_ad_box" android:layout_centerInParent="true" />
+    <com.mobcent.lowest.android.ui.widget.MCProgressBar android:id="@id/mc_forum_download_progress_bar" android:background="@drawable/mc_forum_loading1" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/mc_forum_point_loading_fail" android:background="@drawable/mc_forum_card_img" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+</RelativeLayout>

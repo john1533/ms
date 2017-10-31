@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<ListView android:id="@id/list"-->
+        <!--android:background="@drawable/mc_forum_personal_publish_bg"-->
+        <!--android:layout_width="130.0dip"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="0dip"-->
+        <!--android:divider="@drawable/mc_forum_wire"-->
+        <!--android:dividerHeight="1.0px" />-->
+
+    <ListView android:id="@id/list"
+        android:layout_width="130.0dip"
+        android:background="?attr/android:popupBackground"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="0dip"
+        android:divider="@drawable/mc_forum_wire"
+        android:dividerHeight="1.0px" />
+</FrameLayout>

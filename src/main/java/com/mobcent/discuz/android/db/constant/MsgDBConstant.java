@@ -1,0 +1,48 @@
+package com.mobcent.discuz.android.db.constant;
+
+public interface MsgDBConstant {
+    public static final int AUDIO_READ = 0;
+    public static final int AUDIO_UNREAD = 1;
+    public static final String COLUMN_AUDIO_READ = "audioread";
+    public static final String COLUMN_CACHE_COUNT = "count";
+    public static final String COLUMN_COMMENT_AT_JSON = "commentAtJson";
+    public static final String COLUMN_MSG_CONTENT = "content";
+    public static final String COLUMN_MSG_CONTENT_TYPE = "contenttype";
+    public static final String COLUMN_MSG_ID = "mid";
+    public static final String COLUMN_MSG_SOURCE = "source";
+    public static final String COLUMN_MSG_STATUS = "status";
+    public static final String COLUMN_MSG_TIME = "time";
+    public static final String COLUMN_OTHER_USER_ICON = "ouicon";
+    public static final String COLUMN_OTHER_USER_ID = "ouid";
+    public static final String COLUMN_OTHER_USER_NAME = "ouname";
+    public static final String COLUMN_SESSION_ID = "sid";
+    public static final String COLUMN_SESSION_JSON = "sessionJson";
+    public static final String COLUMN_TYPE = "type";
+    public static final String COLUMN_USER_ID = "userId";
+    public static final String CONTENT_TYPE_AUDIO = "audio";
+    public static final String CONTENT_TYPE_IMAGE = "image";
+    public static final String CONTENT_TYPE_TEXT = "text";
+    public static final int MSG_READ = 0;
+    public static final int MSG_SEND_FAIL = 2;
+    public static final int MSG_SEND_ING = 1;
+    public static final int MSG_SEND_SUCC = 0;
+    public static final int MSG_UNREAD = 1;
+    public static final int SELECT_AFTER = 2;
+    public static final int SELECT_BEFORE = 1;
+    public static final int SEND_MYSELF = 0;
+    public static final int SEND_OTHER = 1;
+    public static final String SQL1 = " select a.ouid , time , count from (select count() as count , ouid from table_msg_list_@ where (( source=0 and status=0 ) or source=1 ) group by ouid ?)  as a left join ( select ouid , max(time) as time from table_msg_list_@ where source=1 group by ouid ) as b on a.ouid=b.ouid";
+    public static final String SQL2 = " select * from table_msg_list_@ where ouid=? and time>? order by time";
+    public static final String SQL3 = " select a.ouid , ouname , ouicon , mid , sid , time , content , contenttype , source , status , count from (select * from (select * from table_msg_list_@ order by ouid , time ) group by ouid ) as a left join (select ouid ,count() as count from table_msg_list_@ where status=1 and source=1 group by ouid ) as b on a.ouid=b.ouid order by time desc";
+    public static final String SQL4 = "select * from (select * from table_msg_list_@ where ouid=? order by time desc limit ?) order by time";
+    public static final String SQL5 = "select * from (select * from table_msg_list_@ where ouid=? and time<? order by time desc limit ?) order by time";
+    public static final String SQL6 = "select * from table_msg_list_@ where ouid=? and time>? order by time";
+    public static final String SQL_CREATE_COMMENT_AT_TABLE = " create table if not exists commentAt_list ( userId long, type varchar(100), commentAtJson text ); ";
+    public static final String SQL_CREATE_MSG_TABLE = " create table if not exists table_msg_list_@ ( mid long not null, ouid long, ouicon varchar(1000), ouname varchar(1000), sid long, time long,content text, contenttype varchar(100), source int, audioread int, status int); ";
+    public static final String SQL_CREATE_SESSION_TABLE = " create table if not exists session_list ( userId long not null, sessionJson text);";
+    public static final String SQL_GET_COMMENT_AT_JSON = " select * from commentAt_list where userId=? and type=?;";
+    public static final String SQL_GET_SESSION = " select sessionJson from session_list where userId=?";
+    public static final String TABLE_COMMENT_AT = "commentAt_list";
+    public static final String TABLE_MSG_LIST = "table_msg_list_@";
+    public static final String TABLE_SESSION_JSON = "session_list";
+}

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="mc_place_route_loading_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="mc_place_rating_bar_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxHeight">15.0dip</item>
+        <item name="android:progressDrawable">@drawable/mc_forum_peripheral_small_icons8</item>
+        <item name="android:minHeight">15.0dip</item>
+        <item name="android:numStars">5</item>
+        <item name="android:rating">0.0</item>
+        <item name="android:stepSize">0.1</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="mc_place_around_list_tab_btn_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/mc_forum_around_list_tab_text_selecter</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+    <style name="mc_place_around_list_item_title_style">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="mc_place_around_list_item_content_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+    <style name="mc_place_around_edit_style">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColorHint">@color/mc_forum_text7_normal_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/mc_forum_card_search_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">33.0dip</item>
+    </style>
+    <style name="mc_place_arrow_style">
+        <item name="android:background">@drawable/mc_forum_peripheral_arrow</item>
+        <item name="android:layout_width">6.0dip</item>
+        <item name="android:layout_height">5.0dip</item>
+        <item name="android:layout_marginLeft">2.0dip</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mc_place_list_style">
+        <item name="android:fadingEdge">none</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:dividerHeight">0.0dip</item>
+    </style>
+    <style name="mc_place_list_text_style">
+        <item name="android:textColor">@color/mc_forum_text1_normal_color</item>
+    </style>
+    <style name="mc_plaza_parent_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="mc_plaza_title_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/mc_forum_topbar_title_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mc_plaza_edit_text_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:textColorHint">@color/mc_forum_text4_other_normal_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/mc_forum_card_search_bg</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">30.0dip</item>
+        <item name="android:layout_height">33.0dip</item>
+        <item name="android:hint">@string/mc_plaza_search_keyword</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:imeActionId">@id/search_btn</item>
+    </style>
+    <style name="mc_plaza_channel_text_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+    <style name="mc_plaza_search_btn_style">
+        <item name="android:background">@drawable/mc_forum_card_search</item>
+        <item name="android:layout_width">44.0dip</item>
+        <item name="android:layout_height">32.0dip</item>
+    </style>
+    <style name="mc_plaza_search_item_title" parent="@style/mc_plaza_parent_style">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:lines">2</item>
+    </style>
+    <style name="mc_plaza_search_item_describe_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/mc_forum_text4_desc_normal_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:maxLines">3</item>
+    </style>
+    <style name="mc_plaza_search_item_img_style">
+        <item name="android:layout_width">66.0dip</item>
+        <item name="android:layout_height">66.0dip</item>
+        <item name="android:layout_marginLeft">15.0dip</item>
+        <item name="android:layout_marginTop">15.0dip</item>
+        <item name="android:layout_marginBottom">15.0dip</item>
+    </style>
+    <style name="mc_plaza_top_box_style">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="mc_plaza_top_btn_style">
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">32.0dip</item>
+        <item name="android:layout_height">32.0dip</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="mc_plaza_top_text_style">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColor">@color/mc_forum_squre_button_n</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="mc_plaza_content_img_style">
+        <item name="android:background">@drawable/mc_forum_squre_substitute</item>
+        <item name="android:layout_width">43.0dip</item>
+        <item name="android:layout_height">43.0dip</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="mc_plaza_content_text_style">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/mc_forum_bg3_text_n</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">70.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="mc_plaza_search_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="mc_plaza_top_bar_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:background">@drawable/mc_forum_top_bar_bg</item>
+        <item name="android:layout_height">@dimen/mc_plaza_top_bar_heigth</item>
+    </style>
+    <style name="mc_plaza_top_bar_btn_style">
+        <item name="android:layout_width">@dimen/mc_plaza_top_bar_btn_width</item>
+        <item name="android:layout_height">@dimen/mc_plaza_top_bar_btn_height</item>
+    </style>
+    <style name="mc_plaza_web_top_bar_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:background">@drawable/mc_forum_top_bar_bg</item>
+        <item name="android:layout_height">@dimen/mc_plaza_web_top_bar_heigth</item>
+    </style>
+    <style name="mc_plaza_web_top_bar_btn_style">
+        <item name="android:layout_width">@dimen/mc_plaza_web_top_bar_btn_width</item>
+        <item name="android:layout_height">@dimen/mc_plaza_web_top_bar_btn_heigth</item>
+    </style>
+    <style name="mc_plaza_web_bottom_bar_style" parent="@style/mc_plaza_parent_style">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="mc_plaza_web_bottom_bar_btn_style">
+        <item name="android:layout_width">@dimen/mc_plaza_web_bottom_bar_btn_width</item>
+        <item name="android:layout_height">@dimen/mc_plaza_web_bottom_bar_btn_heigth</item>
+    </style>
+    <style name="mc_autogen_top_bar_style">
+        <item name="android:background">@drawable/mc_forum_top_bar_bg</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/mc_autogen_top_bar_height</item>
+    </style>
+    <style name="mc_autogen_top_bar_btn_style">
+        <item name="android:layout_width">@dimen/mc_autogen_top_bar_btn_width</item>
+        <item name="android:layout_height">@dimen/mc_autogen_top_bar_btn_height</item>
+    </style>
+    <style name="mc_autogen_top_bar_title_style">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@color/mc_forum_topbar_title_color</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+    </style>
+    <style name="mc_forum_weather_bg">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">110.0dip</item>
+    </style>
+    <style name="mc_forum_weather_icon">
+        <item name="android:layout_width">64.0dip</item>
+        <item name="android:layout_height">64.0dip</item>
+    </style>
+    <style name="mc_forum_weather_txt_color">
+        <item name="android:textColor">@color/mc_forum_weather_widget_text</item>
+    </style>
+    <style name="mc_forum_weather_today_detail_txt">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/mc_forum_weather_today_text</item>
+        <item name="android:padding">5.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="mc_forum_weather_future_detail">
+        <item name="android:background">@drawable/mc_forum_weather_future_bg</item>
+        <item name="android:layout_width">130.0dip</item>
+        <item name="android:layout_height">100.0dip</item>
+    </style>
+    <style name="mc_forum_weather_future_icon">
+        <item name="android:layout_width">32.0dip</item>
+        <item name="android:layout_height">32.0dip</item>
+    </style>
+    <style name="mc_share_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="mc_forum_top_bar_style">
+        <item name="android:background">@drawable/mc_forum_top_bar_bg</item>
+        <item name="android:layout_height">44.0dip</item>
+    </style>
+    <style name="mc_forum_info_topbar_title">
+        <item name="android:textSize">@dimen/mc_forum_text_size_19</item>
+        <item name="android:textColor">@color/mc_forum_topbar_button_text_color</item>
+    </style>
+    <style name="mc_forum_top_bar_button">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_topbar_button_text_color</item>
+        <item name="android:layout_width">44.0dip</item>
+        <item name="android:layout_height">44.0dip</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mc_forum_top_bar_right_button">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_topbar_button_text_color</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">46.0dip</item>
+        <item name="android:layout_height">27.0dip</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="mc_forum_list_view_without_line" parent="@android:style/Widget.ListView">
+        <item name="android:focusable">true</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:scrollingCache">false</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:fastScrollEnabled">false</item>
+    </style>
+    <style name="mc_forum_setting_btn_style">
+        <item name="android:paddingRight">15.0dip</item>
+        <item name="android:layout_width">52.0dip</item>
+        <item name="android:layout_height">25.0dip</item>
+    </style>
+    <style name="mc_share_content_img_style">
+        <item name="android:layout_width">@dimen/mc_share_item_width</item>
+        <item name="android:layout_height">@dimen/mc_share_item_height</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="mc_share_content_text_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_share_text_normal_color1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">70.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="list_view" parent="@android:style/Widget.ListView">
+        <item name="android:focusable">true</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:scrollingCache">false</item>
+        <item name="android:cacheColorHint">@color/mc_forum_transparent</item>
+        <item name="android:divider">@null</item>
+        <item name="android:fastScrollEnabled">false</item>
+        <item name="nav_title_select_color">#ff52ff93</item>
+        <item name="android:dividerHeight">0dp</item>
+
+        <!--<item name="android:background">?android:windowBackground</item>-->
+    </style>
+
+
+
+    <style name="mc_forum_msg_sign">
+        <item name="android:textSize">@dimen/mc_forum_text_size_10</item>
+        <item name="android:textColor">@color/mc_forum_text1_normal_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/mc_forum_point</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">0</item>
+    </style>
+    <style name="mc_forum_message_title_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+    </style>
+    <style name="mc_forum_msg_time_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text4_desc_normal_color</item>
+    </style>
+    <style name="mc_forum_posts_user_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text3_name_normal_color</item>
+    </style>
+    <style name="no_title_activity" parent="@android:style/Theme.Black.NoTitleBar" />
+
+
+    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:popupBackground">?attr/colorPrimary</item>
+        <item name="android:dropDownVerticalOffset">4dip</item>
+        <item name="android:dropDownHorizontalOffset">0dip</item>
+    </style>
+
+
+
+    <style name="mc_forum_top_bar_bg">
+        <item name="android:background">@drawable/mc_forum_top_bar_bg</item>
+        <item name="android:layout_height">@dimen/mc_forum_top_bar_height</item>
+    </style>
+    <style name="mc_forum_top_title_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_18</item>
+        <item name="android:textColor">@color/mc_forum_topbar_title_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="mc_forum_posts_time_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text4_other_normal_color</item>
+    </style>
+    <style name="mc_forum_icon">
+        <item name="android:layout_width">12.0dip</item>
+        <item name="android:layout_height">11.0dip</item>
+    </style>
+    <style name="mc_forum_edit_text">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:textColorHint">@color/mc_forum_text4_other_normal_color</item>
+    </style>
+    <style name="mc_forum_edit_text_no_forcus" parent="@style/mc_forum_edit_text">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:textColorHint">@color/mc_forum_text4_other_normal_color</item>
+        <item name="android:focusable">false</item>
+    </style>
+    <style name="mc_forum_content_detail_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:textColorLink">@color/mc_forum_text6_normal_color</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="mc_forum_user_name_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text3_name_normal_color</item>
+    </style>
+    <style name="mc_forum_user_home_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+        <item name="android:layout_marginLeft">24.0dip</item>
+        <item name="android:layout_marginRight">11.0dip</item>
+        <item name="android:drawableRight">@drawable/mc_forum_personal_icon12_n</item>
+    </style>
+    <style name="mc_forum_pop_menu_item_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_bubble_color</item>
+    </style>
+    <style name="mc_forum_posts_location_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text4_other_normal_color</item>
+    </style>
+    <style name="mc_forum_all_bg1">
+        <item name="android:background">@drawable/mc_forum_bg1</item>
+    </style>
+    <style name="mc_forum_user_info_setting_label">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15.0dip</item>
+    </style>
+    <style name="mc_forum_button2_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text1_normal_color</item>
+        <item name="android:background">@drawable/mc_forum_personal_icon1</item>
+        <item name="android:layout_width">60.0dip</item>
+        <item name="android:layout_height">21.0dip</item>
+    </style>
+    <style name="mc_forum_board_name_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+    </style>
+    <style name="mc_forum_today_total_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text6_normal_color</item>
+    </style>
+    <style name="mc_forum_board_other_num_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text4_desc_normal_color</item>
+    </style>
+    <style name="mc_forum_content_edit_style" parent="@style/mc_forum_edit_text">
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:padding">5.0dip</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="mc_forum_board_dropdown_list_view" parent="@style/list_view">
+        <item name="android:focusable">true</item>
+        <item name="android:drawSelectorOnTop">false</item>
+    </style>
+    <style name="mc_forum_more_info_content">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15.0dip</item>
+    </style>
+    <style name="mc_forum_pwd_lable">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text_normal_color</item>
+    </style>
+    <style name="mc_forum_button1_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text1_normal_color</item>
+        <item name="android:background">@drawable/mc_forum_personal_set_icon1</item>
+        <item name="android:layout_height">30.0dip</item>
+    </style>
+    <style name="mc_forum_list_user_name_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text4_normal_color</item>
+    </style>
+    <style name="mc_forum_list_user_other_style2">
+        <item name="android:textSize">@dimen/mc_forum_text_size_14</item>
+        <item name="android:textColor">@color/mc_forum_text_normal_color</item>
+    </style>
+    <style name="mc_forum_location_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text6_normal_color</item>
+    </style>
+    <style name="mc_forum_photo_album_dialog_style" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="mc_forum_dialog_top_menu" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="mc_forum_dialog_switch_user" parent="@style/mc_forum_dialog_top_menu">
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="mc_forum_photo_album_dialog_anim_style" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/photo_album_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/photo_album_dialog_exit</item>
+    </style>
+    <style name="mc_forum_grid_view" parent="@android:style/Widget.GridView">
+        <item name="android:focusable">true</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:listSelector">@android:color/transparent</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:scrollingCache">false</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:divider">@android:color/transparent</item>
+        <item name="android:fastScrollEnabled">false</item>
+    </style>
+    <style name="mc_forum_home_publish_dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="mc_forum_home_publish_classity_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="mc_forum_msg_friend_content_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_15</item>
+        <item name="android:textColor">@color/mc_forum_text5_normal_color</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="mc_forum_msg_friend_time_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text4_other_normal_color</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+    <style name="mc_forum_line_horizontal_with_margin">
+        <item name="android:layout_marginLeft">1.0dip</item>
+        <item name="android:layout_marginRight">1.0dip</item>
+    </style>
+    <style name="mc_forum_vote_lable_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_12</item>
+        <item name="android:textColor">@color/mc_forum_text_normal_color</item>
+    </style>
+    <style name="mc_forum_posts_lab_style1" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/mc_forum_text_size_11</item>
+        <item name="android:textColor">@color/mc_forum_pull_down_refresh_text_color</item>
+    </style>
+
+    <style name="mc_forum_posts_lab_style" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/mc_forum_text_size_11</item>
+        <item name="android:textColor">#ff0000</item>
+    </style>
+
+    <style name="mc_forum_posts_content_detail_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColorLink">@color/mc_forum_text6_normal_color</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="mc_forum_posts_title_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">?android:windowBackground</item>
+    </style>
+    <style name="mc_forum_posts_content_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text3_content_normal_color</item>
+        <item name="android:textColorLink">@color/mc_forum_text6_normal_color</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="mc_forum_wechat_share_text_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_15</item>
+        <item name="android:textColor">@color/mc_forum_text1_normal_color</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:lines">1</item>
+    </style>
+    <style name="mc_forum_posts_quote_content_style">
+        <item name="android:textSize">@dimen/mc_forum_text_size_16</item>
+        <item name="android:textColor">@color/mc_forum_text4_desc_normal_color</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+</resources>

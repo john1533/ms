@@ -1,0 +1,43 @@
+package com.mobcent.update.android.constant;
+
+public interface MCUpdateConstant {
+    public static final String CONNECTION_FAIL = "connection_fail";
+    public static final int DOWNLOAD_APK_EXIST = 2;
+    public static final int DOWNLOAD_APK_NO_EXIST = 0;
+    public static final int DOWNLOAD_APK_PATH_CREATE_FAIL = -1;
+    public static final int DOWNLOAD_APK_PATH_CREATE_SUCC = 1;
+    public static final String DOWNLOAD_SERVICE_ACTION = "android.intent.action.update";
+    public static final int DOWN_FIAL = -1;
+    public static final int DOWN_FINSH = 4;
+    public static final int DOWN_ING = 2;
+    public static final int DOWN_INIT = 1;
+    public static final int DOWN_PAUSE = 3;
+    public static final String FORUM_KEY = "forumKey";
+    public static final int IS_SHOW_DETAIL = 1;
+    public static final String MC_FORUM_KEY = "mc_forum_key";
+    public static final String PLAT_TYPE = "platType";
+    public static final String PLAT_TYPE_VALUE = "1";
+    public static final String RETURN_UPDATE_NOTICE_MODEL = "returnUpdateModel";
+    public static final String RS = "rs";
+    public static final String START_NOTIFICATION_RECEIVER = "start_notification";
+    public static final String UPDATE = "update";
+    public static final String UPDATE_APP_ICON = "logo";
+    public static final String UPDATE_APP_NAME = "app_name";
+    public static final String UPDATE_APP_URL = "logo_url";
+    public static final String UPDATE_DESC = "desc";
+    public static final String UPDATE_ID = "id";
+    public static final String UPDATE_LINK = "link";
+    public static final String UPDATE_NOTICE_MODEL = "UpdateModel";
+    public static final String UPDATE_NOTICE_SERVER_MSG = ".forum.service.update.notify";
+    public static final int UPDATE_NOTIFICATION_DEFAULT_ID = 1;
+    public static final String UPDATE_NOTIFICATION_ID = "id";
+    public static final int UPDATE_NOTIFICATION_MAX_ID = 1000000;
+    public static final String UPDATE_NOTIFICATION_RECEIVER = "update_notification";
+    public static final String UPDATE_SHOW_DETAIL = "show_detail";
+    public static final String UPDATE_SIZE = "size";
+    public static final String UPDATE_TIME = "time";
+    public static final String UPDATE_TYPE = "type";
+    public static final String UPDATE_VER_NAME = "ver_name";
+    public static final String UPLOAD_IMAGE_FAIL_MSG = "upload_images_fail";
+    public static final String VERSION_CODE = "versionCode";
+}

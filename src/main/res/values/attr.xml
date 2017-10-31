@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="nav_title_color" format="color" />
+    <attr name="nav_title_select_color" format="color" />
+    <attr name="topic_list_item_title_color" format="color|reference" />
+    <attr name="topic_list_item_title_read_color" format="color|reference" />
+    <attr name="topic_list_item_desc_color" format="color|reference" />
+    <attr name="topic_detail_title_color" format="color|reference" />
+    <attr name="topic_detail_content_color" format="color|reference" />
+    <attr name="topic_detail_desc_color" format="color|reference" />
+
+    <attr name="nav_title_select_style" format="reference" />
+
+    <attr name="list_style" format="reference" />
+</resources>

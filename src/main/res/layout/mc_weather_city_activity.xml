@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/mc_forum_open_platform_login_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/weather_detail_top_box" style="@style/mc_autogen_top_bar_style">
+        <TextView android:gravity="center" android:id="@id/title_text" android:text="@string/mc_forum_weather_choose_city" android:layout_centerInParent="true" style="@style/mc_autogen_top_bar_title_style" />
+        <Button android:id="@id/weather_detail_back_btn" android:background="@drawable/mc_forum_top_bar_button1" style="@style/mc_autogen_top_bar_btn_style" />
+    </RelativeLayout>
+    <include android:id="@id/top_search_layout" layout="@layout/mc_weather_city_activity_header" />
+    <GridView android:gravity="center" android:id="@id/hot_city_grid" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:stretchMode="columnWidth" android:numColumns="4" android:layout_below="@id/top_search_layout" android:layout_centerHorizontal="true" />
+</RelativeLayout>

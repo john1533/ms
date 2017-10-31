@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/weather_main_box" android:background="@drawable/mc_forum_open_platform_login_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/weather_detail_top_box" style="@style/mc_autogen_top_bar_style">
+        <TextView android:gravity="center" android:id="@id/title_text" android:layout_width="wrap_content" android:minWidth="30.0dip" android:layout_centerInParent="true" style="@style/mc_autogen_top_bar_title_style" />
+        <View android:id="@id/arrow_view" android:background="@drawable/mc_forum_weather_page_topbar_arrow" android:layout_width="12.0dip" android:layout_height="6.0dip" android:layout_toRightOf="@id/title_text" android:layout_centerVertical="true" />
+        <Button android:id="@id/weather_detail_back_btn" android:background="@drawable/mc_forum_top_bar_button1" style="@style/mc_autogen_top_bar_btn_style" />
+        <Button android:id="@id/weather_refresh_btn" android:background="@drawable/mc_forum_top_bar_button7" android:layout_alignParentRight="true" style="@style/mc_autogen_top_bar_btn_style" />
+    </RelativeLayout>
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/weather_detail_top_box">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/weather_detail_today_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+                    <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_weather_today_text" android:id="@id/weather_detail_date" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <TextView android:textSize="22.0sp" android:textColor="@color/mc_forum_weather_today_text" android:id="@id/weather_detail_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+                    <TextView android:textSize="16.0sp" android:textColor="@color/mc_forum_weather_today_text" android:id="@id/weather_detail_temperature" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+                </LinearLayout>
+                <ImageView android:id="@id/weather_detail_icon" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/mc_forum_weather_icon" />
+            </RelativeLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_below="@id/weather_detail_today_box">
+                <LinearLayout android:orientation="vertical" android:id="@id/weather_today_index_key_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_alignParentLeft="true">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="100.0dip" android:text="@string/mc_forum_dressing_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/dressing_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_comfort_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/comfort_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_morning_exercise_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/morning_exercise_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_cold_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/cold_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_air_conditioning_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/air_conditioning_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="100.0dip" android:text="@string/mc_forum_uv_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/uv_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="100.0dip" android:text="@string/mc_forum_car_wash_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/car_wash_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_air_pollution_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/air_pollution_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_index_of_beer" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/index_of_beer" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_drying_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/drying_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="110.0dip" android:text="@string/mc_forum_travel_index" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/travel_index" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:layout_width="100.0dip" android:text="@string/mc_forum_dressing_suggest" style="@style/mc_forum_weather_today_detail_txt" />
+                        <TextView android:id="@id/dressing_suggest" android:padding="0.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" style="@style/mc_forum_weather_today_detail_txt" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/weather_future_detail_info_box" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+                    <LinearLayout android:orientation="vertical" android:padding="8.0dip" style="@style/mc_forum_weather_future_detail">
+                        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center_vertical" android:id="@id/weather_future_first_day_week" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                            <ImageView android:id="@id/weather_future_first_day_icon" android:layout_marginRight="5.0dip" style="@style/mc_forum_weather_future_icon" />
+                        </LinearLayout>
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_first_day_weather" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_first_day_temperature" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_first_day_manner" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:padding="8.0dip" style="@style/mc_forum_weather_future_detail">
+                        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center_vertical" android:id="@id/weather_future_second_day_week" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                            <ImageView android:id="@id/weather_future_second_day_icon" android:layout_marginRight="5.0dip" style="@style/mc_forum_weather_future_icon" />
+                        </LinearLayout>
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_second_day_weather" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_second_day_temperature" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_second_day_manner" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:padding="8.0dip" style="@style/mc_forum_weather_future_detail">
+                        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center_vertical" android:id="@id/weather_future_third_day_week" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                            <ImageView android:id="@id/weather_future_third_day_icon" android:layout_marginRight="5.0dip" style="@style/mc_forum_weather_future_icon" />
+                        </LinearLayout>
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_third_day_weather" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_third_day_temperature" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        <TextView android:textSize="12.0sp" android:textColor="@color/mc_forum_weather_future_text" android:gravity="center" android:id="@id/weather_future_third_day_manner" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

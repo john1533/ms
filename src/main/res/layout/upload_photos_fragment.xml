@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/mc_forum_all_bg1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_top_box" android:background="@drawable/mc_forum_card_bg2" android:layout_width="fill_parent" android:layout_height="210.0dip" android:layout_margin="8.0dip">
+        <TextView android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/mc_forum_select_text" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:hint="@string/mc_forum_publish_select_photos_hint" android:singleLine="true" android:drawableRight="@drawable/mc_forum_personal_publish2" style="@style/mc_forum_edit_text" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <EditText android:gravity="top" android:id="@id/mc_forum_content_edit" android:background="@drawable/mc_forum_publish_white_bg" android:paddingTop="12.0dip" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:hint="@string/mc_forum_rapid_publish_content" android:lineSpacingExtra="5.0dip" android:textCursorDrawable="@null" style="@style/mc_forum_edit_text" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/mc_forum_picture_box" android:background="@drawable/mc_forum_card_bg2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:minHeight="76.0dip" android:layout_below="@id/mc_forum_top_box">
+        <RelativeLayout android:id="@id/mc_forum_add_img_box" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/mc_forum_add_img" android:background="@drawable/mc_forum_publish_addition_picture_bg" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="8.0dip" android:layout_toRightOf="@id/mc_forum_add_img_box" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/mc_forum_add_img_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="@string/mc_forum_rapid_publish_add_img" android:layout_toRightOf="@id/mc_forum_add_img" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <com.mobcent.discuz.activity.view.MCPopupListView android:id="@id/photos_popup_listview" android:paddingRight="8.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="55.0dip" android:minHeight="200.0dip" android:layout_alignParentRight="true" />
+</RelativeLayout>

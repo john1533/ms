@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/mc_forum_board_title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_board_content_box" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_board_content_box1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="vertical" android:id="@id/mc_forum_board_content_box2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/mc_place_route_comment_detail_topbar" />
+    <com.baidu.mapapi.map.MapView android:id="@id/place_baidu_mapview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/nav_detail_topbar" />
+    <RelativeLayout android:id="@id/map_view_bottom_tools_bar_one" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="16.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/map_view_find_me" android:background="@drawable/mc_forum_map_button6" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <LinearLayout android:id="@id/map_view_step_btn_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <Button android:id="@id/map_view_pre_step" android:background="@drawable/mc_forum_map_button18" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+            <Button android:id="@id/map_view_next_step" android:background="@drawable/mc_forum_map_button17" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/map_view_zoom_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:layout_above="@id/map_view_bottom_tools_bar_one" android:layout_alignParentRight="true">
+        <Button android:id="@id/map_view_traffic" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginBottom="20.0dip" />
+        <Button android:id="@id/map_view_zoom_in" android:background="@drawable/mc_forum_map_button8" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+        <Button android:id="@id/map_view_zoom_out" android:background="@drawable/mc_forum_map_button9" android:layout_width="32.0dip" android:layout_height="32.0dip" />
+    </LinearLayout>
+</RelativeLayout>

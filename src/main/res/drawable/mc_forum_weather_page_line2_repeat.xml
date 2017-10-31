@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap android:src="@drawable/mc_forum_weather_page_line2" android:tileMode="repeat"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

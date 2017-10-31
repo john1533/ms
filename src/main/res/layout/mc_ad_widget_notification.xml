@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/download_img" android:background="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:src="@android:drawable/stat_sys_download" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="50.0dip" android:layout_weight="1.0">
+        <TextView android:id="@id/download_title_text" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ProgressBar android:id="@id/download_progress_bar" android:layout_width="fill_parent" android:layout_height="3.0dip" android:max="100" android:progress="1" android:progressDrawable="@drawable/mc_ad_webview_progress_bar" style="?android:attr/progressBarStyleHorizontal" />
+    </LinearLayout>
+    <Button android:textSize="14.0sp" android:id="@id/continue_btn" android:background="@android:drawable/btn_default_small" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_margin="5.0dip" android:text="@string/mc_ad_notification_continue" />
+</LinearLayout>

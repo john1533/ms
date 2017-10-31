@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v4.view.ViewPager
+        android:id="@id/pager_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/subnav_widget" />
+    <com.mobcent.lowest.android.ui.widget.MCTabBarScrollView
+        android:id="@id/subnav_widget"
+        android:scrollbars="none"
+        android:fadingEdge="none"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+    <com.mobcent.discuz.activity.view.MCPopupListView android:id="@id/popup_listview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.mobcent.discuz.activity.view.MCPopupListView android:id="@id/publish_popup_listview" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

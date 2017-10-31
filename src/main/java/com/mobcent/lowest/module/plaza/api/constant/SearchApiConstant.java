@@ -1,0 +1,40 @@
+package com.mobcent.lowest.module.plaza.api.constant;
+
+public interface SearchApiConstant {
+    public static final String BAIKE_TYPE = "baike_type";
+    public static final String BOARD_ID = "board_id";
+    public static final String CLICK_URL = "click_url";
+    public static final String FORUM_ID = "forum_id";
+    public static final String HAS_NEXT = "has_next";
+    public static final String IMEI = "imei";
+    public static final String IMG_URL = "img_url";
+    public static final String IMSI = "imsi";
+    public static final String IS_ESSENCE = "is_essence";
+    public static final String IS_FAVOR = "is_favor";
+    public static final String IS_HOT = "is_hot";
+    public static final String IS_TOP = "is_top";
+    public static final String LAST_REPLY_DATE = "last_reply_date";
+    public static final String LIST = "list";
+    public static final String NUM_IID = "num_iid";
+    public static final String PARAM_BAIKE_TYPE = "baikeType";
+    public static final String PARAM_FORUM_ID = "forumId";
+    public static final String PARAM_FORUM_KEY = "forumKey";
+    public static final String PARAM_KEY_WORD = "keyword";
+    public static final String PARAM_SEARCH_MODE = "searchMode";
+    public static final String PARAM_USER_ID = "userId";
+    public static final String PIC_PATH = "pic_path";
+    public static final String PLAT_TYPE = "platType";
+    public static final String PLAT_TYPE_VALUE = "1";
+    public static final String RATIO = "ratio";
+    public static final String SDK_VERSION = "sdkVersion";
+    public static final String SDK_VERSION_VALUE = "10304";
+    public static final String SINGER = "singer";
+    public static final String SOURCE_TYPE = "source_type";
+    public static final String STATUS = "status";
+    public static final String SUMMARY = "summary";
+    public static final String TITLE = "title";
+    public static final String TOPIC_ID = "topic_id";
+    public static final String TOTAL_NUM = "total_num";
+    public static final String USER_ID = "user_id";
+    public static final String USER_NICK_NAME = "user_nick_name";
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/mc_game_detail_buttom_comment" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mc_game_detail_coment" android:layout_weight="1.0" />
+    <Button android:id="@id/mc_game_detail_buttom_into_game" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mc_game_detail_into_game" android:layout_weight="5.0" />
+    <Button android:id="@id/mc_game_detail_buttom_share" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mc_game_datail_share" android:layout_weight="1.0" />
+</LinearLayout>

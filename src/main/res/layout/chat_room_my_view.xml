@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/my_view_box" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/my_time_text" android:background="@drawable/mc_forum_chat_time_bg" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" style="@style/mc_forum_msg_friend_time_style" />
+    <com.mobcent.discuz.activity.view.MCHeadIcon android:id="@id/my_user_icon_img" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip" android:scaleType="centerCrop" android:layout_below="@id/my_time_text" android:layout_alignParentRight="true" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/my_content_sign_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="61.0dip" android:layout_toLeftOf="@id/my_user_icon_img" android:layout_alignTop="@id/my_user_icon_img">
+        <RelativeLayout android:id="@id/my_content_box" android:background="@drawable/mc_forum_new_chat_box2_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <TextView android:gravity="center_vertical" android:id="@id/my_content_text" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="30.0dip" android:text="1111" style="@style/mc_forum_msg_friend_content_style" />
+            <ImageView android:id="@id/my_content_img" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:scaleType="centerCrop" android:minWidth="30.0dip" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/my_content_audio_box" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:gravity="center" android:id="@id/my_content_audio_time_text" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="5.0dip" style="@style/mc_forum_msg_friend_time_style" />
+                <ImageView android:id="@id/my_content_audio" android:background="@drawable/mc_forum_voice_chat2_img0" android:layout_width="8.0dip" android:layout_height="15.0dip" android:layout_marginRight="8.0dip" android:scaleType="centerCrop" android:minWidth="30.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+        <com.mobcent.lowest.android.ui.widget.MCProgressBar android:id="@id/my_send_ing" android:background="@drawable/mc_forum_chat_send_ing" android:visibility="gone" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/my_content_box" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/my_send_fail" android:background="@drawable/mc_forum_chat_failure_notice" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/my_content_box" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

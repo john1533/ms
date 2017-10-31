@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/mc_froum_mention_friend_box" android:background="@drawable/mc_forum_bg1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/mc_forum_mention_friend_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:dividerHeight="1.0px" style="@style/list_view" />
+    <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@android:color/black" android:id="@id/mc_forum_no_mention_friend_Text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mc_forum_no_friend" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/mc_forum_bg2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mobcent.discuz.activity.widget.cropImage.CropImageView android:layout_gravity="center" android:id="@id/mc_forum_crop_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/mc_forum_save_layout" />
+    <RelativeLayout android:id="@id/mc_forum_save_layout" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_marginLeft="21.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="21.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true">
+        <Button android:textColor="@color/mc_forum_text1_normal_color" android:gravity="center" android:id="@id/mc_forum_save_btn" android:background="@drawable/mc_forum_login_button2" android:layout_width="100.0dip" android:layout_height="26.0dip" android:text="@string/mc_forum_save" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <Button android:textColor="@color/mc_forum_text1_normal_color" android:gravity="center" android:id="@id/mc_forum_cancel_btn" android:background="@drawable/mc_forum_login_button2" android:layout_width="100.0dip" android:layout_height="26.0dip" android:text="@string/mc_forum_cancel" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

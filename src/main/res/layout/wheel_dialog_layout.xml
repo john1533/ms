@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#ff222222" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/mc_forum_wheel_box" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_margin="10.0dip">
+        <com.mobcent.discuz.activity.view.MCWheelView android:id="@id/mc_forum_wheel1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0" />
+        <com.mobcent.discuz.activity.view.MCWheelView android:id="@id/mc_forum_wheel2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+        <com.mobcent.discuz.activity.view.MCWheelView android:id="@id/mc_forum_wheel3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/positiveButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/mc_forum_dialog_confirm" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:id="@id/negativeButton" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/mc_forum_dialog_cancel" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

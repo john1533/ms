@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/topic_list_foruminfo_box" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/mc_forum_bg3" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/topic_list_foruminfo_boardicon" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:scaleType="centerCrop" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_16" android:textColor="@color/mc_forum_text4_normal_color" android:id="@id/topic_list_foruminfo_boardname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:text="板块" android:includeFontPadding="false" android:layout_toRightOf="@id/topic_list_foruminfo_boardicon" />
+        <TextView android:textSize="@dimen/mc_forum_text_size_14" android:textColor="@color/mc_forum_text4_desc_normal_color" android:id="@id/topic_list_foruminfo_boarddesc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="描述描述描述描述" android:includeFontPadding="false" android:layout_toRightOf="@id/topic_list_foruminfo_boardicon" android:layout_below="@id/topic_list_foruminfo_boardname" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" android:layout_below="@id/topic_list_foruminfo_boarddesc" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/topic_list_foruminfo_topbox1" android:background="@drawable/mc_forum_bg3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/topic_list_foruminfo_icon1" android:background="@drawable/mc_forum_ico67_n" android:layout_width="28.0dip" android:layout_height="18.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:textColor="@color/mc_forum_text4_desc_normal_color" android:gravity="center_vertical" android:id="@id/topic_list_foruminfo_text1" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_marginLeft="10.0dip" android:text="置顶1" android:layout_toRightOf="@id/topic_list_foruminfo_icon1" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" android:layout_below="@id/topic_list_foruminfo_icon1" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/topic_list_foruminfo_topbox2" android:background="@drawable/mc_forum_bg3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/topic_list_foruminfo_icon2" android:background="@drawable/mc_forum_ico67_n" android:layout_width="28.0dip" android:layout_height="18.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:textColor="@color/mc_forum_text4_desc_normal_color" android:gravity="center_vertical" android:id="@id/topic_list_foruminfo_text2" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_marginLeft="10.0dip" android:text="置顶2" android:layout_toRightOf="@id/topic_list_foruminfo_icon2" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" android:layout_below="@id/topic_list_foruminfo_icon2" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/topic_list_foruminfo_topbox3" android:background="@drawable/mc_forum_bg3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/topic_list_foruminfo_icon3" android:background="@drawable/mc_forum_ico67_n" android:layout_width="28.0dip" android:layout_height="18.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:textColor="@color/mc_forum_text4_desc_normal_color" android:gravity="center_vertical" android:id="@id/topic_list_foruminfo_text3" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_marginLeft="10.0dip" android:text="置顶3" android:layout_toRightOf="@id/topic_list_foruminfo_icon3" />
+        <ImageView android:background="@drawable/mc_forum_wire" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" android:layout_below="@id/topic_list_foruminfo_icon3" />
+    </RelativeLayout>
+    <View android:id="@id/topic_list_foruminfo_marginview" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+</LinearLayout>

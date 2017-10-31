@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_bar_layout" android:background="@drawable/mc_forum_top_bar_bg" style="@style/mc_plaza_top_bar_style">
+        <Button android:id="@id/back_btn" android:background="@drawable/mc_forum_top_bar_button1" android:text="" android:layout_weight="0.0" style="@style/mc_plaza_top_bar_btn_style" />
+        <RelativeLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/around_lift_btn" android:background="@drawable/mc_forum_map_button10" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="25.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/around_icon" android:background="@drawable/mc_forum_peripheral_small_icons4" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_place_home_top_text_selecter" android:gravity="center" android:id="@id/around_text" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" android:text="@string/mc_place_home_around_text" android:layout_toRightOf="@id/around_icon" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/route_plane_btn" android:background="@drawable/mc_forum_map_button10" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="25.0dip" android:layout_weight="1.0">
+            <ImageView android:id="@id/route_icon" android:background="@drawable/mc_forum_peripheral_small_icons5" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_centerVertical="true" />
+            <TextView android:textSize="14.0sp" android:textColor="@color/mc_forum_place_home_top_text_selecter" android:gravity="center" android:id="@id/route_text" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="5.0dip" android:text="@string/mc_place_home_route_text" android:layout_toRightOf="@id/route_icon" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/container_layout" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/top_bar_layout" />
+</RelativeLayout>

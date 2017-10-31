@@ -59,12 +59,13 @@ import com.mobcent.lowest.base.utils.MCListUtils;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class HomeActivity extends BaseFragmentActivity implements BaseIntentConstant, PlazaConstant, ConfigConstant {
     private LinearLayout bottomBox;
     private ConfigService configService;
     private FrameLayout container;
-    private int count;
+    private int clickCount;
     private MCPublishMenuDialog dialog;
     private Fragment[] fragments = null;
     private boolean isContainMsgOnly;
@@ -287,12 +288,21 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
             navList.add(ConfigOptHelper.createPlazaNavModel(getApplicationContext()));
             ((ConfigModel) configModel.getData()).getModuleMap().put(Long.valueOf(-1), ConfigOptHelper.createPlazaModuleModel(getApplicationContext()));
         }
-        int count = navList.size();
+//        int count = navList.size();
+        Map<Long, ConfigModuleModel> moduleMap =  ((ConfigModel) configModel.getData()).getModuleMap();
+
+        int count = moduleMap.keySet().size();
+
+
         this.fragments = new Fragment[count];
         this.navBtns = new Button[count];
-        for (int i = 0; i < count; i++) {
-            ConfigNavModel navModel = (ConfigNavModel) navList.get(i);
-            ConfigModuleModel moduleModel = (ConfigModuleModel) ((ConfigModel) configModel.getData()).getModuleMap().get(Long.valueOf(navModel.getModuleId()));
+        int i = 0;
+        for(Long key:moduleMap.keySet()){
+//        for (int i = 0; i < count; i++) {
+//            ConfigModuleModel moduleModel = (ConfigModuleModel) ((ConfigModel) configModel.getData()).getModuleMap().get(Long.valueOf(navModel.getModuleId()));
+
+            ConfigModuleModel moduleModel = moduleMap.get(key);
+
             this.navModuleList.add(moduleModel);
             if (moduleModel != null) {
                 View navBox;
@@ -334,7 +344,7 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
                 }
                 Button navBtn = (Button) navBox.findViewById(this.resource.getViewId("nav_btn"));
                 this.navBtns[i] = navBtn;
-                navBtn.setText(navModel.getTitle());
+                navBtn.setText(moduleModel.getTitle());
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(BaseIntentConstant.BUNDLE_MODULE_MODEL, moduleModel);
                 bundle.putInt(BaseIntentConstant.BUNDLE_ACTIVITY_TYPE, 1);
@@ -348,25 +358,26 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
                     lps.height = MCPhoneUtil.dip2px(getApplicationContext(), 34.0f);
                     navBtn.setLayoutParams(lps);
                 } else {
-                    navBtn.setBackgroundResource(this.resource.getDrawableId(navModel.getIcon()));
+                    navBtn.setBackgroundResource(this.resource.getDrawableId(moduleModel.getIcon()));
                 }
                 this.bottomBox.addView(navBox, new LinearLayout.LayoutParams(-2, -2, CustomConstant.RATIO_ONE_HEIGHT));
             }
+            i ++;
         }
         selectFirst();
     }
 
     public void onBackPressed() {
-        if (this.count == 1) {
+        if (this.clickCount == 1) {
             System.exit(0);
             super.onBackPressed();
             return;
         }
-        this.count++;
+        this.clickCount++;
         Toast.makeText(this, this.resource.getStringId("mc_forum_home_back_exit"), Toast.LENGTH_SHORT).show();
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                HomeActivity.this.count = 0;
+                HomeActivity.this.clickCount = 0;
             }
         }, 5000);
     }

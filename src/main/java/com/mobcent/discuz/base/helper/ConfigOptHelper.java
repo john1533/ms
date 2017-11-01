@@ -9,6 +9,7 @@ import com.mobcent.discuz.android.model.ConfigNavModel;
 import com.mobcent.lowest.base.utils.MCListUtils;
 import com.mobcent.lowest.base.utils.MCResource;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -55,6 +56,47 @@ public class ConfigOptHelper implements ConfigConstant {
         navModel.setModuleId(-1);
         return navModel;
     }
+
+    public static Map<Long, ConfigModuleModel> addLocalConfigModuleModels(Context context,Map<Long, ConfigModuleModel> netModuleMap){
+        LinkedHashMap<Long, ConfigModuleModel> ret = new LinkedHashMap<Long, ConfigModuleModel>();
+        ConfigModuleModel lotteryModuleModel = createLotteryModuleModel(context);
+        ret.put(lotteryModuleModel.getId(),lotteryModuleModel);
+        ConfigModuleModel staticModuleModel = createStaticModuleModel(context);
+        ret.put(staticModuleModel.getId(),staticModuleModel);
+        ret.putAll(netModuleMap);
+        ConfigModuleModel plazaModuleModel = createPlazaModuleModel(context);
+        ret.put(plazaModuleModel.getId(),plazaModuleModel);
+        return ret;
+    }
+
+    public static ConfigModuleModel createLotteryModuleModel(Context context) {
+        ConfigModuleModel configModuleModel = new ConfigModuleModel();
+        configModuleModel.setId(-2);
+        configModuleModel.setType(ConfigConstant.MODULE_TYPE_FULL);
+        configModuleModel.setIcon("mc_forum_main_bar_button2");
+        configModuleModel.setTitle(MCResource.getInstance(context).getString("home_lottery"));
+//        List<ConfigComponentModel> componentModels = new ArrayList();
+//        ConfigComponentModel componentModel = new ConfigComponentModel();
+//        componentModel.setType(ConfigConstant.COMPONENT_DISCOVER);
+//        componentModels.add(componentModel);
+//        configModuleModel.setComponentList(componentModels);
+        return configModuleModel;
+    }
+
+    public static ConfigModuleModel createStaticModuleModel(Context context) {
+        ConfigModuleModel configModuleModel = new ConfigModuleModel();
+        configModuleModel.setId(-3);
+        configModuleModel.setType(ConfigConstant.MODULE_TYPE_FULL);
+        configModuleModel.setIcon("mc_forum_main_bar_button3");
+        configModuleModel.setTitle(MCResource.getInstance(context).getString("home_static"));
+//        List<ConfigComponentModel> componentModels = new ArrayList();
+//        ConfigComponentModel componentModel = new ConfigComponentModel();
+//        componentModel.setType(ConfigConstant.COMPONENT_DISCOVER);
+//        componentModels.add(componentModel);
+//        configModuleModel.setComponentList(componentModels);
+        return configModuleModel;
+    }
+
 
     public static ConfigModuleModel createPlazaModuleModel(Context context) {
         ConfigModuleModel configModuleModel = new ConfigModuleModel();

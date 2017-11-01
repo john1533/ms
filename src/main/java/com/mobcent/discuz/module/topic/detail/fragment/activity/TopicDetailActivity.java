@@ -7,12 +7,10 @@ import android.view.Window;
 
 import com.mobcent.discuz.activity.PopComponentActivity;
 import com.mobcent.discuz.activity.constant.IntentConstant;
-import com.mobcent.discuz.android.constant.StyleConstant;
 import com.mobcent.discuz.android.model.TopicDraftModel;
 import com.mobcent.discuz.base.delegate.SlideDelegate;
 import com.mobcent.discuz.module.topic.detail.fragment.TopicDetail1Fragment;
-import com.mobcent.discuz.module.topic.detail.fragment.TopicDetail2Fragment;
-import com.mobcent.discuz.module.topic.detail.fragment.TopicDetail3Fragment;
+
 import com.mobcent.discuz.module.topic.detail.fragment.TopicDetailRequestFragment;
 
 import java.lang.reflect.Method;

@@ -279,19 +279,11 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
         if (configModel == null || configModel.getRs() == 0) {
             DZToastAlertUtils.toast(getApplicationContext(), configModel);
             configModel = this.configService.getConfigModelAssets("config.json");
-        } else if (configModel.getData() == null || MCListUtils.isEmpty(((ConfigModel) configModel.getData()).getNavList())) {
-            showAlertDialog("mc_forum_config_list_empty");
-            configModel = this.configService.getConfigModelAssets("config.json");
-        }
-        List<ConfigNavModel> navList = ((ConfigModel) configModel.getData()).getNavList();
-        Map<Long, ConfigModuleModel> moduleMap =  ((ConfigModel) configModel.getData()).getModuleMap();
-        if (!ConfigOptHelper.isNavContainDiscover(((ConfigModel) configModel.getData()).getModuleMap(), navList)) {
-            navList.add(ConfigOptHelper.createPlazaNavModel(getApplicationContext()));
-            moduleMap.put(Long.valueOf(-1), ConfigOptHelper.createPlazaModuleModel(getApplicationContext()));
         }
 
+        Map<Long, ConfigModuleModel> moduleMap =  ConfigOptHelper.addLocalConfigModuleModels(getApplicationContext(),((ConfigModel) configModel.getData()).getModuleMap());
+//        moduleMap.put(Long.valueOf(-1), ConfigOptHelper.createPlazaModuleModel(getApplicationContext()));
         int count = moduleMap.keySet().size();
-
 
         this.fragments = new Fragment[count];
         this.navBtns = new Button[count];

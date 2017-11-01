@@ -90,9 +90,6 @@ public class SubPageFragment extends BaseModuleFragment {
             List componentList = this.moduleModel.getComponentList();
             if (this.childModelList.isEmpty() && !MCListUtils.isEmpty(componentList)) {
                 this.childModelList.addAll(componentList);
-                this.childModelList.addAll(componentList);
-                this.childModelList.addAll(componentList);
-                this.childModelList.addAll(componentList);
 //                subList.add("test1");
 //                subList.add("test2");
 //                subList.add("test3");

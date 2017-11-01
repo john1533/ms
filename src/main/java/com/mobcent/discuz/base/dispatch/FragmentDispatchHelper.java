@@ -108,7 +108,6 @@ public class FragmentDispatchHelper implements ConfigConstant, StyleConstant {
 //            if (dataModel instanceof ConfigComponentModel) {
 //                dealPlazaBundle(bundleData, dataModel, fragment);
 //            }
-
             fragment = new com.mobcent.lowest.android.ui.module.plaza.fragment.SettingFragment();
         } else if (type.equals("setting")) {
             fragment = new SettingFragment();

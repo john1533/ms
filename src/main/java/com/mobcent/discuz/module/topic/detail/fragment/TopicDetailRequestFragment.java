@@ -33,8 +33,6 @@ import com.mobcent.discuz.base.fragment.BaseFragment;
 import com.mobcent.discuz.base.model.TopSettingModel;
 import com.mobcent.discuz.module.publish.fragment.activity.ReplyTopicActivity;
 import com.mobcent.discuz.module.publish.fragment.activity.ReplyTopicActivity.ReplyRetrunDelegate;
-import com.mobcent.discuz.module.topic.detail.fragment.adapter.TopicDetail2FragmentAdapter;
-import com.mobcent.discuz.module.topic.detail.fragment.adapter.TopicDetail3FragmentAdapter;
 import com.mobcent.lowest.android.ui.module.ad.widget.AdView;
 import com.mobcent.lowest.android.ui.utils.MCAudioUtils;
 import com.mobcent.lowest.android.ui.widget.PullToRefreshExpandableListView;
@@ -54,8 +52,6 @@ public abstract class TopicDetailRequestFragment extends BaseFragment implements
     protected int SHARE = 1;
     protected String TAG;
     protected AdView adView;
-    protected TopicDetail2FragmentAdapter adapter2;
-    protected TopicDetail3FragmentAdapter adapter3;
     protected String ascCheckStr;
     protected List<UserInfoModel> atUserList;
     protected long authorId;

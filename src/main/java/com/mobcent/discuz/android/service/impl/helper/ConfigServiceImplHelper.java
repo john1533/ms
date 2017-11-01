@@ -25,9 +25,9 @@ public class ConfigServiceImplHelper implements ConfigApiConstant {
             BaseJsonHelper.formJsonRs(context, json, result);
             if (result.getRs() == 1) {
                 JSONObject bodyObject = new JSONObject(json).optJSONObject("body");
-                JSONObject navigationObject = bodyObject.optJSONObject(ConfigApiConstant.NAVIGATION);//下面的tab页数据
-                configModel.setType(navigationObject.optString("type"));//tab类型："bottom"
-                parseConfigNavList(configModel, navigationObject.optJSONArray(ConfigApiConstant.NAV_ITEM_LIST));//
+//                JSONObject navigationObject = bodyObject.optJSONObject(ConfigApiConstant.NAVIGATION);//下面的tab页数据
+//                configModel.setType(navigationObject.optString("type"));//tab类型："bottom"
+//                parseConfigNavList(configModel, navigationObject.optJSONArray(ConfigApiConstant.NAV_ITEM_LIST));//
                 parseConfigModelList(configModel, bodyObject.optJSONArray("moduleList"));
                 configModel.setShowMessageList(isShowMessageList);
                 result.setData(configModel);

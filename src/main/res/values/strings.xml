@@ -695,6 +695,8 @@
     <string name="mc_forum_custom_more">更多</string>
     <string name="mc_forum_search_net_time_out">网络连接超时</string>
     <string name="mc_forum_home_discover">发现</string>
+    <string name="home_lottery">开奖</string>
+    <string name="home_static">分析</string>
     <string name="mc_forum_draft_box">我的草稿</string>
     <string name="mc_forum_draft_flag">[草稿]</string>
     <string name="mc_forum_draft_delete_alert">删除该草稿?</string>

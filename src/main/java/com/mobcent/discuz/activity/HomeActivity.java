@@ -284,12 +284,11 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
             configModel = this.configService.getConfigModelAssets("config.json");
         }
         List<ConfigNavModel> navList = ((ConfigModel) configModel.getData()).getNavList();
+        Map<Long, ConfigModuleModel> moduleMap =  ((ConfigModel) configModel.getData()).getModuleMap();
         if (!ConfigOptHelper.isNavContainDiscover(((ConfigModel) configModel.getData()).getModuleMap(), navList)) {
             navList.add(ConfigOptHelper.createPlazaNavModel(getApplicationContext()));
-            ((ConfigModel) configModel.getData()).getModuleMap().put(Long.valueOf(-1), ConfigOptHelper.createPlazaModuleModel(getApplicationContext()));
+            moduleMap.put(Long.valueOf(-1), ConfigOptHelper.createPlazaModuleModel(getApplicationContext()));
         }
-//        int count = navList.size();
-        Map<Long, ConfigModuleModel> moduleMap =  ((ConfigModel) configModel.getData()).getModuleMap();
 
         int count = moduleMap.keySet().size();
 
@@ -298,68 +297,19 @@ public class HomeActivity extends BaseFragmentActivity implements BaseIntentCons
         this.navBtns = new Button[count];
         int i = 0;
         for(Long key:moduleMap.keySet()){
-//        for (int i = 0; i < count; i++) {
-//            ConfigModuleModel moduleModel = (ConfigModuleModel) ((ConfigModel) configModel.getData()).getModuleMap().get(Long.valueOf(navModel.getModuleId()));
-
             ConfigModuleModel moduleModel = moduleMap.get(key);
-
             this.navModuleList.add(moduleModel);
             if (moduleModel != null) {
                 View navBox;
                 moduleModel.setPosition(i);
-                if (!this.isHaveNav) {
-                    this.isHaveNav = true;
-                }
-                if (i == 0 || !this.isContainMsgOnly) {
-                    this.isContainMsgOnly = ConfigOptHelper.navContainOnly(moduleModel, ConfigConstant.COMPONENT_MESSAGELIST);
-                    this.notificationHelper.setContainMsg(this.isContainMsgOnly);
-                }
-                if (ConfigOptHelper.navContainOnly(moduleModel, ConfigConstant.COMPONENT_MESSAGELIST)) {
-                    this.msgConfigModuleModel = moduleModel;
-                    this.msgModuleTag = moduleModel.getId() + "";
-                    navBox = inflateLayout("home_page_nav_item_msg");
-                    View pointView = navBox.findViewById(this.resource.getViewId("point_view"));
-                    if (this.observerHelper.getActivityObservable().getTabNum(getApplicationContext(), SharedPreferencesDB.getInstance(getApplicationContext()).getUserId()) > 0) {
-                        pointView.setVisibility(View.VISIBLE);
-                    } else {
-                        pointView.setVisibility(View.GONE);
-                    }
-                    final View view = pointView;
-                    this.observer = new ActivityObserver() {
-                        public void updateHomeTabNum(final int msgNum) {
-                            view.post(new Runnable() {
-                                public void run() {
-                                    if (msgNum > 0) {
-                                        view.setVisibility(View.VISIBLE);
-                                    } else {
-                                        view.setVisibility(View.GONE);
-                                    }
-                                }
-                            });
-                        }
-                    };
-                    this.observerHelper.getActivityObservable().registerObserver(this.observer);
-                } else {
-                    navBox = inflateLayout("home_page_nav_item");
-                }
+                navBox = inflateLayout("home_page_nav_item");
                 Button navBtn = (Button) navBox.findViewById(this.resource.getViewId("nav_btn"));
                 this.navBtns[i] = navBtn;
                 navBtn.setText(moduleModel.getTitle());
-                Bundle bundle = new Bundle();
-                bundle.putSerializable(BaseIntentConstant.BUNDLE_MODULE_MODEL, moduleModel);
-                bundle.putInt(BaseIntentConstant.BUNDLE_ACTIVITY_TYPE, 1);
+
                 navBtn.setTag(moduleModel);
                 navBtn.setOnClickListener(this.tabClickListener);
-                if (ConfigConstant.MODULE_TYPE_ONELINK.equals(moduleModel.getType())) {
-                    navBtn.setText("");
-                    navBtn.setBackgroundResource(this.resource.getDrawableId("mc_forum_main_bar_button17"));
-                    LayoutParams lps = (LayoutParams) navBtn.getLayoutParams();
-                    lps.width = MCPhoneUtil.dip2px(getApplicationContext(), 38.0f);
-                    lps.height = MCPhoneUtil.dip2px(getApplicationContext(), 34.0f);
-                    navBtn.setLayoutParams(lps);
-                } else {
-                    navBtn.setBackgroundResource(this.resource.getDrawableId(moduleModel.getIcon()));
-                }
+                navBtn.setBackgroundResource(this.resource.getDrawableId(moduleModel.getIcon()));
                 this.bottomBox.addView(navBox, new LinearLayout.LayoutParams(-2, -2, CustomConstant.RATIO_ONE_HEIGHT));
             }
             i ++;

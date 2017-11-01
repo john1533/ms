@@ -1,6 +1,6 @@
 package com.mobcent.discuz.android.model;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +30,7 @@ public class ConfigModel extends BaseModel {
 
     public Map<Long, ConfigModuleModel> getModuleMap() {
         if (this.moduleMap == null) {
-            this.moduleMap = new HashMap();
+            this.moduleMap = new LinkedHashMap();
         }
         return this.moduleMap;
     }

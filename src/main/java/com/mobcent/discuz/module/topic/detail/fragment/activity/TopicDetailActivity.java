@@ -50,13 +50,14 @@ public class TopicDetailActivity extends PopComponentActivity implements IntentC
         bundle.putLong("topicId", this.topicId);
         bundle.putBoolean(IntentConstant.INTENT_TOPIC_DETAIL_REQUEST_EDIT, this.isRequestEdit);
         bundle.putSerializable(IntentConstant.INTENT_TOPIC_DRAFMODEL, this.topicDraftModel);
-        if (StyleConstant.STYLE_NO_TITLE.equals(this.style)) {
-            this.fragment = new TopicDetail3Fragment();
-        } else if ("card".equals(this.style)) {
-            this.fragment = new TopicDetail2Fragment();
-        } else {
-            this.fragment = new TopicDetail1Fragment();
-        }
+//        if (StyleConstant.STYLE_NO_TITLE.equals(this.style)) {
+//            this.fragment = new TopicDetail3Fragment();
+//        } else if ("card".equals(this.style)) {
+//            this.fragment = new TopicDetail2Fragment();
+//        } else {
+//            this.fragment = new TopicDetail1Fragment();
+//        }
+        this.fragment = new TopicDetail1Fragment();
         this.fragment.setArguments(bundle);
         return this.fragment;
     }

@@ -70,7 +70,7 @@ public class UserRegisterBoundFragment extends BaseFragment implements FinalCons
             DZProgressDialogUtils.hideProgressDialog();
             if (result != null && result.getRs() != 0) {
                 MCToastUtils.toastByResName(UserRegisterBoundFragment.this.activity, "mc_forum_user_register_succ");
-                LocationHelper.startLocation(UserRegisterBoundFragment.this.activity);
+//                LocationHelper.startLocation(UserRegisterBoundFragment.this.activity);
                 ObserverHelper.getInstance().getActivityObservable().loginSuccess();
                 UserRegisterBoundFragment.this.activity.finish();
             } else if (MCStringUtil.isEmpty(result.getErrorInfo())) {

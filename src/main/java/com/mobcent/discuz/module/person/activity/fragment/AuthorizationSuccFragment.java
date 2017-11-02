@@ -79,7 +79,7 @@ public class AuthorizationSuccFragment extends BaseFragment implements FinalCons
                 AuthorizationSuccFragment.this.activity.setResult(200);
                 AuthorizationSuccFragment.this.sharedPreferencesDB.setNickName(AuthorizationSuccFragment.this.nickNameEdit.getText().toString());
                 AuthorizationSuccFragment.this.activity.finish();
-                LocationHelper.startLocation(AuthorizationSuccFragment.this.activity);
+//                LocationHelper.startLocation(AuthorizationSuccFragment.this.activity);
             } else if (MCStringUtil.isEmpty(result.getErrorInfo())) {
                 MCToastUtils.toastByResName(AuthorizationSuccFragment.this.activity, "mc_forum_user_register_fail");
             } else {

@@ -90,12 +90,6 @@ public class SubPageFragment extends BaseModuleFragment {
             List componentList = this.moduleModel.getComponentList();
             if (this.childModelList.isEmpty() && !MCListUtils.isEmpty(componentList)) {
                 this.childModelList.addAll(componentList);
-//                subList.add("test1");
-//                subList.add("test2");
-//                subList.add("test3");
-//                subList.add("test4");
-//                subList.add("test5");
-//                subList.add("test6");
             }
             if (this.subList.isEmpty() && !this.childModelList.isEmpty()) {
                 this.subList.clear();
@@ -182,30 +176,10 @@ public class SubPageFragment extends BaseModuleFragment {
             }
             MCLogUtil.v("RecordUtils", "isCard:" + isCard);
 
-//            Drawable backgroud = null;
-//            TypedValue a = new TypedValue();
-//            activity.getTheme().resolveAttribute(android.R.attr.windowBackground, a, true);
-//            if (a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT) {
-//                // windowBackground is a color
-//                int color = a.data;
-//                backgroud = new ColorDrawable(color);
-//            } else {
-//                // windowBackground is not a color, probably a drawable
-//                backgroud = activity.getResources().getDrawable(a.resourceId);
-//            }
+
             Drawable backgroud = resource.getDrawableFromAttr(activity.getTheme(),android.R.attr.windowBackground);
 
-//            Drawable arrowBackground = null;
-//            a = new TypedValue();
-//            activity.getTheme().resolveAttribute(resource.getAttrId("colorPrimary"), a, true);
-//            if (a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT) {
-//                // windowBackground is a color
-//                int color = a.data;
-//                arrowBackground = new ColorDrawable(color);
-//            } else {
-//                // windowBackground is not a color, probably a drawable
-//                arrowBackground = activity.getResources().getDrawable(a.resourceId);
-//            }
+
             Drawable arrowBackground = resource.getDrawableFromAttr(activity.getTheme(),"colorPrimary");
 
             if (isCard) {
@@ -272,7 +246,7 @@ public class SubPageFragment extends BaseModuleFragment {
             ConfigComponentModel moduleModel;
             TopBtnModel topBtnModel;
             TopSettingModel topSettingModel = createTopSettingModel();
-            topSettingModel.leftTitle = this.moduleModel.getTitle();
+            topSettingModel.title = this.moduleModel.getTitle();
             List<TopBtnModel> leftList = new ArrayList();
             List<TopBtnModel> rightList = new ArrayList();
             List<ConfigComponentModel> leftModels = this.moduleModel.getLeftTopbarList();
@@ -301,49 +275,49 @@ public class SubPageFragment extends BaseModuleFragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
-
-            final String [] testStrings = getResources().getStringArray(resource.getArrayId("mc_place_home_around_names"));
-
-//            MenuInflater inflater = activity.getMenuInflater();
-        inflater.inflate(resource.getMenuId("menu"), menu);
-
-
-            SearchManager searchManager = (SearchManager) activity.getSystemService(Context.SEARCH_SERVICE);
-            MenuItem menuItem = menu.findItem(resource.getViewId("searchView"));
-
-            final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(activity.getComponentName()));
-            int completeTextId = searchView.getResources().getIdentifier("android:id/search_src_text", null, null);
-
-            AutoCompleteTextView completeText = (AutoCompleteTextView) searchView
-                    .findViewById(android.support.v7.appcompat.R.id.search_src_text) ;
-            completeText.setAdapter(new ArrayAdapter<>(activity,android.R.layout.simple_list_item_1,testStrings));
-            completeText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    searchView.setQuery(testStrings[position], true);
-
-                }
-            });
-
-            completeText.setThreshold(0);
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    Toast.makeText(activity, query, Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    return false;
-                }
-            });
-
-        super.onCreateOptionsMenu(menu, inflater);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
+//
+//            final String [] testStrings = getResources().getStringArray(resource.getArrayId("mc_place_home_around_names"));
+//
+////            MenuInflater inflater = activity.getMenuInflater();
+//            inflater.inflate(resource.getMenuId("menu"), menu);
+//
+//
+//            SearchManager searchManager = (SearchManager) activity.getSystemService(Context.SEARCH_SERVICE);
+//            MenuItem menuItem = menu.findItem(resource.getViewId("searchView"));
+//
+//            final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+//
+//            searchView.setSearchableInfo(searchManager.getSearchableInfo(activity.getComponentName()));
+//            int completeTextId = searchView.getResources().getIdentifier("android:id/search_src_text", null, null);
+//
+//            AutoCompleteTextView completeText = (AutoCompleteTextView) searchView
+//                    .findViewById(android.support.v7.appcompat.R.id.search_src_text) ;
+//            completeText.setAdapter(new ArrayAdapter<>(activity,android.R.layout.simple_list_item_1,testStrings));
+//            completeText.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                    searchView.setQuery(testStrings[position], true);
+//
+//                }
+//            });
+//
+//            completeText.setThreshold(0);
+//            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//                @Override
+//                public boolean onQueryTextSubmit(String query) {
+//                    Toast.makeText(activity, query, Toast.LENGTH_SHORT).show();
+//                    return false;
+//                }
+//
+//                @Override
+//                public boolean onQueryTextChange(String newText) {
+//                    return false;
+//                }
+//            });
+//
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 
 }

@@ -60,7 +60,7 @@ public abstract class BaseUserHomeFragment extends BaseFragment implements Final
             super.onPostExecute(result);
             DZToastAlertUtils.toast(BaseUserHomeFragment.this.activity.getApplicationContext(), result);
             if (result.getRs() == 1) {
-                LocationHelper.startLocation(BaseUserHomeFragment.this.activity);
+//                LocationHelper.startLocation(BaseUserHomeFragment.this.activity);
                 BaseUserHomeFragment.this.currentUserId = ((UserInfoModel) result.getData()).getUserId();
                 BaseUserHomeFragment.this.refreshUserInfo();
             }

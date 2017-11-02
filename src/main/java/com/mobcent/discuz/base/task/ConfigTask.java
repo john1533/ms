@@ -37,7 +37,7 @@ public class ConfigTask extends BaseTask<BaseResultModel<ConfigModel>> implement
         super(context, _callback);
         this._callback = _callback;
         this.getAllDataByNet = getAllDataByNet;
-        LocationHelper.startLocation(this.context);
+//        LocationHelper.startLocation(this.context);
     }
 
     protected BaseResultModel<ConfigModel> doInBackground(Void... params) {

@@ -88,7 +88,7 @@ public class UserRegistFragment extends BaseFragment implements IntentConstant {
                     intent.putExtra(IntentConstant.INTENT_GO_PARAM, UserRegistFragment.this.goParam);
                 }
                 UserRegistFragment.this.activity.startActivity(intent);
-                LocationHelper.startLocation(UserRegistFragment.this.activity);
+//                LocationHelper.startLocation(UserRegistFragment.this.activity);
                 if (UserRegistFragment.this.activity != null) {
                     UserRegistFragment.this.activity.finish();
                 }

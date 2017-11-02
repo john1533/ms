@@ -68,7 +68,7 @@ public class UserLoginBoundFragment extends BaseFragment implements IntentConsta
             DZProgressDialogUtils.hideProgressDialog();
             DZToastAlertUtils.toast(UserLoginBoundFragment.this.activity.getApplicationContext(), result);
             if (result != null && result.getRs() != 0) {
-                LocationHelper.startLocation(UserLoginBoundFragment.this.activity);
+//                LocationHelper.startLocation(UserLoginBoundFragment.this.activity);
                 ObserverHelper.getInstance().getActivityObservable().loginSuccess();
                 UserLoginBoundFragment.this.activity.finish();
             } else if (MCStringUtil.isEmpty(result.getErrorInfo())) {

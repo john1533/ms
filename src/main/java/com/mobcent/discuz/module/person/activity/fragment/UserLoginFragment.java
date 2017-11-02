@@ -134,7 +134,7 @@ public class UserLoginFragment extends BaseFragment implements IntentConstant, F
             DZToastAlertUtils.toast(UserLoginFragment.this.activity.getApplicationContext(), result);
             if (result.getRs() != 0) {
                 UserLoginFragment.this.goToTargetActivity();
-                LocationHelper.startLocation(UserLoginFragment.this.activity);
+//                LocationHelper.startLocation(UserLoginFragment.this.activity);
                 UserLoginFragment.this.activity.finish();
             } else if (MCStringUtil.isEmpty(result.getErrorInfo())) {
                 MCToastUtils.toastByResName(UserLoginFragment.this.activity.getApplicationContext(), "mc_forum_login_fail");

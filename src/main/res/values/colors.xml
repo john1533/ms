@@ -164,6 +164,6 @@
     <color name="topic_detail_content_dark">#6a6a6a</color>
     <color name="topic_detail_desc_dark">#4a4a4a</color>
 
-
+    <color name="light_blue">@android:color/holo_blue_light</color>
 
 </resources>

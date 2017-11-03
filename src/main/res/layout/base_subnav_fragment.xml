@@ -21,6 +21,7 @@
 
 
     <com.mobcent.widget.FloatButton
+        android:id="@+id/floatBtn"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@android:drawable/ic_input_add"

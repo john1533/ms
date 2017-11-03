@@ -179,36 +179,40 @@ public class MCPublishMenuDialog extends AlertDialog implements FinalConstant, C
 
     public void onClick(ConfigComponentModel componentModel, TopicDraftModel topicDraftModel) {
         Intent intent;
-        if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTPOST)) {
-            intent = new Intent(this.context, ClassifyTopicActivity.class);
-            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
-            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
-            this.context.startActivity(intent);
-        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTIMAGE)) {
-            intent = new Intent(this.context, ClassifyTopicActivity.class);
-            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 1);
-            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
-            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
-            this.context.startActivity(intent);
-        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTCAMERA)) {
-            intent = new Intent(this.context, ClassifyTopicActivity.class);
-            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 2);
-            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
-            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
-            this.context.startActivity(intent);
-        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_SIGN)) {
-            if (this.settingModel == null || this.settingModel.getPlugCheck() != 1) {
-                MCToastUtils.toast(this.context, this.resource.getString("mc_forum_error_sign_none"), 1);
-            } else if (LoginHelper.doInterceptor(this.context, null, null)) {
-                new SignInAsyncTask(this.context, null).execute(new Void[0]);
-            }
-        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTAUDIO)) {
-            intent = new Intent(this.context, ClassifyTopicActivity.class);
-            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 3);
-            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
-            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
-            this.context.startActivity(intent);
-        }
+        intent = new Intent(this.context, ClassifyTopicActivity.class);
+        intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+        intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
+        this.context.startActivity(intent);
+//        if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTPOST)) {
+//            intent = new Intent(this.context, ClassifyTopicActivity.class);
+//            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+//            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
+//            this.context.startActivity(intent);
+//        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTIMAGE)) {
+//            intent = new Intent(this.context, ClassifyTopicActivity.class);
+//            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 1);
+//            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+//            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
+//            this.context.startActivity(intent);
+//        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTCAMERA)) {
+//            intent = new Intent(this.context, ClassifyTopicActivity.class);
+//            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 2);
+//            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+//            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
+//            this.context.startActivity(intent);
+//        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_SIGN)) {
+//            if (this.settingModel == null || this.settingModel.getPlugCheck() != 1) {
+//                MCToastUtils.toast(this.context, this.resource.getString("mc_forum_error_sign_none"), 1);
+//            } else if (LoginHelper.doInterceptor(this.context, null, null)) {
+//                new SignInAsyncTask(this.context, null).execute(new Void[0]);
+//            }
+//        } else if (componentModel.getType().equals(ConfigConstant.COMPONENT_FASTAUDIO)) {
+//            intent = new Intent(this.context, ClassifyTopicActivity.class);
+//            intent.putExtra(IntentConstant.INTENT_RAPID_PUBLISH_TYPE, 3);
+//            intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+//            intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, topicDraftModel);
+//            this.context.startActivity(intent);
+//        }
     }
 
     public void show() {

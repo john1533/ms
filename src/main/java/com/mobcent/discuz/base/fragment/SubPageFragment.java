@@ -2,6 +2,7 @@ package com.mobcent.discuz.base.fragment;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -24,13 +25,20 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobcent.discuz.activity.constant.IntentConstant;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
+import com.mobcent.discuz.android.model.TopicDraftModel;
+import com.mobcent.discuz.base.constant.BaseIntentConstant;
 import com.mobcent.discuz.base.delegate.SlideDelegate;
 import com.mobcent.discuz.base.delegate.SubChangeListener;
 import com.mobcent.discuz.base.dispatch.FragmentDispatchHelper;
+import com.mobcent.discuz.base.helper.DraftHelper;
+import com.mobcent.discuz.base.helper.LoginHelper;
 import com.mobcent.discuz.base.model.TopBtnModel;
 import com.mobcent.discuz.base.model.TopSettingModel;
+import com.mobcent.discuz.base.widget.MCPublishMenuDialog;
 import com.mobcent.discuz.module.custom.widget.constant.CustomConstant;
+import com.mobcent.discuz.module.publish.fragment.activity.ClassifyTopicActivity;
 import com.mobcent.discuz.module.topic.list.fragment.BaseTopicListFragment;
 import com.mobcent.lowest.android.ui.widget.MCTabBarScrollView;
 import com.mobcent.lowest.android.ui.widget.MCTabBarScrollView.ClickSubNavListener;
@@ -38,6 +46,7 @@ import com.mobcent.lowest.base.utils.MCListUtils;
 import com.mobcent.lowest.base.utils.MCLogUtil;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.base.utils.MCResource;
+import com.mobcent.widget.FloatButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +61,7 @@ public class SubPageFragment extends BaseModuleFragment {
     private List<String> subList = new ArrayList();
     private MCTabBarScrollView subWidget;
     private TopSettingModel mTopSettingModel;
+    private FloatButton floatBtn;
 
     public class SubPageFragmentAdapter extends FragmentPagerAdapter {
         public SubPageFragmentAdapter(FragmentManager fm) {
@@ -103,8 +113,13 @@ public class SubPageFragment extends BaseModuleFragment {
 
     protected void initViews(View rootView) {
         super.initViews(rootView);
+        MCLogUtil.v("RecordUtils", "moduleModel id:" + moduleModel.getId());
         this.subWidget = (MCTabBarScrollView) findViewByName(rootView, "subnav_widget");
         this.pager = (ViewPager) findViewByName(rootView, "pager_layout");
+        this.floatBtn = (FloatButton) findViewByName(rootView,"floatBtn") ;
+        if(moduleModel.getId() == 3){
+            floatBtn.setVisibility(View.INVISIBLE);
+        }
         this.pager.setOffscreenPageLimit(3);
         setTabs();
         if (this.pagerAdapter == null) {
@@ -162,6 +177,26 @@ public class SubPageFragment extends BaseModuleFragment {
             }
 
             public void onPageScrollStateChanged(int state) {
+            }
+        });
+        this.floatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (LoginHelper.doInterceptor(SubPageFragment.this.getContext(), null, null) && !DraftHelper.isNeedAlertDialog(SubPageFragment.this.getContext(), 1, new DraftHelper.DraftDelegate() {
+                    public void onDraftAlertBack(TopicDraftModel model) {
+                        Intent intent;
+                        intent = new Intent(SubPageFragment.this.getContext(), ClassifyTopicActivity.class);
+//                        intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+                        intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, model);
+                        SubPageFragment.this.getContext().startActivity(intent);
+                    }
+                })) {
+                    Intent intent;
+                    intent = new Intent(SubPageFragment.this.getContext(), ClassifyTopicActivity.class);
+//                    intent.putExtra(BaseIntentConstant.BUNDLE_MODULE_MODEL, componentModel);
+                    intent.putExtra(IntentConstant.INTENT_TOPIC_DRAFMODEL, (TopicDraftModel)null);
+                    SubPageFragment.this.getContext().startActivity(intent);
+                }
             }
         });
     }

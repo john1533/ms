@@ -16,7 +16,7 @@ public class SelectBoardFragmentActivity extends PopComponentActivity implements
     protected void initDatas() {
         super.initDatas();
         this.boardList = (List) getIntent().getSerializableExtra(IntentConstant.INTENT_BOARDLIST);
-        this.boardId = getIntent().getLongExtra("boardId", 0);
+        this.boardId = getIntent().getLongExtra("boardId", 3);
     }
 
     protected Fragment initContentFragment() {

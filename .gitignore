@@ -3,6 +3,6 @@
 /.idea
 /build
 /gradle
-/discuz.iml
+/ms.iml
 gradlew
 gradlew.bat

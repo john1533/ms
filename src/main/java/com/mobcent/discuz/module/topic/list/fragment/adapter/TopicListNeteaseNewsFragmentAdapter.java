@@ -4,11 +4,14 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.android.model.AnnoModel;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
 import com.mobcent.discuz.android.model.TopicModel;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCStringUtil;
@@ -27,7 +30,12 @@ public class TopicListNeteaseNewsFragmentAdapter extends BaseTopicListFragmentAd
         convertView = getTopicView(convertView);
         TopicListFragmentAdapterHolder holder = (TopicListFragmentAdapterHolder) convertView.getTag();
         if (this.titleLength > 0) {
-            holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+//            holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+            }else{//繁体
+                holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(MCStringUtil.subString(topicModel.getTitle(), this.titleLength)));
+            }
         }
         if (topicModel.getPicPath() == null || topicModel.getPicPath().trim().equals("") || topicModel.getPicPath().equals("null") || this.imagePosition == 0) {
             holder.getThumbnailView().setVisibility(8);

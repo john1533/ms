@@ -12,6 +12,8 @@ import android.widget.ImageView.ScaleType;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.android.model.MCShareModel;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.activity.utils.DZImageLoadUtils;
@@ -28,6 +30,7 @@ import com.mobcent.lowest.android.ui.utils.MCTouchUtil;
 import com.mobcent.lowest.android.ui.widget.scaleview.ImagePreviewHelper;
 import com.mobcent.lowest.android.ui.widget.scaleview.ImagePreviewHelper.ImageViewerListener;
 import com.mobcent.lowest.android.ui.widget.scaleview.RichImageModel;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
@@ -71,6 +74,11 @@ public class TopicListTiebaFragmentAdapter extends BaseTopicListFragmentAdapter 
         if (this.titleLength > 0) {
             holder.getTitleTextView().setVisibility(0);
             holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+            }else{//繁体
+                holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(MCStringUtil.subString(topicModel.getTitle(), this.titleLength)));
+            }
         } else {
             holder.getTitleTextView().setVisibility(8);
             holder.getTitleTextView().setText("");

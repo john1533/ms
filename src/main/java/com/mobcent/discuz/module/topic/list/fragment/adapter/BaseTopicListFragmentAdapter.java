@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.android.constant.MCShareConstant;
 import com.mobcent.android.model.MCShareModel;
 import com.mobcent.discuz.activity.WebViewFragmentActivity;
@@ -31,6 +34,7 @@ import com.mobcent.discuz.module.topic.detail.fragment.activity.TopicDetailActiv
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.AnnoListFragmentAdapterHolder;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
 import com.mobcent.lowest.android.ui.utils.MCColorUtil;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCResource;
@@ -167,7 +171,12 @@ public abstract class BaseTopicListFragmentAdapter extends BaseAdapter implement
         }
         String titleStr = signStr + topicModel.getTitle();
         int signEndPosition = signStr.length();
-        holder.getTitleTextView().setText(titleStr);
+//        holder.getTitleTextView().setText(titleStr);
+        if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+            holder.getTitleTextView().setText(MCStringUtil.subString(topicModel.getTitle(), this.titleLength));
+        }else{//繁体
+            holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(MCStringUtil.subString(topicModel.getTitle(), this.titleLength)));
+        }
         MCColorUtil.setTextViewPart(this.context, holder.getTitleTextView(), titleStr, 0, signEndPosition, "mc_forum_text6_normal_color");
         convertView.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -185,7 +194,9 @@ public abstract class BaseTopicListFragmentAdapter extends BaseAdapter implement
     private void initAnnoView(View convertView, AnnoListFragmentAdapterHolder holder) {
         holder.setTimeTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_last_update_time_text")));
         holder.setNameTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_nickname_text")));
+
         holder.setTitleTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_topic_title_text")));
+
         holder.setLineView((ImageView) convertView.findViewById(this.resource.getViewId("mc_forum_line")));
     }
 

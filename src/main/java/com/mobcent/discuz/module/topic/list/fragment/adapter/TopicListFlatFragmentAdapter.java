@@ -2,10 +2,13 @@ package com.mobcent.discuz.module.topic.list.fragment.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.android.model.AnnoModel;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
 import com.mobcent.discuz.android.model.TopicModel;
@@ -13,6 +16,7 @@ import com.mobcent.discuz.module.topic.list.fragment.activity.TopicListActivty;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
 import com.mobcent.lowest.android.ui.utils.MCColorUtil;
 import com.mobcent.lowest.android.ui.utils.MCStringBundleUtil;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import java.util.List;
@@ -78,6 +82,13 @@ public class TopicListFlatFragmentAdapter extends BaseTopicListFragmentAdapter {
         if (this.summaryLength > 0) {
             holder.getDescTextView().setVisibility(0);
             holder.getDescTextView().setText(MCStringUtil.subString(topicModel.getSubject(), this.summaryLength));
+
+            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                holder.getDescTextView().setText(MCStringUtil.subString(topicModel.getSubject(), this.summaryLength));
+            }else{//繁体
+                holder.getDescTextView().setText(ChineseHelper.convertToTraditionalChinese(MCStringUtil.subString(topicModel.getSubject(), this.summaryLength)));
+            }
+
             String Str = "";
             double distance = topicModel.getDistance();
             if (distance > 0.0d) {
@@ -96,7 +107,14 @@ public class TopicListFlatFragmentAdapter extends BaseTopicListFragmentAdapter {
         if (this.titleLength > 0) {
             titleStr = MCStringUtil.subString(signStr + topicModel.getTitle(), this.titleLength);
             int signEndPosition = signStr.length();
-            holder.getTitleTextView().setText(titleStr);
+            Log.v("RecordUtils","locale:"+ LowestManager.getInstance().getConfig().getCtr());
+//            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+//                holder.getTitleTextView().setText(titleStr);
+//            }else{//繁体
+//                Log.v("RecordUtils","title:"+ ChineseHelper.convertToTraditionalChinese(titleStr));
+//                holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(titleStr));
+//            }
+
             MCColorUtil.setTextViewPart(this.context, holder.getTitleTextView(), titleStr, 0, signEndPosition, "mc_forum_text6_normal_color");
         } else {
             holder.getTitleTextView().setText("");
@@ -124,6 +142,8 @@ public class TopicListFlatFragmentAdapter extends BaseTopicListFragmentAdapter {
         holder.setThumbnailView((ImageView) convertView.findViewById(this.resource.getViewId("mc_forum_thumbnail_img")));
         holder.setTimeTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_last_update_time_text")));
         holder.setNameTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_nickname_text")));
+
+
         holder.setTitleTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_topic_title_text")));
         holder.setReplyTextView((TextView) convertView.findViewById(this.resource.getViewId("mc_forum_reply_comments_text")));
         holder.setReplyButton((ImageView) convertView.findViewById(this.resource.getViewId("mc_forum_comments_img")));

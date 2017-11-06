@@ -27,6 +27,8 @@ public abstract class LowestConfig implements PlazaDelegate, GameDelegate, Weath
 
     public abstract long getUserId();
 
+    public abstract String getCtr() ;
+
     public String getBdMapAk() {
         return "9R8TDPD4PupIx0OQFlx2MQgs";
     }

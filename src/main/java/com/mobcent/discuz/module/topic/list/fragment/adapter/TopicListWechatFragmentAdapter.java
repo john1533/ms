@@ -7,6 +7,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.activity.view.MomentsView;
 import com.mobcent.discuz.android.model.AnnoModel;
 import com.mobcent.discuz.android.model.BaseResultModel;
@@ -17,6 +19,7 @@ import com.mobcent.discuz.base.task.BaseRequestCallback;
 import com.mobcent.discuz.base.task.SupportAsyncTask;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
 import com.mobcent.lowest.android.ui.utils.MCTouchUtil;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCListUtils;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
@@ -64,7 +67,13 @@ public class TopicListWechatFragmentAdapter extends BaseTopicListFragmentAdapter
             holder.getTitleTextView().setVisibility(8);
         } else {
             holder.getTitleTextView().setVisibility(0);
-            holder.getTitleTextView().setText(MCStringUtil.subString(data.getTitle(), this.titleLength));
+//            holder.getTitleTextView().setText(MCStringUtil.subString(data.getTitle(), this.titleLength));
+            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                holder.getTitleTextView().setText((MCStringUtil.subString(data.getTitle(), this.titleLength)));
+            }else{//繁体
+                holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese((MCStringUtil.subString(data.getTitle(), this.titleLength))));
+            }
+
         }
         if (data.getLastReplyDate() >= 0) {
             holder.getTimeTextView().setText(MCDateUtil.getFormatTimeByWord(this.resource, data.getLastReplyDate(), "yyyy-MM-dd HH:mm"));

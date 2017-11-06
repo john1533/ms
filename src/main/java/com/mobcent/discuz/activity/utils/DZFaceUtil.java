@@ -12,8 +12,11 @@ import android.text.style.ImageSpan;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.android.util.DZFaceLoaderUtils;
 import com.mobcent.discuz.android.util.DZFaceLoaderUtils.BitmapImageCallback;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import java.util.ArrayList;
@@ -165,16 +168,21 @@ public class DZFaceUtil {
         return str.substring(str.indexOf("=") + 1, str.indexOf("]"));
     }
 
-    public static void setStrToFace(TextView tv, String text, Context context) {
+    public static void setStrToFace(TextView tv, String orgText, Context context) {
         try {
             LinkedHashMap<String, Integer> faceMap = getFaceConstant(context).getAllFaceMap();
             LinkedHashMap<String, String> dzfaceMap = new LinkedHashMap();
             int index = 0;
             boolean isHavaLeftFace = false;
-            if (!MCStringUtil.isEmpty(text)) {
+            if (!MCStringUtil.isEmpty(orgText)) {
                 int i;
                 char charText;
                 String faceStr;
+                String text = orgText;
+                if(!"CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                    text =  ChineseHelper.convertToTraditionalChinese(orgText);
+                }
+
                 for (i = 0; i < text.length(); i++) {
                     charText = text.charAt(i);
                     if (charText == '[') {

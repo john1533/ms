@@ -8,6 +8,8 @@ import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.android.model.BaseResultModel;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
@@ -17,6 +19,7 @@ import com.mobcent.discuz.base.task.BaseRequestCallback;
 import com.mobcent.discuz.base.task.SupportAsyncTask;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
 import com.mobcent.lowest.android.ui.utils.MCTouchUtil;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.model.BaseFallWallModel;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
@@ -40,6 +43,11 @@ public class PhotoList1FragementAdapter extends BasePhotoListFragmentAdapter {
         convertView.setTag(holder);
         setTextViewData(holder.getReplyTextView(), model.getReplies());
         holder.getTitleTextView().setText(model.getTitle());
+        if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+            holder.getTitleTextView().setText(model.getTitle());
+        }else{//繁体
+            holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(model.getTitle()));
+        }
         holder.getTimeTextView().setText(MCDateUtil.getFormatTimeExceptHourAndSecond(model.getLastReplyDate()));
         holder.getThumbnailView().setTag(MCAsyncTaskLoaderImage.formatUrl(model.getPicPath(), FinalConstant.RESOLUTION_SMALL));
         holder.getPraiseButton().setBackgroundResource(this.resource.getDrawableId("mc_forum_ico50_n"));

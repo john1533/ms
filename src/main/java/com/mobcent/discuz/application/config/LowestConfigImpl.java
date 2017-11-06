@@ -22,14 +22,17 @@ import com.mobcent.lowest.module.plaza.model.PlazaAppModel;
 import com.mobcent.lowest.module.plaza.model.SearchModel;
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.Locale;
 
 public class LowestConfigImpl extends LowestConfig implements PlazaConstant {
     private Context context;
     private SharedPreferencesDB db;
+    private String ctr;
 
     public LowestConfigImpl(Context context) {
         this.context = context.getApplicationContext();
         db = SharedPreferencesDB.getInstance(this.context);
+        ctr = Locale.getDefault().getCountry();
     }
 
     public void onAppItemClick(Context context, PlazaAppModel paAppModel) {
@@ -139,5 +142,9 @@ public class LowestConfigImpl extends LowestConfig implements PlazaConstant {
 
     public long getUserId() {
         return this.db.getUserId();
+    }
+//CN,HK,MO 澳门;TW
+    public String getCtr() {
+        return ctr;
     }
 }

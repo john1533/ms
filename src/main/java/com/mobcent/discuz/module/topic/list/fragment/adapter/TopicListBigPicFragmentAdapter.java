@@ -10,6 +10,8 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.activity.view.MCHeadIcon;
 import com.mobcent.discuz.android.model.AnnoModel;
@@ -20,6 +22,7 @@ import com.mobcent.discuz.base.helper.LoginHelper;
 import com.mobcent.discuz.base.task.BaseRequestCallback;
 import com.mobcent.discuz.base.task.SupportAsyncTask;
 import com.mobcent.discuz.module.topic.list.fragment.adapter.holder.TopicListFragmentAdapterHolder;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
@@ -59,7 +62,14 @@ public class TopicListBigPicFragmentAdapter extends BaseTopicListFragmentAdapter
             holder.getTitleTextView().setVisibility(8);
         } else {
             holder.getTitleTextView().setVisibility(0);
-            holder.getTitleTextView().setText(MCStringUtil.subString(data.getTitle(), this.titleLength));
+//            holder.getTitleTextView().setText(MCStringUtil.subString(data.getTitle(), this.titleLength));
+
+            if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                holder.getTitleTextView().setText(MCStringUtil.subString(data.getTitle(), this.titleLength));
+            }else{//繁体
+                holder.getTitleTextView().setText(ChineseHelper.convertToTraditionalChinese(MCStringUtil.subString(data.getTitle(), this.titleLength)));
+            }
+
         }
         if (MCStringUtil.isEmpty(data.getPicPath())) {
             ((ImageView) holder.getThumbnailView()).setImageBitmap(null);

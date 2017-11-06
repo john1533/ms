@@ -17,6 +17,8 @@ import android.view.View.OnLongClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView.BufferType;
+
+import com.github.stuxuhai.jpinyin.ChineseHelper;
 import com.mobcent.android.model.MCShareModel;
 import com.mobcent.discuz.activity.WebViewFragmentActivity;
 import com.mobcent.discuz.activity.constant.FinalConstant;
@@ -38,6 +40,7 @@ import com.mobcent.lowest.android.ui.utils.MCTouchUtil;
 import com.mobcent.lowest.android.ui.widget.scaleview.ImagePreviewHelper;
 import com.mobcent.lowest.android.ui.widget.scaleview.ImagePreviewHelper.ImageViewerListener;
 import com.mobcent.lowest.android.ui.widget.scaleview.RichImageModel;
+import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCAsyncTaskLoaderImage;
 import com.mobcent.lowest.base.utils.MCDateUtil;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
@@ -98,7 +101,12 @@ public class TopicDetail1FragmentAdapter extends TopicDetailGroupAdapter {
         } else {
             holder.getTopImg().setVisibility(8);
         }
-        holder.getTitleText().setText(postsModel.getTitle());
+
+        if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+            holder.getTitleText().setText(postsModel.getTitle());
+        }else{//繁体
+            holder.getTitleText().setText(ChineseHelper.convertToTraditionalChinese(postsModel.getTitle()));
+        }
         holder.getReplyCountText().setText(postsModel.getReplies() + "");
         holder.getScanCountText().setText(postsModel.getHits() + "");
         holder.getTimeText().setText(MCDateUtil.getFormatTimeByWord(this.resource, postsModel.getCreateDate(), "yyyy-MM-dd HH:mm"));
@@ -254,7 +262,11 @@ public class TopicDetail1FragmentAdapter extends TopicDetailGroupAdapter {
                     holder.getTextView().setText("");
                     return;
                 }
-                holder.getTextView().setText(contentModel.getInfor());
+                if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                    holder.getTextView().setText(contentModel.getInfor());
+                }else{//繁体
+                    holder.getTextView().setText(ChineseHelper.convertToTraditionalChinese(contentModel.getInfor()));
+                }
                 DZFaceUtil.setStrToFace(holder.getTextView(), contentModel.getInfor(), this.context.getApplicationContext());
                 if (VERSION.SDK_INT >= 16) {
                     holder.getTextView().setTextIsSelectable(true);
@@ -375,11 +387,19 @@ public class TopicDetail1FragmentAdapter extends TopicDetailGroupAdapter {
                     return;
                 }
                 try {
-                    sp = new SpannableString(contentModel.getInfor());
+                    if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                        sp = new SpannableString(contentModel.getInfor());
+                    }else{//繁体
+                        sp = new SpannableString(ChineseHelper.convertToTraditionalChinese(contentModel.getInfor()));
+                    }
+//                    sp = new SpannableString(contentModel.getInfor());
                     if (contentModel.getUrl() != null && MCStringUtil.isUrl(contentModel.getUrl())) {
                         sp.setSpan(new URLSpan(contentModel.getUrl().toString()), 0, contentModel.getInfor().length(), 33);
                     }
                     holder.getTextView().setText(sp);
+
+
+
                 } catch (Exception e) {
                 }
                 topicContentModel = contentModel;
@@ -397,7 +417,12 @@ public class TopicDetail1FragmentAdapter extends TopicDetailGroupAdapter {
                     return;
                 }
                 try {
-                    sp = new SpannableString(contentModel.getInfor());
+                    if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                        sp = new SpannableString(contentModel.getInfor());
+                    }else{//繁体
+                        sp = new SpannableString(ChineseHelper.convertToTraditionalChinese(contentModel.getInfor()));
+                    }
+//                    sp = new SpannableString(contentModel.getInfor());
                     if (contentModel.getUrl() != null && MCStringUtil.isUrl(contentModel.getUrl())) {
                         sp.setSpan(new URLSpan(contentModel.getUrl().toString()), 0, contentModel.getInfor().length(), 33);
                     }
@@ -405,7 +430,13 @@ public class TopicDetail1FragmentAdapter extends TopicDetailGroupAdapter {
                 } catch (Exception e2) {
                 }
                 if (!MCStringUtil.isEmpty(contentModel.getDesc())) {
-                    holder.getTextView().append(contentModel.getDesc());
+                    if("CN".equalsIgnoreCase(LowestManager.getInstance().getConfig().getCtr())){
+                        holder.getTextView().append(contentModel.getDesc());
+                    }else{//繁体
+                        holder.getTextView().append(ChineseHelper.convertToTraditionalChinese(contentModel.getDesc()));
+                        sp = new SpannableString(ChineseHelper.convertToTraditionalChinese(contentModel.getInfor()));
+                    }
+//                    holder.getTextView().append(contentModel.getDesc());
                 }
                 topicContentModel = contentModel;
                 holder.getTextView().setOnClickListener(new OnClickListener() {

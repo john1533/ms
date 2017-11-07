@@ -15,11 +15,8 @@ import android.view.ViewGroup;
 import android.webkit.GeolocationPermissions.Callback;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
-import android.webkit.WebChromeClient.CustomViewCallback;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.module.place.api.constant.BasePlaceApiConstant;
 import java.io.File;
@@ -151,7 +148,6 @@ public class MCWebChromeClient extends WebChromeClient {
                     this.mUploadMsg = null;
                     return;
                 }
-                Toast.makeText(this.activity.getApplicationContext(), "choose img error", LocationClientOption.MIN_SCAN_SPAN).show();
             }
         }
     }

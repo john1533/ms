@@ -1,11 +1,8 @@
 package com.mobcent.discuz.base.helper;
 
 import android.content.Context;
-import com.baidu.location.BDLocation;
-import com.mobcent.discuz.android.db.SharedPreferencesDB;
-import com.mobcent.discuz.android.service.impl.LocationServiceImpl;
+
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 
 public class LocationHelper {
     private static MCLocationUtil locationUtil = null;

@@ -1,6 +1,5 @@
 package com.mobcent.lowest.base.config;
 
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.base.delegate.PlazaDelegate;
 import com.mobcent.lowest.module.game.config.GameConfig.GameDelegate;
 import com.mobcent.lowest.module.weather.config.WeatherConfig;
@@ -21,7 +20,6 @@ public abstract class LowestConfig implements PlazaDelegate, GameDelegate, Weath
 
     public abstract String getForumKey();
 
-    public abstract BDLocation getLocation();
 
     public abstract String getSDKVersion();
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,14 +12,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.activity.view.MCHeaderSearchView;
 import com.mobcent.discuz.activity.view.MCHeaderSearchView.OnSearchClickListener;
 import com.mobcent.discuz.android.constant.PostsConstant;
 import com.mobcent.discuz.android.constant.StyleConstant;
 import com.mobcent.discuz.android.db.SettingSharePreference;
-import com.mobcent.discuz.android.db.SharedPreferencesDB;
 import com.mobcent.discuz.android.model.BaseResultModel;
 import com.mobcent.discuz.android.model.BaseResultTopicModel;
 import com.mobcent.discuz.android.model.BoardChild;
@@ -36,7 +33,6 @@ import com.mobcent.discuz.module.topic.list.fragment.adapter.TopicListTiebaFragm
 import com.mobcent.discuz.module.topic.list.fragment.adapter.TopicListWechatFragmentAdapter;
 import com.mobcent.lowest.android.ui.widget.PullToRefreshListView;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.base.utils.MCToastUtils;
@@ -187,17 +183,7 @@ public class TopicListFragment extends BaseTopicListFragment implements FinalCon
 
     private void initLocationUtil(Context context) {
         this.locationUtil = MCLocationUtil.getInstance(context);
-        this.locationUtil.requestLocation(new LocationDelegate() {
-            public void onReceiveLocation(final BDLocation locationModel) {
-                TopicListFragment.this.mHandler.post(new Runnable() {
-                    public void run() {
-                        if (locationModel != null) {
-                            TopicListFragment.this.sharedPreferencesDB.saveLocation(locationModel);
-                        }
-                    }
-                });
-            }
-        });
+
     }
 
     protected BaseResultModel<List<TopicModel>> getLoadDate() {
@@ -206,10 +192,10 @@ public class TopicListFragment extends BaseTopicListFragment implements FinalCon
             if (!new SettingSharePreference(this.activity.getApplicationContext()).isLocationOpen(this.sharedPreferencesDB.getUserId())) {
                 return null;
             }
-            BDLocation location = SharedPreferencesDB.getInstance(this.activity.getApplicationContext()).getLocation();
-            if (location != null) {
-                return this.postsService.getSurroundtopicList(this.page, this.pageSize, Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), "topic");
-            }
+//            BDLocation location = SharedPreferencesDB.getInstance(this.activity.getApplicationContext()).getLocation();
+//            if (location != null) {
+//                return this.postsService.getSurroundtopicList(this.page, this.pageSize, Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), "topic");
+//            }
             return null;
         } else if (this.topicType.equals("search")) {
             return this.postsService.getSearchTopicList(this.page, this.pageSize, this.keywordStr, this.searchId);

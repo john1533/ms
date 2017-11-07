@@ -1,9 +1,7 @@
 package com.mobcent.lowest.module.place.helper;
 
 import android.content.Context;
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.module.place.delegate.QueryAreaDelegate;
 import com.mobcent.lowest.module.place.model.AreaModel;
@@ -18,7 +16,6 @@ public class PlaceLocationHelper {
     private String areaCode = "";
     private Map<String, AreaModel> areaMap = new HashMap();
     private AreaModel areaModel = null;
-    private BDLocation bdLocation;
     private long lastTime = 0;
     private MCLocationUtil locationUtil = null;
     private QueryAreaTask queryAreaTask = null;
@@ -30,28 +27,7 @@ public class PlaceLocationHelper {
         return helper;
     }
 
-    public void getCurrentLocation(Context context, boolean openGps, final LocationDelegate locationDelegate) {
-        if (this.lastTime == 0 || System.currentTimeMillis() - this.lastTime >= this.TIME_OUT || this.bdLocation == null) {
-            this.locationUtil = MCLocationUtil.getInstance(context.getApplicationContext());
-            this.locationUtil.requestLocation(new LocationDelegate() {
-                public void onReceiveLocation(BDLocation locationModel) {
-                    BDLocation locationTemp;
-                    if (locationModel == null) {
-                        locationTemp = PlaceLocationHelper.this.bdLocation;
-                    } else {
-                        locationTemp = locationModel;
-                        PlaceLocationHelper.this.bdLocation = locationModel;
-                        PlaceLocationHelper.this.lastTime = System.currentTimeMillis();
-                    }
-                    if (locationDelegate != null) {
-                        locationDelegate.onReceiveLocation(locationTemp);
-                    }
-                }
-            });
-        } else if (locationDelegate != null) {
-            locationDelegate.onReceiveLocation(this.bdLocation);
-        }
-    }
+
 
     public void queryAreaByAreaCode(Context context, final String areaCode, final QueryAreaDelegate delegate) {
         if (!(this.queryAreaTask == null || this.queryAreaTask.isCancelled())) {

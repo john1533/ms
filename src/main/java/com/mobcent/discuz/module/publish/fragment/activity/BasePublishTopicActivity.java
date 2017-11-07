@@ -16,20 +16,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.activity.constant.IntentConstant;
 import com.mobcent.discuz.android.db.SettingSharePreference;
 import com.mobcent.discuz.android.db.SharedPreferencesDB;
@@ -45,17 +38,11 @@ import com.mobcent.discuz.android.service.PostsService;
 import com.mobcent.discuz.android.service.impl.DraftServiceImpl;
 import com.mobcent.discuz.android.service.impl.PostsServiceImpl;
 import com.mobcent.discuz.android.util.DZPoiUtil;
-import com.mobcent.discuz.android.util.DZPoiUtil.PoiDelegate;
 import com.mobcent.discuz.base.activity.BaseFragmentActivity;
 import com.mobcent.discuz.base.constant.BaseIntentConstant;
 import com.mobcent.discuz.base.widget.MCEditText;
 import com.mobcent.discuz.module.publish.adapter.PublishTopicTypeListAdapter;
-import com.mobcent.discuz.module.publish.delegate.PoiItemDelegate;
-import com.mobcent.discuz.module.publish.delegate.PoiItemDelegate.ClickPoiItemLisenter;
 import com.mobcent.lowest.base.utils.MCListUtils;
-import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
-import com.mobcent.lowest.base.utils.MCToastUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -88,14 +75,14 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
     protected boolean isLocationSucc = false;
     protected int isOnlytTopicType;
     protected boolean isSave = false;
-    protected double latitude;
-    protected LinearLayout locationBox;
-    protected boolean locationComplete = false;
-    protected String locationStr;
-    protected TextView locationText;
-    private MCLocationUtil locationUtil;
-    protected ImageView loctionImg;
-    protected double longitude;
+//    protected double latitude;
+//    protected LinearLayout locationBox;
+//    protected boolean locationComplete = false;
+//    protected String locationStr;
+//    protected TextView locationText;
+//    private MCLocationUtil locationUtil;
+//    protected ImageView loctionImg;
+//    protected double longitude;
     private Handler mHandler = new Handler();
     protected PermissionModel permissionModelPostInfo;
     protected Map<String, PictureModel> picMap;
@@ -177,15 +164,15 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
         this.contentEdText = (MCEditText) findViewByName("mc_forum_content_edit");
         this.typeListView = (ListView) findViewByName("mc_forum_board_lv");
         this.contentLayout = (LinearLayout) findViewByName("mc_forum_top_content_box");
-        this.locationBox = (LinearLayout) findViewByName("mc_forum_location_box");
-        this.loctionImg = (ImageView) findViewByName("mc_forum_location_img");
-        this.locationText = (TextView) findViewByName("mc_forum_loction_text");
+//        this.locationBox = (LinearLayout) findViewByName("mc_forum_location_box");
+//        this.loctionImg = (ImageView) findViewByName("mc_forum_location_img");
+//        this.locationText = (TextView) findViewByName("mc_forum_loction_text");
         this.bottomBarBox = (LinearLayout) findViewByName("mc_forum_bottom_bar_box");
-        initLocalLocation();
-        if (!new SettingSharePreference(getApplicationContext()).isLocationOpen(this.sharedPreferencesDB.getUserId())) {
-            this.locationComplete = true;
-            this.locationBox.setVisibility(8);
-        }
+//        initLocalLocation();
+//        if (!new SettingSharePreference(getApplicationContext()).isLocationOpen(this.sharedPreferencesDB.getUserId())) {
+//            this.locationComplete = true;
+//            this.locationBox.setVisibility(8);
+//        }
         if (this.boardId <= 0 || this.topicDraftModel != null) {
             this.boradText.setText(this.boardName);
         } else {
@@ -223,7 +210,7 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
             this.requireLocation = 0;
             return;
         }
-        getLocation();
+//        getLocation();
         this.requireLocation = 1;
 
 
@@ -306,30 +293,30 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
                 }
             }
         });
-        this.locationBox.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                if (new SettingSharePreference(BasePublishTopicActivity.this.getApplicationContext()).isLocationOpen(BasePublishTopicActivity.this.sharedPreferencesDB.getUserId())) {
-                    BasePublishTopicActivity.this.getLocation();
-                } else {
-                    MCToastUtils.toastByResName(BasePublishTopicActivity.this.getApplicationContext(), "mc_forum_location_setting_flag", 1);
-                }
-            }
-        });
-        this.locationBox.setOnLongClickListener(new OnLongClickListener() {
-            public boolean onLongClick(View v) {
-                BasePublishTopicActivity.this.loctionImg.setImageResource(BasePublishTopicActivity.this.resource.getDrawableId("mc_forum_publish_icons4_n"));
-                BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.resource.getString("mc_forum_rapid_publish_show_location"));
-                BasePublishTopicActivity.this.requireLocation = 0;
-                return true;
-            }
-        });
-        PoiItemDelegate.getInstance().setClickPoiItemLisenter(new ClickPoiItemLisenter() {
-            public void clickItem(String poi) {
-                BasePublishTopicActivity.this.locationStr += poi;
-                BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.locationStr);
-                BasePublishTopicActivity.this.loctionImg.setImageResource(BasePublishTopicActivity.this.resource.getDrawableId("mc_forum_publish_icons4_h"));
-            }
-        });
+//        this.locationBox.setOnClickListener(new OnClickListener() {
+//            public void onClick(View v) {
+//                if (new SettingSharePreference(BasePublishTopicActivity.this.getApplicationContext()).isLocationOpen(BasePublishTopicActivity.this.sharedPreferencesDB.getUserId())) {
+//                    BasePublishTopicActivity.this.getLocation();
+//                } else {
+//                    MCToastUtils.toastByResName(BasePublishTopicActivity.this.getApplicationContext(), "mc_forum_location_setting_flag", 1);
+//                }
+//            }
+//        });
+//        this.locationBox.setOnLongClickListener(new OnLongClickListener() {
+//            public boolean onLongClick(View v) {
+//                BasePublishTopicActivity.this.loctionImg.setImageResource(BasePublishTopicActivity.this.resource.getDrawableId("mc_forum_publish_icons4_n"));
+//                BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.resource.getString("mc_forum_rapid_publish_show_location"));
+//                BasePublishTopicActivity.this.requireLocation = 0;
+//                return true;
+//            }
+//        });
+//        PoiItemDelegate.getInstance().setClickPoiItemLisenter(new ClickPoiItemLisenter() {
+//            public void clickItem(String poi) {
+//                BasePublishTopicActivity.this.locationStr += poi;
+//                BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.locationStr);
+//                BasePublishTopicActivity.this.loctionImg.setImageResource(BasePublishTopicActivity.this.resource.getDrawableId("mc_forum_publish_icons4_h"));
+//            }
+//        });
     }
 
     public void updateTypeView(ClassifyTypeModel model) {
@@ -353,70 +340,70 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
         }
     }
 
-    protected void getLocation() {
-        if (this.requireLocation == 1) {
-            this.locationComplete = true;
-            this.loctionImg.setImageResource(this.resource.getDrawableId("mc_forum_publish_icons4_n"));
-            if (this.isLocationSucc && this.pois != null && !this.pois.isEmpty()) {
-                Intent intent = new Intent(getApplicationContext(), PoiFragmentAcitvity.class);
-                intent.putExtra(PoiFragmentAcitvity.POI_LIST, (ArrayList) this.pois);
-                startActivity(intent);
-                return;
-            }
-            return;
-        }
-        this.loctionImg.setImageResource(this.resource.getDrawableId("mc_forum_publish_icons4_h"));
-        this.requireLocation = 1;
-        this.locationText.setText(getResources().getString(this.resource.getStringId("mc_forum_obtain_location_info_warn")));
-        if (this.locationUtil.getLocationClient() == null) {
-            this.locationText.setText(getResources().getString(this.resource.getStringId("mc_forum_location_fail_warn")));
-            return;
-        }
-        this.locationComplete = false;
-        this.locationUtil.requestLocation(new LocationDelegate() {
-            public void onReceiveLocation(final BDLocation locationModel) {
-                BasePublishTopicActivity.this.mHandler.post(new Runnable() {
-                    public void run() {
-                        if (locationModel != null) {
-                            BasePublishTopicActivity.this.longitude = locationModel.getLongitude();
-                            BasePublishTopicActivity.this.latitude = locationModel.getLatitude();
-                            BasePublishTopicActivity.this.baseLocationStr = locationModel.getCity() + locationModel.getDistrict() + locationModel.getStreet();
-                            BasePublishTopicActivity.this.locationStr = BasePublishTopicActivity.this.baseLocationStr;
-                            BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.locationStr);
-                            BasePublishTopicActivity.this.isLocationSucc = true;
-                            BasePublishTopicActivity.this.locationComplete = true;
-                            BasePublishTopicActivity.this.sharedPreferencesDB.saveLocation(locationModel);
-                            return;
-                        }
-                        BasePublishTopicActivity.this.locationComplete = true;
-                        BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.getResources().getString(BasePublishTopicActivity.this.resource.getStringId("mc_forum_location_fail_warn")));
-                    }
-                });
-            }
-        });
-        this.poiUtil.requestPoi(new PoiDelegate() {
-            public void onReceivePoi(List<String> poi) {
-                if (poi != null && !poi.isEmpty()) {
-                    BasePublishTopicActivity.this.pois.clear();
-                    if (poi != null && !poi.isEmpty()) {
-                        BasePublishTopicActivity.this.pois.addAll(poi);
-                    }
-                }
-            }
-        });
-    }
+//    protected void getLocation() {
+//        if (this.requireLocation == 1) {
+//            this.locationComplete = true;
+//            this.loctionImg.setImageResource(this.resource.getDrawableId("mc_forum_publish_icons4_n"));
+//            if (this.isLocationSucc && this.pois != null && !this.pois.isEmpty()) {
+//                Intent intent = new Intent(getApplicationContext(), PoiFragmentAcitvity.class);
+//                intent.putExtra(PoiFragmentAcitvity.POI_LIST, (ArrayList) this.pois);
+//                startActivity(intent);
+//                return;
+//            }
+//            return;
+//        }
+//        this.loctionImg.setImageResource(this.resource.getDrawableId("mc_forum_publish_icons4_h"));
+//        this.requireLocation = 1;
+//        this.locationText.setText(getResources().getString(this.resource.getStringId("mc_forum_obtain_location_info_warn")));
+//        if (this.locationUtil.getLocationClient() == null) {
+//            this.locationText.setText(getResources().getString(this.resource.getStringId("mc_forum_location_fail_warn")));
+//            return;
+//        }
+//        this.locationComplete = false;
+//        this.locationUtil.requestLocation(new LocationDelegate() {
+//            public void onReceiveLocation(final BDLocation locationModel) {
+//                BasePublishTopicActivity.this.mHandler.post(new Runnable() {
+//                    public void run() {
+//                        if (locationModel != null) {
+//                            BasePublishTopicActivity.this.longitude = locationModel.getLongitude();
+//                            BasePublishTopicActivity.this.latitude = locationModel.getLatitude();
+//                            BasePublishTopicActivity.this.baseLocationStr = locationModel.getCity() + locationModel.getDistrict() + locationModel.getStreet();
+//                            BasePublishTopicActivity.this.locationStr = BasePublishTopicActivity.this.baseLocationStr;
+//                            BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.locationStr);
+//                            BasePublishTopicActivity.this.isLocationSucc = true;
+//                            BasePublishTopicActivity.this.locationComplete = true;
+//                            BasePublishTopicActivity.this.sharedPreferencesDB.saveLocation(locationModel);
+//                            return;
+//                        }
+//                        BasePublishTopicActivity.this.locationComplete = true;
+//                        BasePublishTopicActivity.this.locationText.setText(BasePublishTopicActivity.this.getResources().getString(BasePublishTopicActivity.this.resource.getStringId("mc_forum_location_fail_warn")));
+//                    }
+//                });
+//            }
+//        });
+//        this.poiUtil.requestPoi(new PoiDelegate() {
+//            public void onReceivePoi(List<String> poi) {
+//                if (poi != null && !poi.isEmpty()) {
+//                    BasePublishTopicActivity.this.pois.clear();
+//                    if (poi != null && !poi.isEmpty()) {
+//                        BasePublishTopicActivity.this.pois.addAll(poi);
+//                    }
+//                }
+//            }
+//        });
+//    }
 
-    private void initLocalLocation() {
-        this.locationUtil = MCLocationUtil.getInstance(this);
-        this.poiUtil = DZPoiUtil.getInstance(getApplicationContext());
-        BDLocation locationModel = this.locationUtil.getCacheLocation();
-        if (locationModel != null) {
-            this.longitude = locationModel.getLongitude();
-            this.latitude = locationModel.getLatitude();
-            this.locationStr = locationModel.getAddrStr();
-            this.locationComplete = true;
-        }
-    }
+//    private void initLocalLocation() {
+//        this.locationUtil = MCLocationUtil.getInstance(this);
+//        this.poiUtil = DZPoiUtil.getInstance(getApplicationContext());
+//        BDLocation locationModel = this.locationUtil.getCacheLocation();
+//        if (locationModel != null) {
+//            this.longitude = locationModel.getLongitude();
+//            this.latitude = locationModel.getLatitude();
+//            this.locationStr = locationModel.getAddrStr();
+//            this.locationComplete = true;
+//        }
+//    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -512,7 +499,7 @@ public class BasePublishTopicActivity extends BaseFragmentActivity implements In
             draft.setTypeList(this.typeList);
         }
         draft.setTypeId((long) this.classificationTypeId);
-        draft.setLocation(this.locationStr);
+//        draft.setLocation(this.locationStr);
         return draft;
     }
 

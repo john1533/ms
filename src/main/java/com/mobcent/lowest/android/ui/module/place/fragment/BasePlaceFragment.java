@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.base.utils.MCResource;
 
 public abstract class BasePlaceFragment extends Fragment {
@@ -55,6 +54,6 @@ public abstract class BasePlaceFragment extends Fragment {
     }
 
     protected void warn(String name) {
-        Toast.makeText(this.context, this.resource.getStringId(name), LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(this.context, this.resource.getStringId(name), 1000).show();
     }
 }

@@ -10,15 +10,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.baidu.location.BDLocation;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.module.place.module.around.activity.AroundListActivity;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCLogUtil;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.base.utils.MCResource;
-import com.mobcent.lowest.module.place.helper.PlaceLocationHelper;
 import com.mobcent.lowest.module.place.model.PlaceHotNavModel;
 import com.mobcent.lowest.module.place.model.PlaceHotSubModel;
 import com.mobcent.lowest.module.place.model.PlaceLocationIntentModel;
@@ -38,20 +33,7 @@ public class HotwordsWidgetHelper {
             if (HotwordsWidgetHelper.this.locationModel != null) {
                 HotwordsWidgetHelper.this.goToAroundList(v, HotwordsWidgetHelper.this.locationModel);
             } else {
-                PlaceLocationHelper.getInastance().getCurrentLocation(HotwordsWidgetHelper.this.context, false, new LocationDelegate() {
-                    public void onReceiveLocation(BDLocation location) {
-                        if (location == null || location.getCity() == null || location.getCityCode() == null) {
-                            Toast.makeText(v.getContext(), HotwordsWidgetHelper.this.resource.getStringId("mc_place_get_location_error"), LocationClientOption.MIN_SCAN_SPAN).show();
-                            return;
-                        }
-                        PlacePoiLocationModel locationModel = new PlacePoiLocationModel();
-                        locationModel.setLat(location.getLatitude());
-                        locationModel.setLng(location.getLongitude());
-                        locationModel.setCity(location.getCity());
-                        locationModel.setAreaCode(location.getCityCode());
-                        HotwordsWidgetHelper.this.goToAroundList(v, locationModel);
-                    }
-                });
+
             }
         }
     };

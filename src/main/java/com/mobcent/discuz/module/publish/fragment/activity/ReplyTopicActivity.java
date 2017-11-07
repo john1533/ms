@@ -29,10 +29,8 @@ public class ReplyTopicActivity extends PublishTopicActivity {
 
         protected BaseResultModel<Object> doInBackground(Object... params) {
             String rContent = (String)params[0];
-            if (ReplyTopicActivity.this.requireLocation == 0) {
-                ReplyTopicActivity.this.locationStr = "";
-            }
-            return ReplyTopicActivity.this.postsService.publishTopic(ReplyTopicActivity.this.postsService.createReplyJson(ReplyTopicActivity.this.boardId, ReplyTopicActivity.this.topicId, rContent, ReplyTopicActivity.this.toReplyId, ReplyTopicActivity.this.isQuote, ReplyTopicActivity.this.longitude, ReplyTopicActivity.this.latitude, ReplyTopicActivity.this.locationStr, 1, ReplyTopicActivity.this.getAid(), ReplyTopicActivity.this.isCheckedPermissionModel), "reply");
+
+            return ReplyTopicActivity.this.postsService.publishTopic(ReplyTopicActivity.this.postsService.createReplyJson(ReplyTopicActivity.this.boardId, ReplyTopicActivity.this.topicId, rContent, ReplyTopicActivity.this.toReplyId, ReplyTopicActivity.this.isQuote, 0,0,"", 1, ReplyTopicActivity.this.getAid(), ReplyTopicActivity.this.isCheckedPermissionModel), "reply");
         }
 
         protected void onPostExecute(BaseResultModel<Object> result) {
@@ -49,7 +47,7 @@ public class ReplyTopicActivity extends PublishTopicActivity {
                 model.setReplyType(PostsConstant.TOPIC_TYPE_NORMAL);
                 model.setPostsDate(System.currentTimeMillis());
                 model.setPosition(-1);
-                model.setLocation(ReplyTopicActivity.this.locationStr);
+                model.setLocation("");
                 model.setReplyContent(ReplyTopicActivity.this.postsService.createContentList(ReplyTopicActivity.this.contentEdText.getText().toString(), "ß", "á", ReplyTopicActivity.this.mentionedFriends, ReplyTopicActivity.this.audioPath, null));
                 if (ReplyTopicActivity.getReplyRetrunDelegate() != null) {
                     ReplyTopicActivity.replyRetrunDelegate.replyReturn();

@@ -8,14 +8,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.android.ui.module.weather.activity.WeatherActivity;
 import com.mobcent.lowest.android.ui.module.weather.delegate.WeatherTaskDelegate;
 import com.mobcent.lowest.android.ui.module.weather.observer.WeatherObserver;
 import com.mobcent.lowest.android.ui.module.weather.task.WeatherDataTask;
 import com.mobcent.lowest.android.ui.utils.MCWeatherUtil;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.module.weather.db.WeatherSharedPreferencesDB;
@@ -82,16 +80,7 @@ public class WeatherWidgetHelper {
             cityModel = WeatherSharedPreferencesDB.getInstance(context.getApplicationContext()).getCityModel();
         }
         if (cityModel == null) {
-            MCLocationUtil.getInstance(context.getApplicationContext()).requestLocation(new LocationDelegate() {
-                public void onReceiveLocation(BDLocation location) {
-                    CityModel cityModel = new CityModel();
-                    if (location != null && !MCStringUtil.isEmpty(location.getCity())) {
-                        cityModel.setLatitude(location.getLatitude());
-                        cityModel.setLongitude(location.getLongitude());
-                        new WeatherDataTask(context.getApplicationContext(), queryType, cityModel, delegate).execute(new Boolean[]{Boolean.valueOf(forceRefresh)});
-                    }
-                }
-            });
+
             return;
         }
         new WeatherDataTask(context, queryType, cityModel, delegate).execute(new Boolean[]{Boolean.valueOf(forceRefresh)});

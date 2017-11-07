@@ -35,8 +35,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.appbyme.app136419.R;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.activity.utils.DZFaceUtil;
 import com.mobcent.discuz.activity.widget.album.PhotoManageHelper;
@@ -64,7 +62,6 @@ import com.mobcent.lowest.android.ui.utils.MCTouchUtil;
 import com.mobcent.lowest.android.ui.widget.MCProgressBar;
 import com.mobcent.lowest.base.utils.MCListUtils;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCLogUtil;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.base.utils.MCStringUtil;
@@ -1064,29 +1061,7 @@ public class MCMultiBottomView extends RelativeLayout {
                     this.locationBox.setVisibility(View.VISIBLE);
                     showLoading(this.locationProgress);
                     this.locationText.setText(this.resource.getString("mc_forum_obtain_location_info_warn"));
-                    if (this.locationUtil.getLocationClient() == null) {
-                        hideLoading(this.locationProgress);
-                        this.locationText.setText(this.resource.getString("mc_forum_location_fail_warn"));
-                        return;
-                    }
-                    this.locationUtil.requestLocation(new LocationDelegate() {
-                        public void onReceiveLocation(final BDLocation location) {
-                            MCMultiBottomView.this.mHandler.post(new Runnable() {
-                                public void run() {
-                                    MCMultiBottomView.this.hideLoading(MCMultiBottomView.this.locationProgress);
-                                    if (location != null) {
-                                        MCMultiBottomView.this.longitude = location.getLongitude();
-                                        MCMultiBottomView.this.latitude = location.getLatitude();
-                                        MCMultiBottomView.this.locationStr = location.getCity() + location.getDistrict() + location.getStreet();
-                                        MCMultiBottomView.this.locationText.setText(MCMultiBottomView.this.locationStr);
-                                        SharedPreferencesDB.getInstance(MCMultiBottomView.this.context.getApplicationContext()).saveLocation(location);
-                                        return;
-                                    }
-                                    MCMultiBottomView.this.locationText.setText(MCMultiBottomView.this.resource.getString("mc_forum_location_fail_warn"));
-                                }
-                            });
-                        }
-                    });
+
                     this.poiUtil.requestPoi(new PoiDelegate() {
                         public void onReceivePoi(List<String> poi) {
                             MCMultiBottomView.this.poiList.clear();

@@ -456,10 +456,8 @@ public class PublishTopicActivity extends BasePublishTopicAudioActivity {
 
     protected void uploadAudioSucc() {
         String contentStr = this.postsService.createContentJson(this.content, "ß", "á", this.audioPath, this.uploadList);
-        if (this.requireLocation == 0) {
-            this.locationStr = "";
-        }
-        String publishJson = PostsServiceImplHelper.createPublishNormalJsonStr(getApplicationContext(), this.boardId, this.title, contentStr, this.longitude, this.latitude, this.locationStr, 1, getAid(), this.classificationTypeId, this.classificationTopId, this.isCheckedPermissionModel);
+
+        String publishJson = PostsServiceImplHelper.createPublishNormalJsonStr(getApplicationContext(), this.boardId, this.title, contentStr, 0, 0, "", 1, getAid(), this.classificationTypeId, this.classificationTopId, this.isCheckedPermissionModel);
         this.publishAsyncTask = new PublishAsyncTask(convertDraftModel());
         this.publishAsyncTask.execute(new Object[]{publishJson});
     }
@@ -602,11 +600,7 @@ public class PublishTopicActivity extends BasePublishTopicAudioActivity {
             }
             updatePicture();
         }
-        this.locationStr = draft.getLocation();
-        if (!MCStringUtil.isEmpty(this.locationStr)) {
-            this.locationText.setText(this.locationStr);
-            this.loctionImg.setImageResource(this.resource.getDrawableId("mc_forum_publish_icons4_h"));
-        }
+
         getSettingModel();
     }
 

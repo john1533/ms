@@ -8,14 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.baidu.location.LocationClientOption;
-import com.baidu.mapapi.search.MKTransitRoutePlan;
-import com.baidu.mapapi.search.MKTransitRouteResult;
 import com.mobcent.lowest.android.ui.module.place.constant.RouteConstant;
 import com.mobcent.lowest.android.ui.module.place.manager.PlaceManager;
 import com.mobcent.lowest.android.ui.module.place.module.route.activity.BusDetailActivity;
 import com.mobcent.lowest.android.ui.module.place.module.route.activity.adapter.holder.BusListAdapterHolder;
-import com.mobcent.lowest.android.ui.module.place.module.route.model.RouteModel;
 import com.mobcent.lowest.android.ui.module.place.module.route.model.RouteSearchMessageModel;
 import com.mobcent.lowest.base.utils.MCResource;
 import java.text.DecimalFormat;
@@ -25,29 +21,24 @@ import java.util.Date;
 public class BusResultAdapter extends BaseRouteAdapter {
     private Context context;
     private MCResource resource;
-    private MKTransitRouteResult result;
     private RouteSearchMessageModel searchMsgModel;
     private long sysCurMil;
 
-    public BusResultAdapter(Context context, MCResource resource, MKTransitRouteResult result, RouteSearchMessageModel searchMsgModel, long sysCurMil) {
+    public BusResultAdapter(Context context, MCResource resource, RouteSearchMessageModel searchMsgModel, long sysCurMil) {
         super(context);
-        this.result = result;
         this.context = context;
         this.resource = resource;
         this.searchMsgModel = searchMsgModel;
         this.sysCurMil = sysCurMil;
     }
 
-    public MKTransitRouteResult getBusResult() {
-        return this.result;
-    }
 
     public int getCount() {
-        return this.result.getNumPlan();
+        return 0;
     }
 
     public Object getItem(int position) {
-        return this.result.getPlan(position);
+        return null;
     }
 
     public long getItemId(int position) {
@@ -56,7 +47,7 @@ public class BusResultAdapter extends BaseRouteAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         BusListAdapterHolder holder;
-        MKTransitRoutePlan routePlanModel = (MKTransitRoutePlan) getItem(position);
+//        MKTransitRoutePlan routePlanModel = (MKTransitRoutePlan) getItem(position);
         if (convertView == null) {
             convertView = View.inflate(this.context, this.resource.getLayoutId("mc_place_route_bus_list_item"), null);
             holder = new BusListAdapterHolder();
@@ -65,7 +56,7 @@ public class BusResultAdapter extends BaseRouteAdapter {
         } else {
             holder = (BusListAdapterHolder) convertView.getTag();
         }
-        updataAdapterHodler(routePlanModel, holder, position);
+//        updataAdapterHodler(routePlanModel, holder, position);
         clickRouteItem(holder, position);
         return convertView;
     }
@@ -80,18 +71,14 @@ public class BusResultAdapter extends BaseRouteAdapter {
         holder.setItemView(itemView);
     }
 
-    private void updataAdapterHodler(MKTransitRoutePlan routePlanModel, BusListAdapterHolder holder, int position) {
-        holder.getOtherMsg().setText(getTime(routePlanModel.getTime(), routePlanModel.getDistance()));
-        holder.getRouteContent().setText(routePlanModel.getContent().replaceAll("_", "→"));
-        holder.getRouteNum().setText((position + 1) + "");
-    }
+
 
     private void clickRouteItem(BusListAdapterHolder holder, final int position) {
         holder.getItemView().setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                RouteModel routeModel = new RouteModel();
-                routeModel.setTransitRouteModel(BusResultAdapter.this.result);
-                PlaceManager.getInstance().setRouteModel(routeModel);
+//                RouteModel routeModel = new RouteModel();
+//                routeModel.setTransitRouteModel(BusResultAdapter.this.result);
+//                PlaceManager.getInstance().setRouteModel(routeModel);
                 Intent locationIntent = new Intent(BusResultAdapter.this.context, BusDetailActivity.class);
                 BusResultAdapter.this.searchMsgModel.setSearchNum(position);
                 locationIntent.putExtra(RouteConstant.SEARCH_MSG_MODEL, BusResultAdapter.this.searchMsgModel);
@@ -102,7 +89,7 @@ public class BusResultAdapter extends BaseRouteAdapter {
     }
 
     private String getTime(int second, int meter) {
-        long ft = this.sysCurMil + ((long) (second * LocationClientOption.MIN_SCAN_SPAN));
+        long ft = this.sysCurMil + ((long) (second * 1000));
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         Date d = new Date(ft);
         String yue = this.resource.getString("mc_traffic_route_about_time");

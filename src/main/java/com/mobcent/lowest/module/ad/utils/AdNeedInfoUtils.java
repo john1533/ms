@@ -2,10 +2,7 @@ package com.mobcent.lowest.module.ad.utils;
 
 import android.content.Context;
 import android.os.Environment;
-import com.baidu.location.BDLocation;
-import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCPhoneConnectionUtil;
-import com.mobcent.lowest.base.utils.MCStringUtil;
 
 public class AdNeedInfoUtils {
     public static String getNetworkType(Context context) {
@@ -25,19 +22,21 @@ public class AdNeedInfoUtils {
     }
 
     public static String getJWD(Context context) {
-        BDLocation location = LowestManager.getInstance().getConfig().getLocation();
-        if (location == null) {
-            return "";
-        }
-        return location.getLongitude() + "_" + location.getLatitude();
+//        BDLocation location = LowestManager.getInstance().getConfig().getLocation();
+//        if (location == null) {
+//            return "";
+//        }
+//        return location.getLongitude() + "_" + location.getLatitude();
+        return "";
     }
 
     public static String getLocation(Context context) {
-        BDLocation location = LowestManager.getInstance().getConfig().getLocation();
-        if (location == null || MCStringUtil.isEmpty(location.getAddrStr())) {
-            return "";
-        }
-        return location.getAddrStr();
+//        BDLocation location = LowestManager.getInstance().getConfig().getLocation();
+//        if (location == null || MCStringUtil.isEmpty(location.getAddrStr())) {
+//            return "";
+//        }
+//        return location.getAddrStr();
+        return "";
     }
 
     public static String getNet(Context context) {

@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.module.place.activity.adapter.PlaceBaseListAdapter;
 import com.mobcent.lowest.android.ui.module.place.constant.RouteConstant;
 import com.mobcent.lowest.android.ui.module.place.module.around.activity.adapter.holder.AroundListHolder;
@@ -171,7 +170,7 @@ public class AroundListAdapter extends PlaceBaseListAdapter<PlacePoiInfoModel, A
         if (model.detailInfoModel != null) {
             if (model.detailInfoModel.distance != 0) {
                 holder.getDistanceText().setVisibility(0);
-                if (model.detailInfoModel.distance > LocationClientOption.MIN_SCAN_SPAN) {
+                if (model.detailInfoModel.distance >1000) {
                     holder.getDistanceText().setText(new DecimalFormat("#.00").format((double) (((float) model.detailInfoModel.distance) / 1000.0f)) + " km");
                 } else {
                     holder.getDistanceText().setText(model.detailInfoModel.distance + "m");

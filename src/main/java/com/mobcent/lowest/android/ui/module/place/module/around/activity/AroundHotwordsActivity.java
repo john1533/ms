@@ -13,11 +13,8 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
-import com.baidu.location.BDLocation;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.module.place.activity.BasePlaceFragmentActivity;
 import com.mobcent.lowest.android.ui.module.place.helper.HotwordsWidgetHelper;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.module.place.delegate.PlaceHotwordsListener;
@@ -104,20 +101,7 @@ public class AroundHotwordsActivity extends BasePlaceFragmentActivity {
             } else if (this.locationModel != null) {
                 goToAroundList(v, this.locationModel);
             } else {
-                PlaceLocationHelper.getInastance().getCurrentLocation(this.context, false, new LocationDelegate() {
-                    public void onReceiveLocation(BDLocation location) {
-                        if (location == null || location.getCity() == null || location.getCityCode() == null) {
-                            Toast.makeText(v.getContext(), AroundHotwordsActivity.this.resource.getStringId("mc_place_get_location_error"), LocationClientOption.MIN_SCAN_SPAN).show();
-                            return;
-                        }
-                        PlacePoiLocationModel locationModel = new PlacePoiLocationModel();
-                        locationModel.setLat(location.getLatitude());
-                        locationModel.setLng(location.getLongitude());
-                        locationModel.setCity(location.getCity());
-                        locationModel.setAreaCode(location.getCityCode());
-                        AroundHotwordsActivity.this.goToAroundList(v, locationModel);
-                    }
-                });
+
             }
         }
     }

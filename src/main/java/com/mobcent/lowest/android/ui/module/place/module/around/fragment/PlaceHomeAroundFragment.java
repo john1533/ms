@@ -14,19 +14,11 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.baidu.location.BDLocation;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.module.place.fragment.BasePlaceFragment;
-import com.mobcent.lowest.android.ui.module.place.module.around.activity.AroundHotwordsActivity;
-import com.mobcent.lowest.android.ui.module.place.module.around.activity.AroundListActivity;
 import com.mobcent.lowest.android.ui.module.place.module.around.activity.AroundListActivity1;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.module.place.delegate.PlacePoiSearchDelegate;
-import com.mobcent.lowest.module.place.helper.PlaceLocationHelper;
 import com.mobcent.lowest.module.place.helper.PlacePoiRequestHelper;
-import com.mobcent.lowest.module.place.model.PlaceLocationIntentModel;
-import com.mobcent.lowest.module.place.model.PlacePoiLocationModel;
 import com.mobcent.lowest.module.place.model.PlacePoiResult;
 import com.mobcent.lowest.module.place.model.PlaceQueryModel;
 import java.util.ArrayList;
@@ -70,7 +62,7 @@ public class PlaceHomeAroundFragment extends BasePlaceFragment {
                     PlaceHomeAroundFragment.this.startActivity(new Intent(PlaceHomeAroundFragment.this.context, AroundListActivity1.class));
                     return;
                 }
-                Toast.makeText(PlaceHomeAroundFragment.this.context, "query failed", LocationClientOption.MIN_SCAN_SPAN).show();
+                Toast.makeText(PlaceHomeAroundFragment.this.context, "query failed", 1000).show();
             }
         });
     }
@@ -131,47 +123,12 @@ public class PlaceHomeAroundFragment extends BasePlaceFragment {
             queryModel.setQuery(this.searchEdit.getText().toString());
             startAroundListActivity(queryModel, true);
         } else if (v.equals(this.moreBtn)) {
-            PlaceLocationHelper.getInastance().getCurrentLocation(this.context, false, new LocationDelegate() {
-                public void onReceiveLocation(BDLocation location) {
-                    if (location == null || location.getCity() == null) {
-                        Toast.makeText(PlaceHomeAroundFragment.this.context, PlaceHomeAroundFragment.this.resource.getStringId("mc_place_get_location_error"), LocationClientOption.MIN_SCAN_SPAN).show();
-                        return;
-                    }
-                    Intent intent = new Intent(PlaceHomeAroundFragment.this.context, AroundHotwordsActivity.class);
-                    PlacePoiLocationModel locationModel = new PlacePoiLocationModel();
-                    locationModel.setLat(location.getLatitude());
-                    locationModel.setLng(location.getLongitude());
-                    locationModel.setCity(location.getCity());
-                    locationModel.setAddress(location.getAddrStr());
-                    locationModel.setAreaCode(location.getCityCode());
-                    intent.putExtra("location", locationModel);
-                    PlaceHomeAroundFragment.this.startActivity(intent);
-                }
-            });
+
         }
     }
 
     private void startAroundListActivity(final PlaceQueryModel queryModel, final boolean isSearch) {
-        PlaceLocationHelper.getInastance().getCurrentLocation(this.context, false, new LocationDelegate() {
-            public void onReceiveLocation(BDLocation location) {
-                if (location == null || location.getCity() == null) {
-                    Toast.makeText(PlaceHomeAroundFragment.this.context, PlaceHomeAroundFragment.this.resource.getStringId("mc_place_get_location_error"), LocationClientOption.MIN_SCAN_SPAN).show();
-                    return;
-                }
-                Intent intent = new Intent(PlaceHomeAroundFragment.this.context, AroundListActivity.class);
-                PlaceLocationIntentModel model = new PlaceLocationIntentModel();
-                PlacePoiLocationModel locationModel = new PlacePoiLocationModel();
-                locationModel.setLat(location.getLatitude());
-                locationModel.setLng(location.getLongitude());
-                locationModel.setCity(location.getCity());
-                locationModel.setAreaCode(location.getCityCode());
-                model.setLocationModel(locationModel);
-                model.setQueryModel(queryModel);
-                model.setSearch(isSearch);
-                intent.putExtra("location", model);
-                PlaceHomeAroundFragment.this.startActivity(intent);
-            }
-        });
+
     }
 
     public void setRootViewBack() {

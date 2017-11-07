@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageManager.NameNotFoundException;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.android.db.constant.SharedPreferencesDBConstant;
 import com.mobcent.discuz.android.model.PayStateModel;
 import com.mobcent.discuz.android.model.SettingModel;
@@ -315,21 +314,9 @@ public class SharedPreferencesDB implements SharedPreferencesDBConstant {
         return this.prefs.getString(key, "");
     }
 
-    public void saveLocation(BDLocation location) {
-        Editor editor = this.prefs.edit();
-        editor.putFloat(LONGITUDE, (float) location.getLongitude());
-        editor.putFloat(LATITUDE, (float) location.getLatitude());
-        editor.putString(SharedPreferencesDBConstant.LOCATION_STR, location.getAddrStr());
-        editor.commit();
-    }
 
-    public BDLocation getLocation() {
-        BDLocation bdLocation = new BDLocation();
-        bdLocation.setLongitude((double) this.prefs.getFloat(LONGITUDE, 0.0f));
-        bdLocation.setLatitude((double) this.prefs.getFloat(LATITUDE, 0.0f));
-        bdLocation.setAddrStr(this.prefs.getString(SharedPreferencesDBConstant.LOCATION_STR, ""));
-        return bdLocation;
-    }
+
+
 
     public void saveInt(String key, int value) {
         Editor editor = this.prefs.edit();

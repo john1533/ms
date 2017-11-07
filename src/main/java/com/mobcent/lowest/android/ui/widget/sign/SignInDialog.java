@@ -13,7 +13,6 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.utils.MCAnimationUtils;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.base.utils.MCResource;
@@ -176,6 +175,6 @@ public class SignInDialog extends AlertDialog {
     }
 
     protected void showMsg(String msg) {
-        Toast.makeText(getContext(), msg, LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(getContext(), msg, 1000).show();
     }
 }

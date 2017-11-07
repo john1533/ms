@@ -9,11 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.android.ui.module.weather.constant.WeatherIntentConstant;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
-import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.module.weather.db.WeatherSharedPreferencesDB;
 import com.mobcent.lowest.module.weather.model.CityModel;
 import java.util.ArrayList;
@@ -28,16 +25,7 @@ public class WeatherCityActivity extends BaseWeatherFragmentActivity {
     private CityModel currentCityModel;
     private GridView hotCityGrid;
     private TextView locationCityText;
-    private LocationDelegate locationDelegate = new LocationDelegate() {
-        public void onReceiveLocation(BDLocation bdLocation) {
-            if (bdLocation != null && !MCStringUtil.isEmpty(bdLocation.getCity())) {
-                WeatherCityActivity.this.locationCityText.setText(bdLocation.getCity());
-                WeatherCityActivity.this.currentCityModel.setCityName(bdLocation.getCity());
-                WeatherCityActivity.this.currentCityModel.setLatitude(bdLocation.getLatitude());
-                WeatherCityActivity.this.currentCityModel.setLongitude(bdLocation.getLongitude());
-            }
-        }
-    };
+
     private MCLocationUtil locationUtil = null;
     private OnClickListener onClickListener = new OnClickListener() {
         public void onClick(View v) {
@@ -126,7 +114,6 @@ public class WeatherCityActivity extends BaseWeatherFragmentActivity {
         this.backBtn.setOnClickListener(this.onClickListener);
         this.locationCityText.setText("......");
         this.locationUtil = MCLocationUtil.getInstance(getApplicationContext());
-        this.locationUtil.requestLocation(this.locationDelegate);
     }
 
     private void onCityClickDo(CityModel cityModel) {

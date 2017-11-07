@@ -6,7 +6,6 @@ import android.os.AsyncTask.Status;
 import android.os.Handler;
 import android.util.Log;
 import android.webkit.WebView;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCPhoneUtil;
 import com.mobcent.lowest.module.ad.cache.AdDatasCache;
@@ -239,7 +238,7 @@ public class AdManager {
     }
 
     public boolean isOverDue() {
-        if (this.haveAdTask == null || this.haveAdTask.getStatus() != Status.FINISHED || System.currentTimeMillis() - this.requestAdTimeMillis <= ((long) ((this.adPositionsCache.getCycle() * LocationClientOption.MIN_SCAN_SPAN) * 60))) {
+        if (this.haveAdTask == null || this.haveAdTask.getStatus() != Status.FINISHED || System.currentTimeMillis() - this.requestAdTimeMillis <= ((long) ((this.adPositionsCache.getCycle() * 1000) * 60))) {
             return false;
         }
         return true;

@@ -11,12 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.RouteOverlay;
-import com.baidu.mapapi.map.TransitOverlay;
-import com.baidu.mapapi.search.MKDrivingRouteResult;
-import com.baidu.mapapi.search.MKTransitRouteResult;
-import com.baidu.mapapi.search.MKWalkingRouteResult;
 import com.mobcent.lowest.android.ui.module.place.activity.PlaceMapViewActivity;
 import com.mobcent.lowest.android.ui.module.place.constant.RouteConstant;
 import com.mobcent.lowest.android.ui.module.place.module.route.model.RouteSearchMessageModel;
@@ -25,15 +19,9 @@ import java.util.ArrayList;
 public class RouteCommentDetailAdapter extends BaseRouteAdapter {
     private Activity activity;
     private Context context;
-    private MKDrivingRouteResult drivingRouteResult;
-    private MapView mMapView;
     private ArrayList<String[]> routeList;
-    private RouteOverlay routeOverlay = null;
     private RouteSearchMessageModel searchMsgModel;
     private int searcheType;
-    private TransitOverlay transitOverlay = null;
-    private MKTransitRouteResult transitRouteResult;
-    private MKWalkingRouteResult walkingRouteResult;
 
     class DetailHodler {
         private TextView detail;
@@ -72,7 +60,6 @@ public class RouteCommentDetailAdapter extends BaseRouteAdapter {
         super(activity);
         this.context = activity;
         this.activity = activity;
-        this.mMapView = new MapView(this.context);
         this.routeList = routeList;
         this.searchMsgModel = searchMsgModel;
     }

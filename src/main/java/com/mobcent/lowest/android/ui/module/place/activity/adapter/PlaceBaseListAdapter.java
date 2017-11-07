@@ -7,7 +7,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.base.utils.MCResource;
 import java.util.List;
 
@@ -102,6 +101,6 @@ public abstract class PlaceBaseListAdapter<DataModel, Holder> extends BaseAdapte
     }
 
     protected void warnStr(String msg) {
-        Toast.makeText(this.context, msg, LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(this.context, msg, 1000).show();
     }
 }

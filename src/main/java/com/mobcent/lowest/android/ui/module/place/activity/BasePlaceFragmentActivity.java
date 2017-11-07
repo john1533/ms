@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.lowest.android.ui.module.place.constant.PlaceIntentConstant;
 import com.mobcent.lowest.android.ui.module.place.constant.RouteConstant;
 import com.mobcent.lowest.base.utils.MCResource;
@@ -87,15 +86,15 @@ public abstract class BasePlaceFragmentActivity extends FragmentActivity impleme
             return view;
         }
         view = new View(this);
-        Toast.makeText(this, name + " can't find", LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(this, name + " can't find", 1000).show();
         return view;
     }
 
     protected void warn(String name) {
-        Toast.makeText(this, this.resource.getStringId(name), LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(this, this.resource.getStringId(name), 1000).show();
     }
 
     protected void warnStr(String msg) {
-        Toast.makeText(this, msg, LocationClientOption.MIN_SCAN_SPAN).show();
+        Toast.makeText(this, msg, 1000).show();
     }
 }

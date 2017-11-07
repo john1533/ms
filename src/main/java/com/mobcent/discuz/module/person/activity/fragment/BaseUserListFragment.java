@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.activity.utils.DZToastAlertUtils;
 import com.mobcent.discuz.android.constant.UserConstant;
@@ -31,7 +30,6 @@ import com.mobcent.lowest.android.ui.widget.PullToRefreshListView.OnBottomRefres
 import com.mobcent.lowest.android.ui.widget.PullToRefreshListView.OnRefreshListener;
 import com.mobcent.lowest.android.ui.widget.listener.PausePullListOnScrollListener;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.base.utils.MCToastUtils;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -130,7 +128,6 @@ public abstract class BaseUserListFragment extends BaseFragment implements Final
         this.userId = getBundle().getLong("userId", 0);
         this.userService = new UserServiceImpl(this.activity.getApplicationContext());
         this.userList = new ArrayList();
-        initLocationUtil(this.activity.getApplicationContext());
         if (this.userId == 0) {
             this.userId = this.sharedPreferencesDB.getUserId();
         }
@@ -184,25 +181,6 @@ public abstract class BaseUserListFragment extends BaseFragment implements Final
         }
     }
 
-    private void initLocationUtil(Context context) {
-        this.locationUtil = MCLocationUtil.getInstance(context);
-        this.locationUtil.requestLocation(new LocationDelegate() {
-            public void onReceiveLocation(final BDLocation locationModel) {
-                BaseUserListFragment.this.mHandler.post(new Runnable() {
-                    public void run() {
-                        if (locationModel != null) {
-                            BaseUserListFragment.this.isLocal = false;
-                            BaseUserListFragment.this.loadDataByNet();
-                            BaseUserListFragment.this.sharedPreferencesDB.saveLocation(locationModel);
-                            return;
-                        }
-                        MCToastUtils.toastByResName(BaseUserListFragment.this.activity.getApplicationContext(), "mc_forum_service_location_fail_warn");
-                        BaseUserListFragment.this.updateLocationFail();
-                    }
-                });
-            }
-        });
-    }
 
     private void updateLocationFail() {
         this.userList.clear();
@@ -233,11 +211,11 @@ public abstract class BaseUserListFragment extends BaseFragment implements Final
     }
 
     private BaseResultModel<List<UserInfoModel>> loadData() {
-        BDLocation location = SharedPreferencesDB.getInstance(this.activity.getApplicationContext()).getLocation();
-        if (location != null) {
-            this.longitude = location.getLongitude();
-            this.latitude = location.getLatitude();
-        }
+//        BDLocation location = SharedPreferencesDB.getInstance(this.activity.getApplicationContext()).getLocation();
+//        if (location != null) {
+//            this.longitude = location.getLongitude();
+//            this.latitude = location.getLatitude();
+//        }
         return this.userService.getUserList(this.userId, this.currentPage, this.pageSize, this.userType, this.isLocal, this.orderBy, this.longitude, this.latitude);
     }
 

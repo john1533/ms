@@ -1,9 +1,7 @@
 package com.mobcent.discuz.android.api;
 
 import android.content.Context;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.android.constant.PostsConstant;
-import com.mobcent.discuz.android.db.SharedPreferencesDB;
 import com.mobcent.discuz.android.model.PermissionModel;
 import com.mobcent.lowest.base.utils.MCLogUtil;
 import com.mobcent.lowest.base.utils.MCResource;
@@ -20,11 +18,11 @@ public class PostsRestfulApiRequester extends BaseDiscuzApiRequester implements 
         params.put("pageSize", new StringBuilder(String.valueOf(pageSize)).toString());
         params.put("moduleId", moudleId);
         params.put(PostsConstant.IS_IMAGE_LIST, new StringBuilder(String.valueOf(isImageList)).toString());
-        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-        if (location != null) {
-            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
-            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
-        }
+//        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
+//        if (location != null) {
+//            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
+//            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
+//        }
         return BaseDiscuzApiRequester.doPostRequest(context, url, params);
     }
 
@@ -39,11 +37,11 @@ public class PostsRestfulApiRequester extends BaseDiscuzApiRequester implements 
         params.put("filterId", new StringBuilder(String.valueOf(filterId)).toString());
         params.put(PostsConstant.IS_IMAGE_LIST, new StringBuilder(String.valueOf(isImageList)).toString());
         params.put(PostsConstant.TOP_ORDER, new StringBuilder(String.valueOf(topOrder)).toString());
-        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-        if (location != null) {
-            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
-            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
-        }
+//        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
+//        if (location != null) {
+//            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
+//            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
+//        }
         return BaseDiscuzApiRequester.doPostRequest(context, url, params);
     }
 
@@ -54,11 +52,11 @@ public class PostsRestfulApiRequester extends BaseDiscuzApiRequester implements 
         params.put("page", new StringBuilder(String.valueOf(page)).toString());
         params.put("pageSize", new StringBuilder(String.valueOf(pageSize)).toString());
         params.put("type", type);
-        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-        if (location != null) {
-            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
-            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
-        }
+//        BDLocation location = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
+//        if (location != null) {
+//            params.put("longitude", new StringBuilder(String.valueOf(location.getLongitude())).toString());
+//            params.put("latitude", new StringBuilder(String.valueOf(location.getLatitude())).toString());
+//        }
         return BaseDiscuzApiRequester.doPostRequest(context, url, params);
     }
 

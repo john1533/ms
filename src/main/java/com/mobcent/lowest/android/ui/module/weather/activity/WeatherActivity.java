@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.android.ui.module.weather.constant.WeatherIntentConstant;
 import com.mobcent.lowest.android.ui.module.weather.delegate.WeatherTaskDelegate;
 import com.mobcent.lowest.android.ui.module.weather.observer.WeatherObserver;
@@ -17,7 +16,6 @@ import com.mobcent.lowest.android.ui.utils.MCAnimationUtils;
 import com.mobcent.lowest.android.ui.utils.MCWeatherUtil;
 import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCLocationUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCResource;
 import com.mobcent.lowest.module.weather.db.WeatherSharedPreferencesDB;
 import com.mobcent.lowest.module.weather.model.CityModel;
@@ -146,25 +144,14 @@ public class WeatherActivity extends BaseWeatherFragmentActivity {
                         WeatherActivity.this.queryWeatherInfo(localCityModel);
                         return;
                     }
-                    BDLocation location = LowestManager.getInstance().getConfig().getLocation();
-                    if (location == null) {
-                        MCLocationUtil.getInstance(WeatherActivity.this.getApplicationContext()).requestLocation(new LocationDelegate() {
-                            public void onReceiveLocation(BDLocation location) {
-                                if (location != null) {
-                                    CityModel cityModel = new CityModel();
-                                    cityModel.setCityName(location.getCity());
-                                    cityModel.setCityId(location.getCityCode());
-                                    cityModel.setLatitude(location.getLatitude());
-                                    cityModel.setLongitude(location.getLongitude());
-                                    WeatherActivity.this.queryWeatherInfo(cityModel);
-                                }
-                            }
-                        });
-                        return;
-                    }
-                    cityModel.setCityName(location.getCity());
-                    cityModel.setLatitude(location.getLatitude());
-                    cityModel.setLongitude(location.getLongitude());
+//                    BDLocation location = LowestManager.getInstance().getConfig().getLocation();
+//                    if (location == null) {
+//
+//                        return;
+//                    }
+//                    cityModel.setCityName(location.getCity());
+//                    cityModel.setLatitude(location.getLatitude());
+//                    cityModel.setLongitude(location.getLongitude());
                     WeatherActivity.this.queryWeatherInfo(cityModel);
                     return;
                 }

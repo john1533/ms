@@ -3,7 +3,6 @@ package com.mobcent.discuz.application.config;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.android.constant.BaseApiConstant;
 import com.mobcent.discuz.android.constant.PostsConstant;
 import com.mobcent.discuz.android.db.SharedPreferencesDB;
@@ -128,9 +127,9 @@ public class LowestConfigImpl extends LowestConfig implements PlazaConstant {
         return null;
     }
 
-    public BDLocation getLocation() {
-        return this.db.getLocation();
-    }
+//    public BDLocation getLocation() {
+//        return this.db.getLocation();
+//    }
 
     public String getAccessToken() {
         return this.db.getAccessToken();

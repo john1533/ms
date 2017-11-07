@@ -14,7 +14,6 @@ import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import android.widget.ImageView;
 import android.widget.Scroller;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.discuz.module.custom.widget.constant.CustomConstant;
 
 public class ScaleView extends ImageView {
@@ -205,7 +204,7 @@ public class ScaleView extends ImageView {
             resetView();
         }
         VelocityTracker v = this.vTracker;
-        v.computeCurrentVelocity(LocationClientOption.MIN_SCAN_SPAN, (float) (this.maxVelocity * 2));
+        v.computeCurrentVelocity(1000, (float) (this.maxVelocity * 2));
         float yV = v.getYVelocity();
         float xV = v.getXVelocity();
         if (this.currentHeight > this.scaleViewHeight || this.currentWidth > this.scaleViewWidth) {

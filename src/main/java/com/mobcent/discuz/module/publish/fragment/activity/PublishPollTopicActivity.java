@@ -58,10 +58,8 @@ public class PublishPollTopicActivity extends PublishTopicActivity implements Fi
                 return null;
             }
             long boardId = Long.parseLong((String) params[0]);
-            if (PublishPollTopicActivity.this.requireLocation == 0) {
-                PublishPollTopicActivity.this.locationStr = "";
-            }
-            return postsService.publishPollTopic(boardId, (String) params[1], (String) params[2], PublishPollTopicActivity.this.pollType + "", PublishPollTopicActivity.this.pollVisible, (String) params[3], PublishPollTopicActivity.this.overtime, PublishPollTopicActivity.this.longitude, PublishPollTopicActivity.this.latitude, PublishPollTopicActivity.this.locationStr, 1, PublishPollTopicActivity.this.getAid(), (PermissionModel) params[4]);
+
+            return postsService.publishPollTopic(boardId, (String) params[1], (String) params[2], PublishPollTopicActivity.this.pollType + "", PublishPollTopicActivity.this.pollVisible, (String) params[3], PublishPollTopicActivity.this.overtime, 0,0,"", 1, PublishPollTopicActivity.this.getAid(), (PermissionModel) params[4]);
         }
 
         protected void onPostExecute(BaseResultModel<Object> result) {

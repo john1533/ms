@@ -1022,10 +1022,8 @@ public class ClassifyTopicActivity extends PublishTopicActivity implements Final
     protected void uploadAudioSucc() {
         this.classifiedJson = this.postsService.createPublishClassifiedModelJson(this.classifiedModeLoadDatalList);
         String contentStr = this.postsService.createContentJson(this.content, "ß", "á", this.audioPath, this.uploadList);
-        if (this.requireLocation == 0) {
-            this.locationStr = "";
-        }
-        String publishJson = PostsServiceImplHelper.getPublishSortJsonStr(this, this.boardId, this.title, this.classifiedJson, contentStr, getAid(), this.longitude, this.latitude, this.locationStr, 1, this.classificationTypeId, this.classificationTopId, this.isCheckedPermissionModel);
+
+        String publishJson = PostsServiceImplHelper.getPublishSortJsonStr(this, this.boardId, this.title, this.classifiedJson, contentStr, getAid(), 0,0,"", 1, this.classificationTypeId, this.classificationTopId, this.isCheckedPermissionModel);
         this.publishAsyncTask = new PublishAsyncTask(convertDraftModel());
         this.publishAsyncTask.execute(new Object[]{publishJson});
     }

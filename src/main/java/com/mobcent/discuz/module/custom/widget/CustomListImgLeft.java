@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import com.baidu.mapapi.cloud.BaseSearchResult;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
 import com.mobcent.discuz.module.custom.widget.delegate.CustomViewClickListener;
@@ -43,7 +42,7 @@ public class CustomListImgLeft extends CustomBaseRelativeLayout {
         addView(this.img);
         this.rightIcon = new View(getContext());
         this.rightIcon.setBackgroundDrawable(this.resource.getDrawable("mc_forum_squre_arrow"));
-        this.rightIcon.setId(BaseSearchResult.STATUS_CODE_SERVICE_DISABLED);
+        this.rightIcon.setId(101);
         this.lps = new RelativeLayout.LayoutParams(dip2px(8.0f), dip2px(13.0f));
         this.lps.addRule(11, -1);
         this.lps.addRule(15, -1);
@@ -56,7 +55,7 @@ public class CustomListImgLeft extends CustomBaseRelativeLayout {
         this.lps.addRule(0, this.rightIcon.getId());
         this.titleText = CustomHelper.createTitle(getContext());
         this.titleText.setPadding(0, 0, 0, 0);
-        this.titleText.setId(BaseSearchResult.STATUS_CODE_SECURITY_CODE_ERROR);
+        this.titleText.setId(102);
         this.titleText.setText(data.getTitle());
         if (TextUtils.isEmpty(data.getDesc())) {
             this.lps.addRule(15, -1);

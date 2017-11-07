@@ -8,7 +8,6 @@ import android.os.Build.VERSION;
 import android.util.AttributeSet;
 import android.webkit.DownloadListener;
 import android.webkit.WebView;
-import com.baidu.location.BDLocation;
 import com.mobcent.lowest.android.ui.widget.web.MCWebViewClient;
 import com.mobcent.lowest.base.manager.LowestManager;
 import com.mobcent.lowest.base.utils.MCLibIOUtil;
@@ -108,14 +107,14 @@ public class MCWebView extends WebView {
 
     public void loadUrl(String url) {
         if (url.contains("wsh.appbyme.com")) {
-            BDLocation location = LowestManager.getInstance().getConfig().getLocation();
-            if (location != null) {
-                if (url.contains("?")) {
-                    url = url + "&longitude=" + location.getLongitude() + "&latitude=" + location.getLatitude();
-                } else {
-                    url = url + "?longitude=" + location.getLongitude() + "&latitude=" + location.getLatitude();
-                }
-            }
+//            BDLocation location = LowestManager.getInstance().getConfig().getLocation();
+//            if (location != null) {
+//                if (url.contains("?")) {
+//                    url = url + "&longitude=" + location.getLongitude() + "&latitude=" + location.getLatitude();
+//                } else {
+//                    url = url + "?longitude=" + location.getLongitude() + "&latitude=" + location.getLatitude();
+//                }
+//            }
         }
         super.loadUrl(url);
     }

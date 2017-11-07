@@ -1,7 +1,6 @@
 package com.mobcent.discuz.android.service.impl.helper;
 
 import android.content.Context;
-import com.baidu.location.BDLocation;
 import com.mobcent.discuz.activity.constant.FinalConstant;
 import com.mobcent.discuz.android.constant.PostsConstant;
 import com.mobcent.discuz.android.db.SharedPreferencesDB;
@@ -747,11 +746,7 @@ public class PostsServiceImplHelper implements PostsConstant {
                     jsonObject.put("aid", aid);
                     jsonObject.put("content", content);
                     jsonObject.put("title", title);
-                    BDLocation bdLocation = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-                    if (bdLocation != null) {
-                        longitude = bdLocation.getLongitude();
-                        latitude = bdLocation.getLatitude();
-                    }
+
                     jsonObject.put("longitude", String.valueOf(longitude));
                     jsonObject.put("latitude", String.valueOf(latitude));
                     jsonObject.put("isHidden", settingModel.getIsHidden());
@@ -819,11 +814,7 @@ public class PostsServiceImplHelper implements PostsConstant {
                     jsonObject.put("aid", aid);
                     jsonObject.put("content", content);
                     jsonObject.put("title", title);
-                    BDLocation bdLocation = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-                    if (bdLocation != null) {
-                        longitude = bdLocation.getLongitude();
-                        latitude = bdLocation.getLatitude();
-                    }
+
                     jsonObject.put("longitude", String.valueOf(longitude));
                     jsonObject.put("latitude", String.valueOf(latitude));
                     jsonObject.put("isHidden", settingModel.getIsHidden());
@@ -1067,11 +1058,7 @@ public class PostsServiceImplHelper implements PostsConstant {
                     jsonObject.put("location", location);
                     jsonObject.put("aid", aid);
                     jsonObject.put("content", rContent);
-                    BDLocation bdLocation = SharedPreferencesDB.getInstance(context.getApplicationContext()).getLocation();
-                    if (bdLocation != null) {
-                        longitude = bdLocation.getLongitude();
-                        latitude = bdLocation.getLatitude();
-                    }
+
                     jsonObject.put("longitude", String.valueOf(longitude));
                     jsonObject.put("latitude", String.valueOf(latitude));
                     jsonObject.put("isHidden", settingModel.getIsHidden());

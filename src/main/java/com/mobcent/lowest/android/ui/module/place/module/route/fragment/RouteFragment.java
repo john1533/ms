@@ -22,48 +22,24 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.baidu.location.BDLocation;
-import com.baidu.mapapi.BMapManager;
-import com.baidu.mapapi.map.LocationData;
-import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.map.MyLocationOverlay;
-import com.baidu.mapapi.map.MyLocationOverlay.LocationMode;
-import com.baidu.mapapi.search.MKAddrInfo;
-import com.baidu.mapapi.search.MKBusLineResult;
-import com.baidu.mapapi.search.MKCityListInfo;
-import com.baidu.mapapi.search.MKDrivingRouteResult;
-import com.baidu.mapapi.search.MKPlanNode;
-import com.baidu.mapapi.search.MKPoiInfo;
-import com.baidu.mapapi.search.MKPoiResult;
-import com.baidu.mapapi.search.MKSearch;
-import com.baidu.mapapi.search.MKSearchListener;
-import com.baidu.mapapi.search.MKShareUrlResult;
-import com.baidu.mapapi.search.MKSuggestionInfo;
-import com.baidu.mapapi.search.MKSuggestionResult;
-import com.baidu.mapapi.search.MKTransitRouteResult;
-import com.baidu.mapapi.search.MKWalkingRouteResult;
-import com.baidu.platform.comapi.basestruct.GeoPoint;
 import com.mobcent.lowest.android.ui.module.place.activity.RouteSolutionDetailActivity;
 import com.mobcent.lowest.android.ui.module.place.constant.RouteConstant;
 import com.mobcent.lowest.android.ui.module.place.fragment.BasePlaceFragment;
-import com.mobcent.lowest.android.ui.module.place.manager.PlaceManager;
 import com.mobcent.lowest.android.ui.module.place.module.route.activity.adapter.RouteSugDialogListAdapter;
 import com.mobcent.lowest.android.ui.module.place.module.route.activity.adapter.RouteSugDialogListAdapter.ClickSugItemListener;
 import com.mobcent.lowest.android.ui.module.place.module.route.model.GeoPointModel;
 import com.mobcent.lowest.android.ui.module.place.module.route.model.RouteSearchMessageModel;
 import com.mobcent.lowest.android.ui.module.place.module.route.model.SearchConditionModel;
 import com.mobcent.lowest.android.ui.module.place.utils.RouteLoadingUtil;
-import com.mobcent.lowest.base.utils.MCLocationUtil.LocationDelegate;
 import com.mobcent.lowest.base.utils.MCLogUtil;
 import com.mobcent.lowest.base.utils.MCStringUtil;
 import com.mobcent.lowest.module.place.helper.PlaceLocationHelper;
 import com.mobcent.lowest.module.place.model.PlacePoiInfoModel;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     private String TAG = "RouteFragment";
-    private MapView bDMapView;
+//    private MapView bDMapView;
     private LinearLayout bus;
     private ImageView busIcon;
     private TextView busText;
@@ -74,7 +50,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     private int currentSearchType;
     private int currentSugLocation = 1;
     private AlertDialog dlg;
-    private ArrayList<MKPoiInfo> enPois;
+//    private ArrayList<MKPoiInfo> enPois;
     private ArrayAdapter<String> endAdapter = null;
     private boolean endChange = false;
     private String endCity;
@@ -82,14 +58,14 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     private SearchConditionModel endModel = null;
     private AutoCompleteTextView endNameET;
     private LinearLayout endPointLayout;
-    private LocationData locData = null;
-    private BMapManager mBMapManager = null;
-    private MKSearch mSearch = null;
+//    private LocationData locData = null;
+//    private BMapManager mBMapManager = null;
+//    private MKSearch mSearch = null;
     private int myLatitude;
-    private MyLocationOverlay myLocationOverlay = null;
+//    private MyLocationOverlay myLocationOverlay = null;
     private int myLongitude;
     private PlacePoiInfoModel poiInfo;
-    private ArrayList<MKPoiInfo> stPois;
+//    private ArrayList<MKPoiInfo> stPois;
     private ArrayAdapter<String> startAdapter = null;
     private boolean startChange = false;
     private String startCity;
@@ -101,53 +77,6 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     private ImageView walkIcon;
     private TextView walkText;
 
-    class OnItemClick implements ClickSugItemListener {
-        OnItemClick() {
-        }
-
-        public void onClickItemLayout(MKPoiInfo info, int stOrEn) {
-            RouteFragment.this.dlg.dismiss();
-            if (stOrEn == 1) {
-                RouteFragment.this.startModel.setPointLocation(info.name);
-                RouteFragment.this.startModel.setPointName(info.name);
-                RouteFragment.this.startNameET.setText(RouteFragment.this.startModel.getPointName());
-                RouteFragment.this.startModel.setLatitudeE6(info.pt.getLatitudeE6());
-                RouteFragment.this.startModel.setLongitudeE6(info.pt.getLongitudeE6());
-                RouteFragment.this.startIsOk = true;
-                int hasEnd = 0;
-                if (RouteFragment.this.enPois != null && RouteFragment.this.enPois.size() > 0) {
-                    int i = 0;
-                    while (i < RouteFragment.this.enPois.size()) {
-                        String sName = ((MKPoiInfo) RouteFragment.this.enPois.get(i)).name;
-                        if (sName.equals(RouteFragment.this.endModel.getPointName())) {
-                            hasEnd = 2;
-                            break;
-                        } else if (sName.contains(RouteFragment.this.endModel.getPointName())) {
-                            hasEnd = 1;
-                            break;
-                        } else {
-                            i++;
-                        }
-                    }
-                }
-                if (hasEnd == 1) {
-                    RouteFragment.this.showSugDiaLog(RouteFragment.this.enPois, 2);
-                }
-            } else {
-                MCLogUtil.e(RouteFragment.this.TAG, "endMode2222222222 :  info.pt.getLatitudeE6() = " + info.pt.getLatitudeE6() + "   info.pt.getLongitudeE6() = " + info.pt.getLongitudeE6());
-                RouteFragment.this.endModel.setLatitudeE6(info.pt.getLatitudeE6());
-                RouteFragment.this.endModel.setLongitudeE6(info.pt.getLongitudeE6());
-                RouteFragment.this.endModel.setPointLocation(info.name);
-                RouteFragment.this.endModel.setPointName(info.name);
-                RouteFragment.this.endNameET.setText(RouteFragment.this.endModel.getPointName());
-                MCLogUtil.e(RouteFragment.this.TAG, "endModel1111111111 = " + RouteFragment.this.endModel.toString());
-                RouteFragment.this.endIsOk = true;
-            }
-            if (RouteFragment.this.endIsOk && RouteFragment.this.startIsOk) {
-                RouteFragment.this.startSearch();
-            }
-        }
-    }
 
     protected void initData() {
         super.initData();
@@ -162,194 +91,141 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
             this.endModel.setPointName(this.poiInfo.name);
             this.endModel.setPointLocation(this.poiInfo.address);
         }
-        this.mBMapManager = PlaceManager.getInstance().getBMapManager(getActivity().getApplicationContext());
-        this.mSearch = new MKSearch();
-        this.mSearch.init(this.mBMapManager, new MKSearchListener() {
-            public void onGetSuggestionResult(MKSuggestionResult res, int arg1) {
-                if (res != null && res.getAllSuggestions() != null) {
-                    Iterator i$;
-                    MKSuggestionInfo info;
-                    if (RouteFragment.this.currentSugLocation == 1) {
-                        RouteFragment.this.startAdapter.clear();
-                        i$ = res.getAllSuggestions().iterator();
-                        while (i$.hasNext()) {
-                            info = (MKSuggestionInfo) i$.next();
-                            if (info.key != null) {
-                                RouteFragment.this.startAdapter.add(info.key);
-                            }
-                        }
-                        RouteFragment.this.startAdapter.notifyDataSetChanged();
-                        return;
-                    }
-                    RouteFragment.this.endAdapter.clear();
-                    i$ = res.getAllSuggestions().iterator();
-                    while (i$.hasNext()) {
-                        info = (MKSuggestionInfo) i$.next();
-                        if (info.key != null) {
-                            RouteFragment.this.endAdapter.add(info.key);
-                        }
-                    }
-                    RouteFragment.this.endAdapter.notifyDataSetChanged();
-                }
-            }
+//        this.mBMapManager = PlaceManager.getInstance().getBMapManager(getActivity().getApplicationContext());
+//        this.mSearch = new MKSearch();
+//        this.mSearch.init(this.mBMapManager, new MKSearchListener() {
+//            public void onGetSuggestionResult(MKSuggestionResult res, int arg1) {
+//                if (res != null && res.getAllSuggestions() != null) {
+//                    Iterator i$;
+//                    MKSuggestionInfo info;
+//                    if (RouteFragment.this.currentSugLocation == 1) {
+//                        RouteFragment.this.startAdapter.clear();
+//                        i$ = res.getAllSuggestions().iterator();
+//                        while (i$.hasNext()) {
+//                            info = (MKSuggestionInfo) i$.next();
+//                            if (info.key != null) {
+//                                RouteFragment.this.startAdapter.add(info.key);
+//                            }
+//                        }
+//                        RouteFragment.this.startAdapter.notifyDataSetChanged();
+//                        return;
+//                    }
+//                    RouteFragment.this.endAdapter.clear();
+//                    i$ = res.getAllSuggestions().iterator();
+//                    while (i$.hasNext()) {
+//                        info = (MKSuggestionInfo) i$.next();
+//                        if (info.key != null) {
+//                            RouteFragment.this.endAdapter.add(info.key);
+//                        }
+//                    }
+//                    RouteFragment.this.endAdapter.notifyDataSetChanged();
+//                }
+//            }
+//
+//            public void onGetTransitRouteResult(MKTransitRouteResult res, int error) {
+//                MCLogUtil.e(RouteFragment.this.TAG, "onGetTransitRouteResult get result" + res);
+//                if (error == 4) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
+//                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
+//                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
+//                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
+//                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
+//                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                    } else {
+//                        RouteFragment.this.handleSugResult();
+//                    }
+//                } else if (error != 0 || res == null) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                } else {
+//                    GeoPoint sp = res.getStart().pt;
+//                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
+//                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
+//                    GeoPoint np = res.getEnd().pt;
+//                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
+//                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
+//                    RouteFragment.this.startSearch();
+//                }
+//            }
+//
+//            public void onGetDrivingRouteResult(MKDrivingRouteResult res, int error) {
+//                MCLogUtil.e(RouteFragment.this.TAG, "onGetDrivingRouteResult get result " + res);
+//                if (error == 4) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
+//                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
+//                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
+//                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
+//                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
+//                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                    } else {
+//                        RouteFragment.this.handleSugResult();
+//                    }
+//                } else if (error != 0 || res == null) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                } else {
+//                    GeoPoint sp = res.getStart().pt;
+//                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
+//                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
+//                    GeoPoint np = res.getEnd().pt;
+//                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
+//                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
+//                    RouteFragment.this.startSearch();
+//                }
+//            }
+//
+//            public void onGetWalkingRouteResult(MKWalkingRouteResult res, int error) {
+//                MCLogUtil.e(RouteFragment.this.TAG, "onGetWalkingRouteResult get result" + res);
+//                if (error == 4) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
+//                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
+//                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
+//                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
+//                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
+//                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                    } else {
+//                        RouteFragment.this.handleSugResult();
+//                    }
+//                } else if (error != 0 || res == null) {
+//                    RouteLoadingUtil.getInstance().hide();
+//                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
+//                } else {
+//                    GeoPoint sp = res.getStart().pt;
+//                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
+//                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
+//                    GeoPoint np = res.getEnd().pt;
+//                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
+//                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
+//                    RouteFragment.this.startSearch();
+//                }
+//            }
+//
+//            public void onGetAddrResult(MKAddrInfo res, int error) {
+//            }
+//
+//            public void onGetBusDetailResult(MKBusLineResult result, int iError) {
+//            }
+//
+//            public void onGetPoiDetailSearchResult(int type, int error) {
+//            }
+//
+//            public void onGetPoiResult(MKPoiResult res, int type, int error) {
+//            }
+//
+//            public void onGetShareUrlResult(MKShareUrlResult result, int type, int error) {
+//            }
+//        });
 
-            public void onGetTransitRouteResult(MKTransitRouteResult res, int error) {
-                MCLogUtil.e(RouteFragment.this.TAG, "onGetTransitRouteResult get result" + res);
-                if (error == 4) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
-                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
-                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
-                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
-                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
-                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                    } else {
-                        RouteFragment.this.handleSugResult();
-                    }
-                } else if (error != 0 || res == null) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                } else {
-                    GeoPoint sp = res.getStart().pt;
-                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
-                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
-                    GeoPoint np = res.getEnd().pt;
-                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
-                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
-                    RouteFragment.this.startSearch();
-                }
-            }
 
-            public void onGetDrivingRouteResult(MKDrivingRouteResult res, int error) {
-                MCLogUtil.e(RouteFragment.this.TAG, "onGetDrivingRouteResult get result " + res);
-                if (error == 4) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
-                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
-                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
-                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
-                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
-                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                    } else {
-                        RouteFragment.this.handleSugResult();
-                    }
-                } else if (error != 0 || res == null) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                } else {
-                    GeoPoint sp = res.getStart().pt;
-                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
-                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
-                    GeoPoint np = res.getEnd().pt;
-                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
-                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
-                    RouteFragment.this.startSearch();
-                }
-            }
 
-            public void onGetWalkingRouteResult(MKWalkingRouteResult res, int error) {
-                MCLogUtil.e(RouteFragment.this.TAG, "onGetWalkingRouteResult get result" + res);
-                if (error == 4) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.stPois = res.getAddrResult().mStartPoiList;
-                    RouteFragment.this.enPois = res.getAddrResult().mEndPoiList;
-                    ArrayList<MKCityListInfo> stCities = res.getAddrResult().mStartCityList;
-                    ArrayList<MKCityListInfo> enCities = res.getAddrResult().mEndCityList;
-                    if (res.getAddrResult() == null || res.getAddrResult().mEndPoiList == null || res.getAddrResult().mStartPoiList == null) {
-                        RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                    } else {
-                        RouteFragment.this.handleSugResult();
-                    }
-                } else if (error != 0 || res == null) {
-                    RouteLoadingUtil.getInstance().hide();
-                    RouteFragment.this.warn("mc_place_route_can_not_find_result");
-                } else {
-                    GeoPoint sp = res.getStart().pt;
-                    RouteFragment.this.startModel.setLatitudeE6(sp.getLatitudeE6());
-                    RouteFragment.this.startModel.setLongitudeE6(sp.getLongitudeE6());
-                    GeoPoint np = res.getEnd().pt;
-                    RouteFragment.this.endModel.setLatitudeE6(np.getLatitudeE6());
-                    RouteFragment.this.endModel.setLongitudeE6(np.getLongitudeE6());
-                    RouteFragment.this.startSearch();
-                }
-            }
-
-            public void onGetAddrResult(MKAddrInfo res, int error) {
-            }
-
-            public void onGetBusDetailResult(MKBusLineResult result, int iError) {
-            }
-
-            public void onGetPoiDetailSearchResult(int type, int error) {
-            }
-
-            public void onGetPoiResult(MKPoiResult res, int type, int error) {
-            }
-
-            public void onGetShareUrlResult(MKShareUrlResult result, int type, int error) {
-            }
-        });
-        this.locData = new LocationData();
+//        this.locData = new LocationData();
     }
 
     private void handleSugResult() {
-        int i;
-        String sName;
-        int hasStart = 0;
-        int hasEnd = 0;
-        if (this.stPois != null && this.stPois.size() > 0) {
-            i = 0;
-            while (i < this.stPois.size()) {
-                sName = ((MKPoiInfo) this.stPois.get(i)).name;
-                if (sName.equals(this.startModel.getPointLocation())) {
-                    this.startModel.setLatitudeE6(((MKPoiInfo) this.stPois.get(i)).pt.getLatitudeE6());
-                    this.startModel.setLongitudeE6(((MKPoiInfo) this.stPois.get(i)).pt.getLongitudeE6());
-                    this.startCity = ((MKPoiInfo) this.stPois.get(i)).city;
-                    hasStart = 2;
-                    this.startIsOk = true;
-                    break;
-                } else if (sName.contains(this.startModel.getPointLocation())) {
-                    hasStart = 1;
-                    break;
-                } else {
-                    i++;
-                }
-            }
-            if (hasStart == 0) {
-                warn("mc_place_route_sug_dialog_no_start");
-                MCLogUtil.e(this.TAG, this.resource.getString("place_route_can_not_find_start"));
-                return;
-            }
-        }
-        if (this.enPois != null && this.enPois.size() > 0) {
-            i = 0;
-            while (i < this.enPois.size()) {
-                sName = ((MKPoiInfo) this.enPois.get(i)).name;
-                if (sName.equals(this.endModel.getPointLocation())) {
-                    this.endModel.setLatitudeE6(((MKPoiInfo) this.enPois.get(i)).pt.getLatitudeE6());
-                    this.endModel.setLongitudeE6(((MKPoiInfo) this.enPois.get(i)).pt.getLongitudeE6());
-                    this.endCity = ((MKPoiInfo) this.enPois.get(i)).city;
-                    this.endIsOk = true;
-                    hasEnd = 2;
-                    break;
-                } else if (sName.contains(this.endModel.getPointLocation())) {
-                    hasEnd = 1;
-                    break;
-                } else {
-                    i++;
-                }
-            }
-            if (hasEnd == 0) {
-                warn("mc_place_route_sug_dialog_no_end");
-                MCLogUtil.e(this.TAG, this.resource.getString("mc_place_route_sug_dialog_no_end"));
-                return;
-            }
-        }
-        if (hasStart == 1) {
-            showSugDiaLog(this.stPois, 1);
-        } else if (hasEnd == 1) {
-            showSugDiaLog(this.enPois, 2);
-        }
+
     }
 
     protected View initViews(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -364,13 +240,6 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
         this.busText = (TextView) view.findViewById(this.resource.getViewId("mc_place_route_bus_text"));
         this.carText = (TextView) view.findViewById(this.resource.getViewId("mc_place_route_car_text"));
         this.walkText = (TextView) view.findViewById(this.resource.getViewId("mc_place_route_walk_text"));
-        this.bDMapView = (MapView) view.findViewById(this.resource.getViewId("place_route_baidu_mapview"));
-        this.bDMapView.getController().setZoom(12.0f);
-        this.bDMapView.getController().enableClick(true);
-        this.myLocationOverlay = new MyLocationOverlay(this.bDMapView);
-        this.myLocationOverlay.setData(this.locData);
-        this.myLocationOverlay.enableCompass();
-        this.bDMapView.getOverlays().add(this.myLocationOverlay);
         this.changeBtn.setOnClickListener(this.clickListener);
         this.bus.setOnClickListener(this.clickListener);
         this.car.setOnClickListener(this.clickListener);
@@ -381,43 +250,33 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
         this.endAdapter = new ArrayAdapter(this.context, 17367050);
         this.startNameET.setAdapter(this.startAdapter);
         this.endNameET.setAdapter(this.endAdapter);
-        PlaceLocationHelper.getInastance().getCurrentLocation(this.context, false, new LocationDelegate() {
-            public void onReceiveLocation(BDLocation location) {
-                RouteFragment.this.startCity = location.getCity();
-                RouteFragment.this.endCity = RouteFragment.this.startCity;
-                RouteFragment.this.myLatitude = (int) (location.getLatitude() * 1000000.0d);
-                RouteFragment.this.myLongitude = (int) (location.getLongitude() * 1000000.0d);
-                RouteFragment.this.startModel.setLatitudeE6((int) (location.getLatitude() * 1000000.0d));
-                RouteFragment.this.startModel.setLongitudeE6((int) (location.getLongitude() * 1000000.0d));
-                RouteFragment.this.startModel.setHint(RouteFragment.this.resource.getString("mc_place_route_input_start_location"));
-                RouteFragment.this.startModel.setPointName(RouteFragment.this.resource.getString("mc_traffic_route_my_location"));
-                RouteFragment.this.startModel.setPointLocation(RouteFragment.this.resource.getString("mc_traffic_route_my_location"));
-                RouteFragment.this.startChange = true;
-                RouteFragment.this.startNameET.setText(RouteFragment.this.startModel.getPointName());
-                if (RouteFragment.this.startModel.getPointName().equals(RouteFragment.this.resource.getString("mc_traffic_route_my_location"))) {
-                    RouteFragment.this.startNameET.setTextColor(-16776961);
-                } else {
-                    RouteFragment.this.startNameET.setTextColor(-7829368);
-                }
-                RouteFragment.this.findMyLoc(location);
-            }
-        });
+//        PlaceLocationHelper.getInastance().getCurrentLocation(this.context, false, new LocationDelegate() {
+//            public void onReceiveLocation(BDLocation location) {
+//                RouteFragment.this.startCity = location.getCity();
+//                RouteFragment.this.endCity = RouteFragment.this.startCity;
+//                RouteFragment.this.myLatitude = (int) (location.getLatitude() * 1000000.0d);
+//                RouteFragment.this.myLongitude = (int) (location.getLongitude() * 1000000.0d);
+//                RouteFragment.this.startModel.setLatitudeE6((int) (location.getLatitude() * 1000000.0d));
+//                RouteFragment.this.startModel.setLongitudeE6((int) (location.getLongitude() * 1000000.0d));
+//                RouteFragment.this.startModel.setHint(RouteFragment.this.resource.getString("mc_place_route_input_start_location"));
+//                RouteFragment.this.startModel.setPointName(RouteFragment.this.resource.getString("mc_traffic_route_my_location"));
+//                RouteFragment.this.startModel.setPointLocation(RouteFragment.this.resource.getString("mc_traffic_route_my_location"));
+//                RouteFragment.this.startChange = true;
+//                RouteFragment.this.startNameET.setText(RouteFragment.this.startModel.getPointName());
+//                if (RouteFragment.this.startModel.getPointName().equals(RouteFragment.this.resource.getString("mc_traffic_route_my_location"))) {
+//                    RouteFragment.this.startNameET.setTextColor(-16776961);
+//                } else {
+//                    RouteFragment.this.startNameET.setTextColor(-7829368);
+//                }
+//                RouteFragment.this.findMyLoc(location);
+//            }
+//        });
         if (this.endModel != null) {
             this.endNameET.setText(this.endModel.getPointName());
         }
         return view;
     }
 
-    private void findMyLoc(BDLocation location) {
-        this.locData.latitude = location.getLatitude();
-        this.locData.longitude = location.getLongitude();
-        this.locData.accuracy = location.getRadius();
-        this.locData.direction = location.getDerect();
-        this.myLocationOverlay.setLocationMode(LocationMode.NORMAL);
-        this.myLocationOverlay.setData(this.locData);
-        this.bDMapView.getController().animateTo(new GeoPoint((int) (this.locData.latitude * 1000000.0d), (int) (this.locData.longitude * 1000000.0d)));
-        this.bDMapView.refresh();
-    }
 
     protected void initActions() {
         this.bus.setOnTouchListener(new OnTouchListener() {
@@ -480,7 +339,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
                     RouteFragment.this.startModel.setPointName(startContent);
                     RouteFragment.this.startModel.setPointLocation(startContent);
                 }
-                RouteFragment.this.mSearch.suggestionSearch(startContent, RouteFragment.this.startCity);
+//                RouteFragment.this.mSearch.suggestionSearch(startContent, RouteFragment.this.startCity);
                 RouteFragment.this.startChange = false;
             }
         });
@@ -508,7 +367,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
                     RouteFragment.this.endModel.setPointName(endContent);
                     RouteFragment.this.endModel.setPointLocation(endContent);
                 }
-                RouteFragment.this.mSearch.suggestionSearch(endContent, RouteFragment.this.endCity);
+//                RouteFragment.this.mSearch.suggestionSearch(endContent, RouteFragment.this.endCity);
                 RouteFragment.this.endChange = false;
             }
         });
@@ -540,20 +399,6 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
         });
     }
 
-    private void showSugDiaLog(ArrayList<MKPoiInfo> pois, int stOrEn) {
-        this.dlg = new Builder(this.context).create();
-        this.dlg.show();
-        Window window = this.dlg.getWindow();
-        this.dlg.setContentView(this.resource.getLayoutId("mc_place_route_location_dialog"));
-        TextView sugTitle = (TextView) window.findViewById(this.resource.getViewId("route_location_dialog_title"));
-        ListView sugList = (ListView) window.findViewById(this.resource.getViewId("route_location_dialog_sug_list"));
-        if (stOrEn == 1) {
-            sugTitle.setText(this.resource.getStringId("mc_place_route_sug_dialog_start"));
-        } else {
-            sugTitle.setText(this.resource.getStringId("mc_place_route_sug_dialog_end"));
-        }
-        sugList.setAdapter(new RouteSugDialogListAdapter(this.context, pois, new OnItemClick(), stOrEn));
-    }
 
     private void startSearch() {
         switch (this.currentSearchType) {
@@ -587,15 +432,9 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
             if (this.bus.equals(v)) {
                 onBusClick();
             } else if (this.car.equals(v)) {
-                RouteLoadingUtil.getInstance().show(this.context);
-                this.currentSearchType = 2;
-                this.mSearch.setDrivingPolicy(0);
-                this.mSearch.drivingSearch(this.startCity, getNode(this.startModel), this.endCity, getNode(this.endModel));
+
             } else if (this.walk.equals(v)) {
-                RouteLoadingUtil.getInstance().show(this.context);
-                this.currentSearchType = 3;
-                this.mSearch.setDrivingPolicy(0);
-                this.mSearch.walkingSearch(this.startCity, getNode(this.startModel), this.endCity, getNode(this.endModel));
+
             }
         }
     }
@@ -604,8 +443,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
         RouteLoadingUtil.getInstance().show(this.context);
         resetMyLocation();
         this.currentSearchType = 1;
-        this.mSearch.setTransitPolicy(3);
-        this.mSearch.transitSearch(this.startCity, getNode(this.startModel), getNode(this.endModel));
+
         MCLogUtil.e(this.TAG, "startModel" + this.startModel + "  endModel = " + this.endModel);
     }
 
@@ -666,14 +504,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
         startActivity(locationIntent);
     }
 
-    private MKPlanNode getNode(SearchConditionModel model) {
-        MKPlanNode enNode = new MKPlanNode();
-        enNode.name = model.getPointLocation();
-        if (model.getLatitudeE6() != 0) {
-            enNode.pt = new GeoPoint(model.getLatitudeE6(), model.getLongitudeE6());
-        }
-        return enNode;
-    }
+
 
     private boolean getStEnPoint() {
         if (MCStringUtil.isEmpty(this.startNameET.getText() + "")) {
@@ -692,7 +523,7 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     }
 
     public void onResume() {
-        this.bDMapView.onResume();
+//        this.bDMapView.onResume();
         super.onResume();
     }
 
@@ -701,13 +532,13 @@ public class RouteFragment extends BasePlaceFragment implements RouteConstant {
     }
 
     public void onDestroy() {
-        this.bDMapView.destroy();
-        this.mSearch.destory();
+//        this.bDMapView.destroy();
+//        this.mSearch.destory();
         super.onDestroy();
     }
 
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        this.bDMapView.onSaveInstanceState(outState);
+//        this.bDMapView.onSaveInstanceState(outState);
     }
 }

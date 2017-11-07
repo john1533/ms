@@ -3,7 +3,6 @@ package com.mobcent.discuz.base.fragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-import com.baidu.location.LocationClientOption;
 import com.mobcent.discuz.base.model.TopBtnModel;
 import com.mobcent.discuz.base.model.TopSettingModel;
 import java.util.ArrayList;
@@ -44,11 +43,11 @@ public class DemoDetailFragment extends BaseFragment {
             public void onClick(View v) {
                 TopBtnModel t = (TopBtnModel) v.getTag();
                 if (t.action == DemoDetailFragment.this.COMMENT) {
-                    Toast.makeText(DemoDetailFragment.this.getActivity(), "评论", LocationClientOption.MIN_SCAN_SPAN).show();
+                    Toast.makeText(DemoDetailFragment.this.getActivity(), "评论", 1000).show();
                 } else if (t.action == DemoDetailFragment.this.SHARE) {
-                    Toast.makeText(DemoDetailFragment.this.getActivity(), "分享", LocationClientOption.MIN_SCAN_SPAN).show();
+                    Toast.makeText(DemoDetailFragment.this.getActivity(), "分享", 1000).show();
                 } else if (t.action == -2) {
-                    Toast.makeText(DemoDetailFragment.this.getActivity(), "标题点击", LocationClientOption.MIN_SCAN_SPAN).show();
+                    Toast.makeText(DemoDetailFragment.this.getActivity(), "标题点击", 1000).show();
                 }
             }
         });

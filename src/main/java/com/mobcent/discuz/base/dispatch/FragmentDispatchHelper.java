@@ -37,6 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentDispatchHelper implements ConfigConstant, StyleConstant {
+    //初始化主界面时调用
     public static Fragment disPatchFragment(ConfigModuleModel dataModel) {
         Fragment c;
         String type = dataModel.getType();
@@ -56,7 +57,7 @@ public class FragmentDispatchHelper implements ConfigConstant, StyleConstant {
         c.setArguments(bundle);
         return c;
     }
-
+    //子界面调用   ConfigComponentModel 是ConfigModuleModel的list成员的成员
     public static Fragment disPatchFragment(ConfigComponentModel dataModel) {
         Fragment fragment = null;
         Bundle bundleData = new Bundle();

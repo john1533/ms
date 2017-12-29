@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
+
+import com.mark6.fragment.OpenFragment;
 import com.mobcent.discuz.activity.HomeActivity;
 import com.mobcent.discuz.android.constant.ConfigConstant;
 import com.mobcent.discuz.android.model.ConfigComponentModel;
@@ -54,12 +56,22 @@ public class FullPageFragment extends BaseModuleFragment {
 
     protected void firstCreate() {
         super.firstCreate();
-        if (this.moduleModel != null && !MCListUtils.isEmpty(this.moduleModel.getComponentList())) {
-            List<ConfigComponentModel> componentModels = this.moduleModel.getComponentList();
-            if (componentModels != null && !componentModels.isEmpty()) {
-                this.currentFrgment = FragmentDispatchHelper.disPatchFragment((ConfigComponentModel) componentModels.get(0));
+        if (this.moduleModel != null) {
+
+            if(moduleModel.getId()==-2){//kj
+                this.currentFrgment = new OpenFragment();
                 getFragmentHelper().addFragment(this.containerBox.getId(), this.currentFrgment);
+            }else if(moduleModel.getId()==-3){//static
+                this.currentFrgment = new OpenFragment();
+                getFragmentHelper().addFragment(this.containerBox.getId(), this.currentFrgment);
+            }else if(!MCListUtils.isEmpty(this.moduleModel.getComponentList())){
+                List<ConfigComponentModel> componentModels = this.moduleModel.getComponentList();
+                if (componentModels != null && !componentModels.isEmpty()) {
+                    this.currentFrgment = FragmentDispatchHelper.disPatchFragment((ConfigComponentModel) componentModels.get(0));
+                    getFragmentHelper().addFragment(this.containerBox.getId(), this.currentFrgment);
+                }
             }
+
         }
     }
 

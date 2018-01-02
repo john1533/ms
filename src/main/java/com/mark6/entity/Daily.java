@@ -5,14 +5,19 @@ package com.mark6.entity;
  */
 
 public class Daily {
+
     /**
      * successful : true
      * msg : ok
-     * data : {"date":"09/12/2017","id":"17/144","num1":"22","num2":"24","num3":"29","num4":"35","num5":"38","num6":"48","num7":"30","totalAmount":"53,979,761","amount1":"-","amount2":"$564,550","amount3":"$100,360","count1":"-","count2":"4.5","count3":"67.5","nextSerial":"17/145","nextDate":"12/12/2017","ext":"$37,406,204","expect":"$46,000,000"}
+     * timestamp : 0
+     * enable : true
+     * data : {"date":"02/01/2018","id":"2017/152","num1":"15","num2":"17","num3":"23","num4":"40","num5":"44","num6":"46","num7":"11","totalAmount":"47,308,642","amount1":"-","amount2":"$1,598,230","amount3":"$108,350","count1":"-","count2":"1.5","count3":"59.0","nextSerial":"17/153","nextDate":"30/12/2017","ext":"$22,802,345","expect":"$29,000,000"}
      */
 
     private boolean successful;
     private String msg;
+    private int timestamp;
+    private boolean enable;
     private DataBean data;
 
     public boolean isSuccessful() {
@@ -31,6 +36,22 @@ public class Daily {
         this.msg = msg;
     }
 
+    public int getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(int timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
     public DataBean getData() {
         return data;
     }
@@ -41,26 +62,26 @@ public class Daily {
 
     public static class DataBean {
         /**
-         * date : 09/12/2017
-         * id : 17/144
-         * num1 : 22
-         * num2 : 24
-         * num3 : 29
-         * num4 : 35
-         * num5 : 38
-         * num6 : 48
-         * num7 : 30
-         * totalAmount : 53,979,761
+         * date : 02/01/2018
+         * id : 2017/152
+         * num1 : 15
+         * num2 : 17
+         * num3 : 23
+         * num4 : 40
+         * num5 : 44
+         * num6 : 46
+         * num7 : 11
+         * totalAmount : 47,308,642
          * amount1 : -
-         * amount2 : $564,550
-         * amount3 : $100,360
+         * amount2 : $1,598,230
+         * amount3 : $108,350
          * count1 : -
-         * count2 : 4.5
-         * count3 : 67.5
-         * nextSerial : 17/145
-         * nextDate : 12/12/2017
-         * ext : $37,406,204
-         * expect : $46,000,000
+         * count2 : 1.5
+         * count3 : 59.0
+         * nextSerial : 17/153
+         * nextDate : 30/12/2017
+         * ext : $22,802,345
+         * expect : $29,000,000
          */
 
         private String date;
